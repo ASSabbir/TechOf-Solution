@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'fellix';
+  src: url(./assets/font/fellix.woff2);
+}
+@font-face {
+  font-family: 'raleway';
+  src: url(./assets/font/Raleway-SemiBold.ttf);
+}
+@font-face {
+  font-family: 'glonto';
+  src: url(./assets/font/Glonto-Regular.otf);
+}
+@font-face {
+  font-family: 'orange';
+  src: url(./assets/font/orange.otf);
+}
+@font-face {
+  font-family: 'obito';
+  src: url(./assets/font/Orbito.otf);
+}
+@font-face {
+  font-family: 'riope';
+  src: url(./assets/font/Riope.ttf);
+}
+@font-face {
+  font-family: 'klimisk';
+  src: url(./assets/font/Klomisk.otf);
+}
+@font-face {
+  font-family: 'dmsans';
+  src: url(./assets/font/DMSans-VariableFont_opsz\,wght.ttf);
+}
+@font-face {
+  font-family: 'urbanist';
+  src: url(./assets/font/Urbanist-VariableFont_wght.ttf);
+}
+
+@layer utilities {
+  .font-fellix {
+    font-family: 'fellix';
+  }
+  .font-raleway{
+    font-family: 'raleway';
+  }
+  .font-glonto{
+    font-family: 'glonto';
+  }
+  .font-obito{
+    font-family: 'obito';
+  }
+  .font-riope{
+    font-family: 'riope';
+  }
+  .font-orange{
+    font-family: 'orange';
+  }
+  .font-klimisk{
+    font-family: 'klimisk';
+  }
+  .font-urbanist{
+    font-family: 'urbanist';
+  }
+  .font-dmsans{
+    font-family: 'dmsans';
+  }
+}
+
+@keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
+
+        .logo-container:hover .animate-scroll {
+            animation-play-state: paused;
+        }
+
+        /* Logo color transitions */
+        .logo-item {
+            mix-blend-mode: difference;
+        }
+        
+        .logo-text {
+            color: white;
+        }
+
+        /* Curved shape for black background */
+        .curved-black {
+            clip-path: polygon(0 0, 60% 0, 53% 100%, 0% 100%);
+        }

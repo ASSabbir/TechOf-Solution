@@ -1,14 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechOf Solution</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
-<body>
-    <h1 class="text-4xl">hi</h1>
+
+<body class="bg-zinc-950 h-screen font-fellix text-white">
+
+    <section class="relative ">
+        <nav class=" w-full py-4 px-10 z-10">
+            <div class="flex  items-center justify-between px-20 py-4">
+                <img src="./assets/Img/logo.png" class="w-13" alt="">
+                <div class="list-none flex gap-10 text-xl font-fellix">
+                    <li class="nav-item">Home</li>
+                    <li class="nav-item">Works</li>
+                    <li class="nav-item">PlayGround</li>
+                </div>
+                <button class="text-2xl border py-2 px-5 border-zinc-500 nav-btn">Book A Meeting</button>
+            </div>
+        </nav>
+
+        <!-- <div class="absolute top-0 left-0 w-full h-full">
+            <video autoplay muted loop class="h-screen w-full object-cover" src="./assets/Img/banner.mp4"></video>
+        </div> -->
+
+        <div class="video-overlay"></div>
+
+        <div class=" px-30  space-y-10 mt-10">
+            <h1 class="font-semibold uppercase font-urbanist upp">Creative Tech & Marketing Agency</h1>
+            <div>
+
+                <h1 class="text-9xl font-semibold">Building <span class="font-klimisk font-normal italic">Website</span>
+                </h1>
+                <h1 class="text-9xl font-semibold">That move the world</h1>
+            </div>
+            <div class="flex gap-2 text-4xl tracking-tight">
+                <h1>On Time</h1>
+                <h1 class="text-blue-400">/</h1>
+                <h1>On Budget</h1>
+                <h1 class="text-blue-400">/</h1>
+                <h1>Never Settle</h1>
+            </div>
+        </div>
+        <div class="px-30  space-y-10 mt-30">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-o text-blue-400 text-2xl"></i>
+                <h1 class=" uppercase font-urbanist upp">TRUSTED by</h1>
+            </div>
+            <div class="bg-gray-100 overflow-hidden">
+                <div class="relative h-32 overflow-hidden">
+                    <!-- White background (full width) -->
+                    <div class="absolute inset-0 bg-white z-0"></div>
+
+                    <!-- Black background with curved edge on right -->
+                    <div class="absolute inset-0 bg-zinc-950  z-10"></div>
+
+                    <!-- Logo carousel container with overflow hidden -->
+                    <div class="relative z-20 h-full logo-container overflow-hidden">
+                        <div class="flex items-center h-full">
+                            <div class="flex animate-scroll">
+                                <!-- First set of logos -->
+                                <div class="flex items-center space-x-16 px-8">
+                                    <!-- OURA -->
+                                    <div class="flex-shrink-0 logo-item">
+                                        <span class="logo-text text-3xl font-light tracking-widest">OURA</span>
+                                    </div>
+
+                                    <!-- Urban Mattress -->
+                                    <div class="flex-shrink-0 logo-item">
+                                        <span class="logo-text text-2xl font-light">urban mattress</span>
+                                    </div>
+
+                                    <!-- Amazon -->
+                                    <div class="flex-shrink-0 logo-item">
+                                        <svg class="h-10 w-28" viewBox="0 0 120 40" fill="white">
+                                            <path
+                                                d="M70 25c-7.5 5.5-18.4 8.5-27.8 8.5-13.1 0-25-4.8-34-12.8-.7-.6-.1-1.5.8-1 12.5 7.3 28 11.7 44 11.7 10.8 0 22.7-2.2 33.6-6.8 1.6-.7 3 1.1 1.4 2.4z" />
+                                            <path
+                                                d="M73.4 21.6c-1-.9-6.3-.4-8.7-.2-.7.1-.8-.5-.2-1 4.3-3 11.3-2.1 12.1-1.1.8 1-.1 8-4.2 11.3-.6.5-1.2.2-.9-.4.9-1.5 2.8-4.9 1.9-6.6z" />
+                                            <path
+                                                d="M65.9 5.7V3.2c0-.4.3-.6.6-.6h11.2c.4 0 .6.3.6.6v2.1c0 .3-.3.8-.9 1.5l-5.8 8.3c2.2-.1 4.5.3 6.4 1.4.4.2.6.6.6 1v2.7c0 .4-.4.8-.8.6-3.6-1.9-8.4-2.1-12.4.1-.4.2-.8-.2-.8-.6v-2.5c0-.4 0-1.1.4-1.7l6.7-9.6h-5.8c-.3-.1-.6-.4-.6-.8z" />
+                                        </svg>
+                                    </div>
+
+                                    <!-- Selfbook -->
+                                    <div class="flex-shrink-0 logo-item">
+                                        <span class="logo-text text-3xl font-bold lowercase">selfbook</span>
+                                    </div>
+
+                                    <!-- Harvard (with shield icon) -->
+                                    <div class="flex-shrink-0 logo-item flex items-center space-x-2">
+                                        <svg class="h-8 w-8" viewBox="0 0 40 40" fill="white">
+                                            <path
+                                                d="M20 2L4 8v10c0 10 7 19 16 22 9-3 16-12 16-22V8L20 2zm0 3.5l12 4.5v9c0 8-5.5 15-12 18-6.5-3-12-10-12-18v-9l12-4.5z" />
+                                            <text x="20" y="26" font-size="14" text-anchor="middle" fill="white"
+                                                font-family="serif">H</text>
+                                        </svg>
+                                        <span class="logo-text text-xl font-light">HARVARD</span>
+                                    </div>
+                                </div>
+
+                                <!-- Duplicate set for seamless loop -->
+                                <div class="flex items-center space-x-16 px-8">
+                                    <!-- OURA -->
+                                    <div class="flex-shrink-0 logo-item">
+                                        <span class="logo-text text-3xl font-light tracking-widest">OURA</span>
+                                    </div>
+
+                                    <!-- Urban Mattress -->
+                                    <div class="flex-shrink-0 logo-item">
+                                        <span class="logo-text text-2xl font-light">urban mattress</span>
+                                    </div>
+
+                                    <!-- Amazon -->
+                                    <div class="flex-shrink-0 logo-item">
+                                        <svg class="h-10 w-28" viewBox="0 0 120 40" fill="white">
+                                            <path
+                                                d="M70 25c-7.5 5.5-18.4 8.5-27.8 8.5-13.1 0-25-4.8-34-12.8-.7-.6-.1-1.5.8-1 12.5 7.3 28 11.7 44 11.7 10.8 0 22.7-2.2 33.6-6.8 1.6-.7 3 1.1 1.4 2.4z" />
+                                            <path
+                                                d="M73.4 21.6c-1-.9-6.3-.4-8.7-.2-.7.1-.8-.5-.2-1 4.3-3 11.3-2.1 12.1-1.1.8 1-.1 8-4.2 11.3-.6.5-1.2.2-.9-.4.9-1.5 2.8-4.9 1.9-6.6z" />
+                                            <path
+                                                d="M65.9 5.7V3.2c0-.4.3-.6.6-.6h11.2c.4 0 .6.3.6.6v2.1c0 .3-.3.8-.9 1.5l-5.8 8.3c2.2-.1 4.5.3 6.4 1.4.4.2.6.6.6 1v2.7c0 .4-.4.8-.8.6-3.6-1.9-8.4-2.1-12.4.1-.4.2-.8-.2-.8-.6v-2.5c0-.4 0-1.1.4-1.7l6.7-9.6h-5.8c-.3-.1-.6-.4-.6-.8z" />
+                                        </svg>
+                                    </div>
+
+                                    <!-- Selfbook -->
+                                    <div class="flex-shrink-0 logo-item">
+                                        <span class="logo-text text-3xl font-bold lowercase">selfbook</span>
+                                    </div>
+
+                                    <!-- Harvard (with shield icon) -->
+                                    <div class="flex-shrink-0 logo-item flex items-center space-x-2">
+                                        <svg class="h-8 w-8" viewBox="0 0 40 40" fill="white">
+                                            <path
+                                                d="M20 2L4 8v10c0 10 7 19 16 22 9-3 16-12 16-22V8L20 2zm0 3.5l12 4.5v9c0 8-5.5 15-12 18-6.5-3-12-10-12-18v-9l12-4.5z" />
+                                            <text x="20" y="26" font-size="14" text-anchor="middle" fill="white"
+                                                font-family="serif">H</text>
+                                        </svg>
+                                        <span class="logo-text text-xl font-light">HARVARD</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <section class="bg-white  text-black  py-[7vw] px-[6vw]">
+        
+        <p class="fade-text text-7xl ">
+            TechOf Solution — <span class="">web-first</span> digital agency
+            Building modern, fast, and scalable websites
+            We create MERN apps and animated portfolios
+            Business sites LMS, and e-commerce platforms
+            Built for speed, usability, and strong SEO
+            Plus research and machine learning solutions
+           
+        </p>
+    </section>
+    <section>
+        
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="script.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll(".fade-text").forEach((element) => {
+            const text = new SplitType(element, { types: "chars" });
+            const scrollConfig = {
+                trigger: element,
+                start: "top 80%",
+                end: "top 20%",
+                scrub: true,
+                toggleActions: "play play reverse reverse",
+            };
+
+            gsap.fromTo(
+                text.chars,
+                { opacity: 0.1 },
+                {
+                    opacity: 1,
+                    duration: 0.3,
+                    stagger: 0.02,
+                    scrollTrigger: scrollConfig,
+                }
+            );
+
+            gsap.fromTo(
+                element.querySelectorAll("span .char"),
+                { color: "#000000" },
+                {
+                    color: "blue",
+                    duration: 0.3,
+                    stagger: 0.02,
+                    scrollTrigger: scrollConfig,
+                }
+            );
+        });
+
+        const lenis = new Lenis();
+        requestAnimationFrame(function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        });
+    </script>
 </body>
-<script src="script.js"></script>
+
+
 </html>
