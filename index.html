@@ -14,24 +14,72 @@
 
 </head>
 
-<body class="bg-zinc-950 h-screen font-fellix text-white">
+<body class="bg-zinc-950 h-screen pt-28 font-fellix text-white">
 
     <section class="relative ">
-        <nav class=" w-full py-4 px-10 z-10">
-            <div class="flex  items-center justify-between px-20 py-4">
+        <nav id="navbar" class="fixed top-0 mt-2 left-0 w-full  px-10 z-50 transition-all duration-300">
+            <div id="navber-div" class="flex items-center justify-between px-18 py-1">
                 <img src="./assets/Img/logo.png" class="w-13" alt="">
+
                 <div class="list-none flex gap-10 text-xl font-fellix">
                     <a href="/index.html">
-                        <li class="nav-item">Home</li>
+                        <li class="nav-item overflow-hidden cursor-pointer">
+                            <span class="split-text inline-block">
+                                <span class="letter">
+                                    <span class="top">H</span>
+                                    <span class="bottom">H</span>
+                                </span>
+                                <span class="letter">
+                                    <span class="top">o</span>
+                                    <span class="bottom">o</span>
+                                </span>
+                                <span class="letter">
+                                    <span class="top">m</span>
+                                    <span class="bottom">m</span>
+                                </span>
+                                <span class="letter">
+                                    <span class="top">e</span>
+                                    <span class="bottom">e</span>
+                                </span>
+                            </span>
+                        </li>
                     </a>
                     <a href="/works.html">
-                        <li class="nav-item">Works</li>
+                        <li class="nav-item overflow-hidden cursor-pointer">
+                            <span class="split-text inline-flex">
+
+                                <span class="letter"><span class="top">W</span><span class="bottom">W</span></span>
+                                <span class="letter"><span class="top">o</span><span class="bottom">o</span></span>
+                                <span class="letter"><span class="top">r</span><span class="bottom">r</span></span>
+                                <span class="letter"><span class="top">k</span><span class="bottom">k</span></span>
+                                <span class="letter"><span class="top">s</span><span class="bottom">s</span></span>
+
+                            </span>
+                        </li>
                     </a>
                     <a href="/playground.html">
-                        <li class="nav-item">PlayGround</li>
+                        <li class="nav-item overflow-hidden cursor-pointer">
+                            <span class="split-text inline-flex">
+
+                                <span class="letter"><span class="top">P</span><span class="bottom">P</span></span>
+                                <span class="letter"><span class="top">l</span><span class="bottom">l</span></span>
+                                <span class="letter"><span class="top">a</span><span class="bottom">a</span></span>
+                                <span class="letter"><span class="top">y</span><span class="bottom">y</span></span>
+                                <span class="letter"><span class="top">g</span><span class="bottom">g</span></span>
+                                <span class="letter"><span class="top">r</span><span class="bottom">r</span></span>
+                                <span class="letter"><span class="top">o</span><span class="bottom">o</span></span>
+                                <span class="letter"><span class="top">u</span><span class="bottom">u</span></span>
+                                <span class="letter"><span class="top">n</span><span class="bottom">n</span></span>
+                                <span class="letter"><span class="top">d</span><span class="bottom">d</span></span>
+
+                            </span>
+                        </li>
                     </a>
                 </div>
-                <button class="text-2xl border py-2 px-5 border-zinc-500 nav-btn">Book A Meeting</button>
+
+                <button class="text-3xl all-btn border  px-5 border-zinc-500 nav-btn">
+                    Book A Meeting
+                </button>
             </div>
         </nav>
 

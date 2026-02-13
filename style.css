@@ -150,3 +150,40 @@
   transition: background 0s;
 }
 
+.navbar {
+    background: transparent;
+    backdrop-filter: blur(0px);
+    border-bottom: 1px solid transparent;
+}
+
+/* Scrolled state with blur */
+.navbar.scrolled-up {
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled-up .navbar-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.split-text {
+  display: inline-flex;
+}
+
+.letter {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.letter span {
+  display: block;
+}
+.bottom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  
+}
