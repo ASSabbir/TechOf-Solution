@@ -1,4 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
+const lenis = new Lenis();
+requestAnimationFrame(function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+});
+
 const scrolled = () => {
 
     const navbar = document.getElementById("navbar");
@@ -38,7 +44,7 @@ const scrolled = () => {
         }
         else {
             gsap.to(navbar, { y: "0%", duration: 0.1, ease: "power3.out" });
-           
+
             navbarDiv.classList.add("backdrop-blur-md", "bg-zinc-950/60", "shadow-md");
         }
 
@@ -62,6 +68,7 @@ const textSrolled = () => {
             opacity: 0,
             ease: "none",
             scrollTrigger: {
+                // markers:true,
                 trigger: card,
                 start: "top 10%",
                 end: "top -50%",
@@ -71,6 +78,7 @@ const textSrolled = () => {
         });
     });
 
+    
     document.querySelectorAll('.faq-question').forEach(button => {
         button.addEventListener('click', () => {
             const faqItem = button.parentElement;
@@ -99,47 +107,47 @@ textSrolled()
 
 
 document.querySelectorAll(".nav-item").forEach((item) => {
-  const letters = item.querySelectorAll(".letter");
+    const letters = item.querySelectorAll(".letter");
 
-  item.addEventListener("mouseenter", () => {
-    letters.forEach((letter, index) => {
-      const top = letter.querySelector(".top");
-      const bottom = letter.querySelector(".bottom");
+    item.addEventListener("mouseenter", () => {
+        letters.forEach((letter, index) => {
+            const top = letter.querySelector(".top");
+            const bottom = letter.querySelector(".bottom");
 
-      gsap.to(top, {
-        y: "-100%",
-        duration: 0.6,
-        delay: index * 0.03,
-        ease: "power3.out"
-      });
+            gsap.to(top, {
+                y: "-100%",
+                duration: 0.6,
+                delay: index * 0.03,
+                ease: "power3.out"
+            });
 
-      gsap.to(bottom, {
-        y: "-100%",
-        duration: 0.6,
-        delay: index * 0.03,
-        ease: "power3.out"
-      });
+            gsap.to(bottom, {
+                y: "-100%",
+                duration: 0.6,
+                delay: index * 0.03,
+                ease: "power3.out"
+            });
+        });
     });
-  });
 
-  item.addEventListener("mouseleave", () => {
-    letters.forEach((letter, index) => {
-      const top = letter.querySelector(".top");
-      const bottom = letter.querySelector(".bottom");
+    item.addEventListener("mouseleave", () => {
+        letters.forEach((letter, index) => {
+            const top = letter.querySelector(".top");
+            const bottom = letter.querySelector(".bottom");
 
-      gsap.to(top, {
-        y: "0%",
-        duration: 0.4,
-        delay: index * 0.03,
-        ease: "power3.out"
-      });
+            gsap.to(top, {
+                y: "0%",
+                duration: 0.4,
+                delay: index * 0.03,
+                ease: "power3.out"
+            });
 
-      gsap.to(bottom, {
-        y: "0%",
-        duration: 0.4,
-        delay: index * 0.03,
-        ease: "power3.out"
-      });
+            gsap.to(bottom, {
+                y: "0%",
+                duration: 0.4,
+                delay: index * 0.03,
+                ease: "power3.out"
+            });
+        });
     });
-  });
 });
