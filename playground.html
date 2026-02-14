@@ -11,7 +11,185 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+        :root {
+            --orb-gradient-1: #00f5ff;
+            --orb-gradient-2: #ff00ff;
+            --orb-glow: rgba(0, 245, 255, 0.8);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            overflow: hidden;
+            transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animated-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--orb-gradient-1), var(--orb-gradient-2));
+            box-shadow: 
+                0 0 40px var(--orb-glow),
+                0 0 80px var(--orb-glow),
+                inset 0 0 20px rgba(255,255,255,0.3);
+            cursor: pointer;
+            transform: scale(0);
+            z-index: 10;
+            transition: transform 0.1s ease;
+        }
+
+        .orb:hover {
+            transform: scale(1.1) !important;
+        }
+
+        .orb:active {
+            transform: scale(0.95) !important;
+        }
+
+        .theme-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .theme-btn:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+
+        .theme-btn:hover {
+            border-color: rgba(255,255,255,0.4);
+            transform: translateY(-2px);
+        }
+
+        .combo-badge {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            z-index: 1000;
+            pointer-events: none;
+            text-shadow: 0 0 40px rgba(0, 245, 255, 0.6);
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px currentColor;
+        }
+
+        .heart-icon {
+            display: inline-block;
+            font-size: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .heart-shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px) rotate(-5deg); }
+            75% { transform: translateX(5px) rotate(5deg); }
+        }
+
+        .score-pulse {
+            animation: pulse 0.3s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .modal-backdrop {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .neon-border {
+            border: 2px solid;
+            border-image: linear-gradient(135deg, var(--orb-gradient-1), var(--orb-gradient-2)) 1;
+            box-shadow: 0 0 20px var(--orb-glow);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orb-gradient-1), var(--orb-gradient-2));
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--orb-glow);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body class="bg-zinc-950 h-screen font-fellix text-white">
@@ -27,7 +205,121 @@
             </div>
         </nav>
 
-    
+    <section>
+        
+    <div class="animated-grid"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-black bg-opacity-40 backdrop-blur-md z-50 border-b border-white border-opacity-10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold glow-text">NEON REFLEX</div>
+            
+            <div class="flex flex-col items-center">
+                <div id="scoreDisplay" class="text-3xl font-bold mb-1">0</div>
+                <div id="highScoreDisplay" class="text-sm text-gray-400">Best: 0</div>
+                <div id="comboDisplay" class="text-xs text-cyan-400 mt-1 opacity-0">COMBO x2</div>
+            </div>
+            
+            <div id="livesDisplay" class="flex gap-2">
+                <span class="heart-icon">❤️</span>
+                <span class="heart-icon">❤️</span>
+                <span class="heart-icon">❤️</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Theme Control Panel -->
+    <div class="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 bg-black bg-opacity-40 backdrop-blur-md rounded-2xl p-4 border border-white border-opacity-10">
+        <div class="text-xs text-gray-400 mb-3 text-center font-semibold">THEME</div>
+        
+        <!-- Background Themes -->
+        <div class="mb-4">
+            <div class="text-xs text-gray-500 mb-2">BG</div>
+            <div class="flex flex-col gap-2">
+                <button class="theme-btn bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900" data-bg="purple" title="Purple Void"></button>
+                <button class="theme-btn bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900" data-bg="blue" title="Blue Abyss"></button>
+                <button class="theme-btn bg-gradient-to-br from-gray-900 via-red-900 to-gray-900" data-bg="red" title="Red Nebula"></button>
+                <button class="theme-btn bg-gradient-to-br from-gray-900 via-green-900 to-gray-900" data-bg="green" title="Green Matrix"></button>
+            </div>
+        </div>
+
+        <!-- Orb Themes -->
+        <div>
+            <div class="text-xs text-gray-500 mb-2">ORB</div>
+            <div class="flex flex-col gap-2">
+                <button class="theme-btn bg-gradient-to-br from-cyan-400 to-pink-500" data-orb="cyan-pink" title="Cyan Dream"></button>
+                <button class="theme-btn bg-gradient-to-br from-yellow-400 to-orange-500" data-orb="yellow-orange" title="Solar Flare"></button>
+                <button class="theme-btn bg-gradient-to-br from-green-400 to-blue-500" data-orb="green-blue" title="Ocean Wave"></button>
+                <button class="theme-btn bg-gradient-to-br from-purple-400 to-red-500" data-orb="purple-red" title="Royal Flame"></button>
+            </div>
+        </div>
+
+        <!-- Difficulty Selector (before game starts) -->
+        <div id="difficultyPanel" class="mt-4 pt-4 border-t border-white border-opacity-10">
+            <div class="text-xs text-gray-500 mb-2">DIFFICULTY</div>
+            <div class="flex flex-col gap-2">
+                <button class="text-xs px-3 py-2 rounded-lg bg-green-600 bg-opacity-40 hover:bg-opacity-60 transition" data-difficulty="easy">EASY</button>
+                <button class="text-xs px-3 py-2 rounded-lg bg-yellow-600 bg-opacity-40 hover:bg-opacity-60 transition" data-difficulty="medium">MEDIUM</button>
+                <button class="text-xs px-3 py-2 rounded-lg bg-red-600 bg-opacity-40 hover:bg-opacity-60 transition" data-difficulty="hard">HARD</button>
+            </div>
+        </div>
+
+        <!-- Pause Button (only visible during game) -->
+        <button id="pauseBtn" class="mt-4 w-full text-xs px-3 py-2 rounded-lg bg-white bg-opacity-10 hover:bg-opacity-20 transition hidden">
+            PAUSE (P)
+        </button>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="startScreen" class="fixed inset-0 flex items-center justify-center z-30 bg-black bg-opacity-60 backdrop-blur-sm">
+        <div class="text-center">
+            <h1 class="text-7xl font-black mb-4 glow-text floating">NEON REFLEX</h1>
+            <p class="text-gray-400 mb-8 text-lg">Click the orbs before they vanish</p>
+            <button id="startBtn" class="btn-primary px-12 py-4 rounded-full text-xl font-bold">
+                START GAME
+            </button>
+            <div class="mt-6 text-sm text-gray-500">
+                <p>Press <span class="text-cyan-400 font-mono">P</span> to pause</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="fixed inset-0 flex items-center justify-center z-30 modal-backdrop hidden">
+        <div class="bg-black bg-opacity-80 rounded-3xl p-12 text-center neon-border max-w-md">
+            <h2 class="text-5xl font-black mb-6 glow-text">GAME OVER</h2>
+            <div class="mb-8">
+                <div class="text-gray-400 mb-2">FINAL SCORE</div>
+                <div id="finalScore" class="text-6xl font-bold text-cyan-400">0</div>
+            </div>
+            <div class="mb-8">
+                <div class="text-gray-400 mb-2">HIGH SCORE</div>
+                <div id="finalHighScore" class="text-3xl font-bold text-purple-400">0</div>
+            </div>
+            <button id="restartBtn" class="btn-primary px-10 py-3 rounded-full text-lg font-bold">
+                PLAY AGAIN
+            </button>
+        </div>
+    </div>
+
+    <!-- Pause Screen -->
+    <div id="pauseScreen" class="fixed inset-0 flex items-center justify-center z-30 modal-backdrop hidden">
+        <div class="bg-black bg-opacity-80 rounded-3xl p-12 text-center neon-border">
+            <h2 class="text-5xl font-black mb-6 glow-text">PAUSED</h2>
+            <p class="text-gray-400 mb-6">Press <span class="text-cyan-400 font-mono">P</span> or click below to resume</p>
+            <button id="resumeBtn" class="btn-primary px-10 py-3 rounded-full text-lg font-bold">
+                RESUME
+            </button>
+        </div>
+    </div>
+
+    <!-- Combo Badge -->
+    <div id="comboBadge" class="combo-badge">COMBO x2</div>
+
+    <!-- Game Area -->
+    <div id="gameArea" class="fixed inset-0 z-10"></div>
+
+    </section>
 
 
 
@@ -37,6 +329,573 @@
     <script src="https://unpkg.com/split-type"></script>
     <script src="script.js"></script>
     
+     <script type="module">
+        // ==================== GAME STATE ====================
+        const GameState = {
+            score: 0,
+            highScore: parseInt(localStorage.getItem('neonReflexHighScore')) || 0,
+            lives: 3,
+            isPlaying: false,
+            isPaused: false,
+            currentOrb: null,
+            orbTimer: null,
+            orbDuration: 1500,
+            minOrbDuration: 400,
+            combo: 0,
+            comboMultiplier: 1,
+            difficulty: 'medium',
+            difficultySettings: {
+                easy: { initialDuration: 2000, reduction: 0.03, minDuration: 600 },
+                medium: { initialDuration: 1500, reduction: 0.05, minDuration: 400 },
+                hard: { initialDuration: 1000, reduction: 0.07, minDuration: 250 }
+            }
+        };
+
+        // ==================== AUDIO SYSTEM ====================
+        const AudioSystem = {
+            context: null,
+            
+            init() {
+                this.context = new (window.AudioContext || window.webkitAudioContext)();
+            },
+
+            playClick() {
+                if (!this.context) return;
+                const oscillator = this.context.createOscillator();
+                const gainNode = this.context.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(this.context.destination);
+                
+                oscillator.frequency.value = 800;
+                oscillator.type = 'sine';
+                
+                gainNode.gain.setValueAtTime(0.3, this.context.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, this.context.currentTime + 0.1);
+                
+                oscillator.start(this.context.currentTime);
+                oscillator.stop(this.context.currentTime + 0.1);
+            },
+
+            playMiss() {
+                if (!this.context) return;
+                const oscillator = this.context.createOscillator();
+                const gainNode = this.context.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(this.context.destination);
+                
+                oscillator.frequency.value = 200;
+                oscillator.type = 'sawtooth';
+                
+                gainNode.gain.setValueAtTime(0.2, this.context.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, this.context.currentTime + 0.3);
+                
+                oscillator.start(this.context.currentTime);
+                oscillator.stop(this.context.currentTime + 0.3);
+            },
+
+            playGameOver() {
+                if (!this.context) return;
+                const oscillator = this.context.createOscillator();
+                const gainNode = this.context.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(this.context.destination);
+                
+                oscillator.frequency.setValueAtTime(400, this.context.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(100, this.context.currentTime + 0.5);
+                oscillator.type = 'square';
+                
+                gainNode.gain.setValueAtTime(0.3, this.context.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, this.context.currentTime + 0.5);
+                
+                oscillator.start(this.context.currentTime);
+                oscillator.stop(this.context.currentTime + 0.5);
+            }
+        };
+
+        // ==================== THEME CONTROLLER ====================
+        const ThemeController = {
+            backgrounds: {
+                purple: 'from-gray-900 via-purple-900 to-gray-900',
+                blue: 'from-gray-900 via-blue-900 to-gray-900',
+                red: 'from-gray-900 via-red-900 to-gray-900',
+                green: 'from-gray-900 via-green-900 to-gray-900'
+            },
+
+            orbs: {
+                'cyan-pink': {
+                    gradient1: '#00f5ff',
+                    gradient2: '#ff00ff',
+                    glow: 'rgba(0, 245, 255, 0.8)'
+                },
+                'yellow-orange': {
+                    gradient1: '#fbbf24',
+                    gradient2: '#f97316',
+                    glow: 'rgba(251, 191, 36, 0.8)'
+                },
+                'green-blue': {
+                    gradient1: '#34d399',
+                    gradient2: '#3b82f6',
+                    glow: 'rgba(52, 211, 153, 0.8)'
+                },
+                'purple-red': {
+                    gradient1: '#a78bfa',
+                    gradient2: '#ef4444',
+                    glow: 'rgba(167, 139, 250, 0.8)'
+                }
+            },
+
+            changeBackground(theme) {
+                const body = document.body;
+                Object.values(this.backgrounds).forEach(bg => {
+                    body.classList.remove('bg-gradient-to-br', ...bg.split(' '));
+                });
+                body.classList.add('bg-gradient-to-br', ...this.backgrounds[theme].split(' '));
+                
+                gsap.from(body, {
+                    opacity: 0.8,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                });
+            },
+
+            changeOrb(theme) {
+                const config = this.orbs[theme];
+                document.documentElement.style.setProperty('--orb-gradient-1', config.gradient1);
+                document.documentElement.style.setProperty('--orb-gradient-2', config.gradient2);
+                document.documentElement.style.setProperty('--orb-glow', config.glow);
+
+                const currentOrb = GameState.currentOrb;
+                if (currentOrb) {
+                    gsap.to(currentOrb, {
+                        scale: 1.2,
+                        duration: 0.2,
+                        yoyo: true,
+                        repeat: 1,
+                        ease: 'power2.inOut'
+                    });
+                }
+            }
+        };
+
+        // ==================== UI CONTROLLER ====================
+        const UIController = {
+            elements: {
+                score: document.getElementById('scoreDisplay'),
+                highScore: document.getElementById('highScoreDisplay'),
+                combo: document.getElementById('comboDisplay'),
+                lives: document.getElementById('livesDisplay'),
+                startScreen: document.getElementById('startScreen'),
+                gameOverScreen: document.getElementById('gameOverScreen'),
+                pauseScreen: document.getElementById('pauseScreen'),
+                finalScore: document.getElementById('finalScore'),
+                finalHighScore: document.getElementById('finalHighScore'),
+                comboBadge: document.getElementById('comboBadge'),
+                gameArea: document.getElementById('gameArea'),
+                pauseBtn: document.getElementById('pauseBtn'),
+                difficultyPanel: document.getElementById('difficultyPanel')
+            },
+
+            updateScore(score) {
+                this.elements.score.textContent = score;
+                this.elements.score.classList.add('score-pulse');
+                setTimeout(() => this.elements.score.classList.remove('score-pulse'), 300);
+                
+                gsap.to(this.elements.score, {
+                    scale: 1.2,
+                    duration: 0.15,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: 'power2.out'
+                });
+            },
+
+            updateHighScore(score) {
+                this.elements.highScore.textContent = `Best: ${score}`;
+            },
+
+            updateLives(lives) {
+                const hearts = this.elements.lives.querySelectorAll('.heart-icon');
+                hearts.forEach((heart, index) => {
+                    if (index < lives) {
+                        heart.style.opacity = '1';
+                        heart.classList.add('heart-shake');
+                        setTimeout(() => heart.classList.remove('heart-shake'), 500);
+                    } else {
+                        gsap.to(heart, {
+                            opacity: 0.2,
+                            scale: 0.8,
+                            duration: 0.3,
+                            ease: 'back.in'
+                        });
+                    }
+                });
+            },
+
+            showCombo() {
+                gsap.to(this.elements.combo, {
+                    opacity: 1,
+                    scale: 1.1,
+                    duration: 0.3,
+                    ease: 'back.out'
+                });
+            },
+
+            hideCombo() {
+                gsap.to(this.elements.combo, {
+                    opacity: 0,
+                    scale: 1,
+                    duration: 0.3
+                });
+            },
+
+            showComboBadge() {
+                gsap.fromTo(this.elements.comboBadge,
+                    { scale: 0, rotation: -180 },
+                    {
+                        scale: 1,
+                        rotation: 0,
+                        duration: 0.5,
+                        ease: 'back.out'
+                    }
+                );
+
+                gsap.to(this.elements.comboBadge, {
+                    scale: 0,
+                    rotation: 180,
+                    duration: 0.5,
+                    delay: 1,
+                    ease: 'back.in'
+                });
+            },
+
+            showStartScreen() {
+                gsap.to(this.elements.startScreen, {
+                    opacity: 1,
+                    display: 'flex',
+                    duration: 0.5
+                });
+            },
+
+            hideStartScreen() {
+                gsap.to(this.elements.startScreen, {
+                    opacity: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        this.elements.startScreen.style.display = 'none';
+                    }
+                });
+            },
+
+            showGameOver(score, highScore) {
+                this.elements.finalScore.textContent = score;
+                this.elements.finalHighScore.textContent = highScore;
+                
+                gsap.to(this.elements.gameOverScreen, {
+                    opacity: 1,
+                    display: 'flex',
+                    duration: 0.5
+                });
+
+                gsap.from(this.elements.gameOverScreen.querySelector('div'), {
+                    scale: 0.8,
+                    y: 50,
+                    duration: 0.5,
+                    ease: 'back.out'
+                });
+            },
+
+            hideGameOver() {
+                gsap.to(this.elements.gameOverScreen, {
+                    opacity: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        this.elements.gameOverScreen.classList.add('hidden');
+                    }
+                });
+            },
+
+            showPause() {
+                gsap.to(this.elements.pauseScreen, {
+                    opacity: 1,
+                    display: 'flex',
+                    duration: 0.3
+                });
+            },
+
+            hidePause() {
+                gsap.to(this.elements.pauseScreen, {
+                    opacity: 0,
+                    duration: 0.3,
+                    onComplete: () => {
+                        this.elements.pauseScreen.classList.add('hidden');
+                    }
+                });
+            },
+
+            createParticles(x, y) {
+                const colors = [
+                    getComputedStyle(document.documentElement).getPropertyValue('--orb-gradient-1'),
+                    getComputedStyle(document.documentElement).getPropertyValue('--orb-gradient-2')
+                ];
+
+                for (let i = 0; i < 12; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = `${x}px`;
+                    particle.style.top = `${y}px`;
+                    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    document.body.appendChild(particle);
+
+                    const angle = (Math.PI * 2 * i) / 12;
+                    const velocity = 100 + Math.random() * 100;
+                    const tx = Math.cos(angle) * velocity;
+                    const ty = Math.sin(angle) * velocity;
+
+                    gsap.to(particle, {
+                        x: tx,
+                        y: ty,
+                        opacity: 0,
+                        duration: 0.8,
+                        ease: 'power2.out',
+                        onComplete: () => particle.remove()
+                    });
+                }
+            }
+        };
+
+        // ==================== GAME ENGINE ====================
+        const GameEngine = {
+            init() {
+                AudioSystem.init();
+                UIController.updateHighScore(GameState.highScore);
+                this.setupEventListeners();
+            },
+
+            setupEventListeners() {
+                document.getElementById('startBtn').addEventListener('click', () => this.startGame());
+                document.getElementById('restartBtn').addEventListener('click', () => this.restartGame());
+                document.getElementById('pauseBtn').addEventListener('click', () => this.togglePause());
+                document.getElementById('resumeBtn').addEventListener('click', () => this.togglePause());
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key.toLowerCase() === 'p' && GameState.isPlaying) {
+                        this.togglePause();
+                    }
+                });
+
+                document.querySelectorAll('[data-bg]').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        ThemeController.changeBackground(e.target.dataset.bg);
+                    });
+                });
+
+                document.querySelectorAll('[data-orb]').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        ThemeController.changeOrb(e.target.dataset.orb);
+                    });
+                });
+
+                document.querySelectorAll('[data-difficulty]').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('[data-difficulty]').forEach(b => {
+                            b.classList.remove('ring-2', 'ring-white');
+                        });
+                        e.target.classList.add('ring-2', 'ring-white');
+                        GameState.difficulty = e.target.dataset.difficulty;
+                    });
+                });
+            },
+
+            startGame() {
+                const settings = GameState.difficultySettings[GameState.difficulty];
+                GameState.score = 0;
+                GameState.lives = 3;
+                GameState.isPlaying = true;
+                GameState.isPaused = false;
+                GameState.combo = 0;
+                GameState.comboMultiplier = 1;
+                GameState.orbDuration = settings.initialDuration;
+                GameState.minOrbDuration = settings.minDuration;
+
+                UIController.hideStartScreen();
+                UIController.updateScore(0);
+                UIController.updateLives(3);
+                UIController.hideCombo();
+                UIController.elements.pauseBtn.classList.remove('hidden');
+                UIController.elements.difficultyPanel.classList.add('hidden');
+
+                this.spawnOrb();
+            },
+
+            restartGame() {
+                this.cleanup();
+                UIController.hideGameOver();
+                UIController.elements.gameOverScreen.classList.remove('hidden');
+                UIController.elements.difficultyPanel.classList.remove('hidden');
+                UIController.showStartScreen();
+            },
+
+            togglePause() {
+                if (!GameState.isPlaying) return;
+
+                GameState.isPaused = !GameState.isPaused;
+
+                if (GameState.isPaused) {
+                    UIController.showPause();
+                    if (GameState.orbTimer) {
+                        clearTimeout(GameState.orbTimer);
+                    }
+                } else {
+                    UIController.hidePause();
+                    UIController.elements.pauseScreen.classList.add('hidden');
+                    if (GameState.currentOrb) {
+                        this.startOrbTimer();
+                    }
+                }
+            },
+
+            spawnOrb() {
+                if (!GameState.isPlaying || GameState.isPaused) return;
+
+                this.cleanup();
+
+                const orb = document.createElement('div');
+                orb.className = 'orb';
+                
+                const headerHeight = 80;
+                const margin = 50;
+                const maxX = window.innerWidth - 80 - margin * 2;
+                const maxY = window.innerHeight - 80 - margin - headerHeight;
+
+                const x = margin + Math.random() * maxX;
+                const y = headerHeight + margin + Math.random() * maxY;
+
+                orb.style.left = `${x}px`;
+                orb.style.top = `${y}px`;
+
+                UIController.elements.gameArea.appendChild(orb);
+                GameState.currentOrb = orb;
+
+                gsap.to(orb, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'back.out'
+                });
+
+                orb.addEventListener('click', (e) => this.handleOrbClick(e, orb, x + 40, y + 40));
+
+                this.startOrbTimer();
+            },
+
+            startOrbTimer() {
+                GameState.orbTimer = setTimeout(() => {
+                    this.handleOrbMiss();
+                }, GameState.orbDuration);
+            },
+
+            handleOrbClick(e, orb, x, y) {
+                e.stopPropagation();
+                
+                if (!GameState.isPlaying || GameState.isPaused) return;
+
+                clearTimeout(GameState.orbTimer);
+                AudioSystem.playClick();
+
+                const points = 1 * GameState.comboMultiplier;
+                GameState.score += points;
+                GameState.combo++;
+
+                if (GameState.combo >= 5 && GameState.comboMultiplier === 1) {
+                    GameState.comboMultiplier = 2;
+                    UIController.showCombo();
+                    UIController.showComboBadge();
+                }
+
+                UIController.updateScore(GameState.score);
+                UIController.createParticles(x, y);
+
+                if (GameState.score > GameState.highScore) {
+                    GameState.highScore = GameState.score;
+                    localStorage.setItem('neonReflexHighScore', GameState.highScore);
+                    UIController.updateHighScore(GameState.highScore);
+                }
+
+                gsap.to(orb, {
+                    scale: 0,
+                    duration: 0.2,
+                    ease: 'back.in',
+                    onComplete: () => {
+                        orb.remove();
+                        const settings = GameState.difficultySettings[GameState.difficulty];
+                        GameState.orbDuration = Math.max(
+                            GameState.minOrbDuration,
+                            GameState.orbDuration * (1 - settings.reduction)
+                        );
+                        this.spawnOrb();
+                    }
+                });
+            },
+
+            handleOrbMiss() {
+                if (!GameState.isPlaying || GameState.isPaused) return;
+
+                AudioSystem.playMiss();
+                GameState.lives--;
+                GameState.combo = 0;
+                GameState.comboMultiplier = 1;
+                UIController.hideCombo();
+
+                UIController.updateLives(GameState.lives);
+
+                const orb = GameState.currentOrb;
+                if (orb) {
+                    gsap.to(orb, {
+                        scale: 0,
+                        opacity: 0,
+                        duration: 0.3,
+                        ease: 'power2.in',
+                        onComplete: () => orb.remove()
+                    });
+                }
+
+                if (GameState.lives <= 0) {
+                    this.gameOver();
+                } else {
+                    setTimeout(() => this.spawnOrb(), 500);
+                }
+            },
+
+            gameOver() {
+                GameState.isPlaying = false;
+                AudioSystem.playGameOver();
+                this.cleanup();
+                UIController.elements.pauseBtn.classList.add('hidden');
+                UIController.showGameOver(GameState.score, GameState.highScore);
+            },
+
+            cleanup() {
+                if (GameState.orbTimer) {
+                    clearTimeout(GameState.orbTimer);
+                    GameState.orbTimer = null;
+                }
+                
+                if (GameState.currentOrb) {
+                    GameState.currentOrb.remove();
+                    GameState.currentOrb = null;
+                }
+
+                document.querySelectorAll('.orb').forEach(orb => orb.remove());
+                document.querySelectorAll('.particle').forEach(particle => particle.remove());
+            }
+        };
+
+        // ==================== INITIALIZE ====================
+        GameEngine.init();
+    </script>
 </body>
 
 

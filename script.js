@@ -78,7 +78,7 @@ const textSrolled = () => {
         });
     });
 
-    
+
     document.querySelectorAll('.faq-question').forEach(button => {
         button.addEventListener('click', () => {
             const faqItem = button.parentElement;
@@ -151,3 +151,10 @@ document.querySelectorAll(".nav-item").forEach((item) => {
         });
     });
 });
+
+
+
+
+
+
+
