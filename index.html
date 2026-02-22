@@ -230,7 +230,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-black  px-[6vw] pt-[7vw]">
+    <section class="bg-zinc-950  px-[6vw] pt-[7vw]">
         <div class="flex">
             <h1 class="text-8xl flex-1 font-semibold text-white">OUR WORKS</h1>
             <div class="relative flex-1 w-full h-150"
@@ -283,7 +283,7 @@
             <button class="all-btn">SHOW ALL</button>
         </div>
     </section>
-    <section class="h-screen bg-black pt-44">
+    <section class="h-screen bg-zinc-950 pt-44">
         <p class="fade-text text-7xl lead px-[6vw]">
             TechOf Solution — <span class="">web-first</span> digital agency
             Building modern, fast, and scalable websites
@@ -293,6 +293,59 @@
             Plus research and machine learning solutions
 
         </p>
+
+    </section>
+    <section class="bg-zinc-950 text-white  flex items-center justify-center">
+        <div class="overflow-hidden fade-mask border-y border-neutral-700 py-6 w-full">
+            <div
+                class="marquee flex gap-14 text-9xl tracking-wide selection:bg-white selection:text-black font-semibold lowercase whitespace-nowrap">
+                <!-- duplicated for seamless loop -->
+                <span>Services</span>&copy;<span>Services</span>&copy;<span>Services</span>&copy;
+                <span>Services</span>&copy;<span>Services</span>&copy;<span>Services</span>&copy;
+
+                <span>Services</span>&copy;<span>Services</span>&copy;<span>Services</span>&copy;
+                <span>Services</span>&copy;<span>Services</span>&copy;<span>Services</span>&copy;
+            </div>
+        </div>
+    </section>
+    <section class="bg-zinc-950">
+        <div class="group inline-block py-30 w-full mx-[6vw] border-y border-neutral-700 ">
+            <div class="text-7xl font-black  overflow-hidden relative service-text leading-none">
+
+                <!-- main text -->
+                <h1
+                    class="block transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full">
+                    Web Solution
+                </h1>
+
+                <!-- hover text -->
+                <h1
+                    class="absolute left-0 top-full transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full">
+                    Web Solution
+                </h1>
+
+            </div>
+            <h1 class="max-w-140 leading-4 text-gray-400 mt-5">High-performance websites and applications built for
+                clarity and interaction. AI-enhanced development workflows support faster builds, smarter optimisation,
+                and scalable digital systems.</h1>
+            <div class="flex items-center gap-10 text-2xl mt-7 font-semibold">
+                <h1>Business Website</h1>
+                <h1>Business Website</h1>
+                <h1>Business Website</h1>
+                <h1>Business Website</h1>
+            </div>
+            <div class="relative h-[1px] w-full mt-4 overflow-hidden">
+                <!-- base gray line -->
+                <div class="absolute top-0 left-0 h-1 w-full bg-gray-700"></div>
+
+                <!-- animated colored blur line -->
+                <div
+                    class="absolute top-0 left-0 h-[1px] z-30 w-full bg-blue-600  origin-left scale-x-0 transition-transform duration-400 ease-[cubic-bezier(.76,0,.24,1)] group-hover:scale-x-100">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-zinc-950 h-96">
 
     </section>
 
@@ -338,8 +391,10 @@
                 }
             );
         });
+        const ele = document.querySelectorAll('.service-text')
 
-        
+
+
     </script>
 </body>
 

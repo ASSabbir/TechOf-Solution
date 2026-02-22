@@ -153,8 +153,32 @@ document.querySelectorAll(".nav-item").forEach((item) => {
 });
 
 
+const marquee = document.querySelector(".marquee");
+
+// base infinite motion
+const tween = gsap.to(marquee, {
+  xPercent: -150,
+  duration: 25,
+  ease: "none",
+  repeat: -1
+});
 
 
+// SCROLL DIRECTION + SPEED
+let lastScroll = window.pageYOffset;
 
+window.addEventListener("scroll", () => {
+  const current = window.pageYOffset;
+  const delta = current - lastScroll;
 
+  const direction = delta > 0 ? -1 : 1;
+  const speed = gsap.utils.clamp(0.5, 6, Math.abs(delta) * 0.05);
 
+  gsap.to(tween, {
+    timeScale: speed,
+    duration: 0.4,
+    ease: "power3.out"
+  });
+
+  lastScroll = current;
+});
