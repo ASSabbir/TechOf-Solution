@@ -153,7 +153,7 @@ document.querySelectorAll(".nav-item").forEach((item) => {
 });
 
 
-const marquee = document.querySelector(".marquee");
+const marquee = document.querySelectorAll(".marquee");
 
 // base infinite motion
 const tween = gsap.to(marquee, {
