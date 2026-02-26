@@ -4,78 +4,7 @@ requestAnimationFrame(function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
 });
-const reviewAnimation =()=>{
-    
-        const carousel = document.getElementById("carousel");
-        const customCursor = document.getElementById("customCursor");
-        const slides = document.getElementById("slides");
-        const totalSlides = 5;
-        let index = 0;
 
-        carousel.addEventListener("click", () => {
-            index++;
-
-            if (index >= totalSlides) {
-                index = 0;
-            }
-
-            gsap.to(slides, {
-                x: -index * 100 + "%",
-                duration: 0.6,
-                ease: "power3.inOut"
-            });
-
-            gsap.fromTo(customCursor,
-                { scale: 1 },
-                {
-                    scale: 0.8,
-                    duration: 0.2,
-                    ease: "back.in(1)",
-                    yoyo: true,
-                    repeat: 1   // go back automatically
-                }
-            );
-        });
-
-
-        
-
-        carousel.addEventListener("mousemove", (e) => {
-            const rect = carousel.getBoundingClientRect();
-
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            gsap.to(customCursor, {
-                x: x - 64,
-                y: y - 64,
-                duration: 0.2,
-                ease: "power3.out"
-            });
-        });
-
-        carousel.addEventListener("mouseenter", () => {
-            carousel.style.cursor = "none";
-
-            gsap.to(customCursor, {
-                opacity: 1,
-                scale: 1,
-                duration: 0.3
-            });
-        });
-
-        carousel.addEventListener("mouseleave", () => {
-            carousel.style.cursor = "auto";
-
-            gsap.to(customCursor, {
-                opacity: 0,
-                scale: 0.5,
-                duration: 0.3
-            });
-        });
-
-
-}
 
 const scrolled = () => {
 
@@ -130,9 +59,6 @@ const scrolled = () => {
 
 
 const textSrolled = () => {
-
-
-
     document.querySelectorAll('.cardsingle').forEach((card) => {
 
         gsap.to(card, {
@@ -174,12 +100,10 @@ const textSrolled = () => {
         });
     });
 }
-reviewAnimation()
-scrolled()
-textSrolled()
 
 
-document.querySelectorAll(".nav-item").forEach((item) => {
+const navlinkflipping =()=>{
+    document.querySelectorAll(".nav-item").forEach((item) => {
     const letters = item.querySelectorAll(".letter");
 
     item.addEventListener("mouseenter", () => {
@@ -225,6 +149,9 @@ document.querySelectorAll(".nav-item").forEach((item) => {
     });
 });
 
+}
+
+const cardHover= ()=>{
 
 const marquee = document.querySelectorAll(".marquee");
 
@@ -255,3 +182,11 @@ window.addEventListener("scroll", () => {
 
   lastScroll = current;
 });
+
+}
+
+scrolled()
+textSrolled()
+navlinkflipping()
+cardHover()
+console.log('hiiii')

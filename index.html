@@ -589,14 +589,14 @@
             </div>
         </div>
     </section>
-    <footer class="bg-white text-black  px-[5vw]">
+    <footer class="bg-white text-black  px-[5vw] ">
         <div class="flex ">
             <div class="flex-1">
                 <h1 class="text-[12vw] font-black">SAY HI!</h1>
-                <h1 class="text-xl font-bold">Tell us about your project. ,<br> <span class="font-light">Let`s
+                <h1 class=" text-xl font-bold">Tell us about your project. ,<br> <span class="font-light">Let`s
                         collaborate and make great stuff</span></h1>
             </div>
-            <div class="flex flex-1 items-center gap-1">
+            <div class="flex flex-1 ml-60 items-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-phone-icon lucide-phone">
@@ -606,13 +606,31 @@
                 <h1 class="border-l-2 px-2">01798392494</h1>
             </div>
         </div>
-        <div class="mt-20 border-t-[1px]">
-            <div>
-                <button class="text-3xl all-btn border bg-black px-5 border-zinc-900 nav-btn">
-                    Book A Meeting
-                </button>
+        <div class="mt-20 border-t-[1px] flex items-center justify-between">
+            <div class="">
+                <a target="_blank" href="https://www.facebook.com/techofsolution">
+                    <button class="text-xl all-btn2 p-1 border-2 bg-black  border-zinc-900 ">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </button>
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/company/techofsolution">
+                    <button class="text-xl all-btn2 p-1 border-2 bg-black  border-zinc-900 ">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </button>
+                </a>
+                <a target="_blank" href="https://discord.gg/j68RBQ3P">
+                    <button class="text-xl all-btn2 p-1 border-2 bg-black  border-zinc-900 ">
+                        <i class="fa-brands fa-discord"></i>
+                    </button>
+                </a>
+                <a target="_blank" href="https://github.com/techofsolution">
+                    <button class="text-xl all-btn2 p-1 border-2 bg-black  border-zinc-900 ">
+                        <i class="fa-brands fa-github"></i>
+                    </button>
+                </a>
             </div>
-            
+            <h1>&copy;2026 All Right Reserved</h1>
+
 
         </div>
     </footer>
@@ -625,6 +643,68 @@
     <script src="https://unpkg.com/split-type"></script>
     <script src="script.js"></script>
     <script>
+        const reviewAnimation = () => {
+            const carousel = document.getElementById("carousel");
+            const customCursor = document.getElementById("customCursor");
+            const slides = document.getElementById("slides");
+            const totalSlides = 5;
+            let index = 0;
+
+            carousel.addEventListener("click", () => {
+                index++;
+
+                if (index >= totalSlides) {
+                    index = 0;
+                }
+                gsap.to(slides, {
+                    x: -index * 100 + "%",
+                    duration: 0.6,
+                    ease: "power3.inOut"
+                });
+                gsap.fromTo(customCursor,
+                    { scale: 1 },
+                    {
+                        scale: 0.8,
+                        duration: 0.2,
+                        ease: "back.in(1)",
+                        yoyo: true,
+                        repeat: 1
+                    }
+                );
+            });
+            carousel.addEventListener("mousemove", (e) => {
+                const rect = carousel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                gsap.to(customCursor, {
+                    x: x - 64,
+                    y: y - 64,
+                    duration: 0.2,
+                    ease: "power3.out"
+                });
+            });
+
+            carousel.addEventListener("mouseenter", () => {
+                carousel.style.cursor = "none";
+                gsap.to(customCursor, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.3
+                });
+            });
+
+            carousel.addEventListener("mouseleave", () => {
+                carousel.style.cursor = "auto";
+
+                gsap.to(customCursor, {
+                    opacity: 0,
+                    scale: 0.5,
+                    duration: 0.3
+                });
+            });
+           
+        }
+         reviewAnimation()
 
 
 
