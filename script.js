@@ -185,8 +185,55 @@ window.addEventListener("scroll", () => {
 
 }
 
+const marqueeScrolling =()=>{
+   let currentScroll =0;
+   let isScrollingDown =true;
+   let arrows =document.querySelectorAll(".arrow_icon")
+   let tween =gsap
+    .to(".marquee_part",{
+        xPercent:-120,
+        repeat:-1,
+        duration:13,
+        ease:'linear'
+    })
+    .totalProgress(0.5)
+
+    gsap.set(".marquee_inner",{xPercent:-50})
+
+    window.addEventListener("scroll",function (){
+        if(window.pageYOffset> currentScroll){
+            isScrollingDown =true
+        }else {
+            isScrollingDown=false
+        }
+
+        gsap.to(tween,{
+            timeScale:isScrollingDown? 1:-1,
+        })
+
+        arrows.forEach((arrow)=>{
+            if(isScrollingDown){
+                gsap.to('.arrow_icon',{
+                    rotate:180,
+                    duration:1
+                })
+            }else{
+                gsap.to('.arrow_icon',{
+                    rotate:0,duration:1
+                })
+            }
+        });
+        currentScroll=window.pageYOffset
+        
+    })
+    
+
+
+
+}
+marqueeScrolling()
+
 scrolled()
 textSrolled()
 navlinkflipping()
 cardHover()
-console.log('hiiii')

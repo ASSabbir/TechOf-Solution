@@ -225,3 +225,7 @@
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
+
+.arrow_icon{
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
