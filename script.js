@@ -185,53 +185,201 @@ window.addEventListener("scroll", () => {
 
 }
 
-const marqueeScrolling =()=>{
-   let currentScroll =0;
-   let isScrollingDown =true;
-   let arrows =document.querySelectorAll(".arrow_icon")
-   let tween =gsap
-    .to(".marquee_part",{
-        xPercent:-120,
-        repeat:-1,
-        duration:13,
-        ease:'linear'
-    })
-    .totalProgress(0.5)
+const initMarquees = () => {
+  // 1. Wire Lenis into ScrollTrigger so they don't fight
+//   lenis.on('scroll', ScrollTrigger.update)
+  gsap.ticker.add((time) => lenis.raf(time * 1000))
+  gsap.ticker.lagSmoothing(0)
 
-    gsap.set(".marquee_inner",{xPercent:-50})
+  const tweens = []
 
-    window.addEventListener("scroll",function (){
-        if(window.pageYOffset> currentScroll){
-            isScrollingDown =true
-        }else {
-            isScrollingDown=false
-        }
+  // 2. Scope each marquee independently
+  document.querySelectorAll('.marquee_inner').forEach((inner) => {
+    const parts = inner.querySelectorAll('.marquee_part')
 
-        gsap.to(tween,{
-            timeScale:isScrollingDown? 1:-1,
-        })
+    gsap.set(inner, { xPercent: -50 })
 
-        arrows.forEach((arrow)=>{
-            if(isScrollingDown){
-                gsap.to('.arrow_icon',{
-                    rotate:180,
-                    duration:1
-                })
-            }else{
-                gsap.to('.arrow_icon',{
-                    rotate:0,duration:1
-                })
-            }
-        });
-        currentScroll=window.pageYOffset
-        
-    })
-    
+    const tween = gsap
+      .to(parts, {
+        xPercent: -120,
+        repeat: -1,
+        duration: 13,
+        ease: 'linear',
+      })
+      .totalProgress(0.5)
 
+    tweens.push(tween)
+  })
 
+  // 3. ONE shared scroll listener via ScrollTrigger
+  let isDown = true
 
+  ScrollTrigger.create({
+    onUpdate: (self) => {
+      const down = self.direction === 1
+      if (down === isDown) return  // no change, skip
+
+      isDown = down
+
+      // Flip all marquee tweens
+      tweens.forEach((t) => gsap.to(t, { timeScale: isDown ? 1 : -1 }))
+
+      // Toggle Tailwind class on all marquee wrappers (for arrow rotation)
+      document.querySelectorAll('.marquee_inner').forEach((el) => {
+        el.classList.toggle('scrolling-down', isDown)
+      })
+    },
+  })
 }
-marqueeScrolling()
+const cardAnimation = () => {
+  const cards = document.querySelectorAll('.card');
+ 
+  cards.forEach((card) => {
+    const imgLayer    = card.querySelector('.imgLayer');
+    const logo        = card.querySelector('.logo');
+    const arrowBtn    = card.querySelector('.arrowBtn');
+    const bottomTitle = card.querySelector('.bottomTitle');
+    const cursorDot   = card.querySelector('.cursorDot');
+ 
+    const PARALLAX = 20;
+ 
+    gsap.set(imgLayer, { scale: 1.0 });
+ 
+    // Mouse Enter
+    card.addEventListener('mouseenter', () => {
+      gsap.to(imgLayer, {
+        scale: 1.1,
+        duration: 0.6,
+        ease: 'power2.out'
+      });
+ 
+      if (logo) {
+        gsap.set(logo, { visibility: 'visible' });
+        gsap.fromTo(logo,
+          { opacity: 0, y: -10 },
+          { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }
+        );
+      }
+ 
+      gsap.set(arrowBtn, { visibility: 'visible' });
+      gsap.fromTo(arrowBtn,
+        { opacity: 0, y: -10, scale: 0.8 },
+        {  opacity: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(1.7)'}
+      );
+ 
+      gsap.set(bottomTitle, { visibility: 'visible' });
+      gsap.fromTo(bottomTitle,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }
+      );
+ 
+      gsap.to(cursorDot, {
+        opacity: 1,
+        duration: 0.2,
+        ease: 'power2.out'
+      });
+    });
+ 
+    // Mouse Leave
+    card.addEventListener('mouseleave', () => {
+      gsap.to(imgLayer, {
+        scale: 1.0,
+        x: 0,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      });
+ 
+      if (logo) {
+        gsap.to(logo, {
+          opacity: 0,
+          y: -10,
+          duration: 0.35,
+          ease: 'power2.in',
+          onComplete: () => gsap.set(logo, { visibility: 'hidden' })
+        });
+      }
+ 
+      gsap.to(arrowBtn, {
+        opacity: 0,
+        y: -10,
+        scale: 0.8,
+        duration: 0.3,
+        ease: 'power2.in',
+        onComplete: () => gsap.set(arrowBtn, { visibility: 'hidden' })
+      });
+ 
+      gsap.to(bottomTitle, {
+        opacity: 0,
+        y: 12,
+        duration: 0.35,
+        ease: 'power2.in',
+        onComplete: () => gsap.set(bottomTitle, { visibility: 'hidden' })
+      });
+ 
+      gsap.to(cursorDot, {
+        opacity: 0,
+        duration: 0.2
+      });
+    });
+ 
+    // Mouse Move
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x    = e.clientX - rect.left;
+      const y    = e.clientY - rect.top;
+      const cx   = rect.width  / 2;
+      const cy   = rect.height / 2;
+      const nx   = (x - cx) / cx;
+      const ny   = (y - cy) / cy;
+      const tx   = -(nx * PARALLAX);
+      const ty   = -(ny * PARALLAX);
+ 
+      gsap.to(imgLayer, {
+        x: -tx,
+        y: -ty,
+        duration: 0.6,
+        ease: 'power3.out'
+      });
+ 
+      gsap.set(cursorDot, {
+        left: x,
+        top: y
+      });
+    });
+  });
+  
+};
+const cardAnimation2=()=>{
+  const cards = document.querySelectorAll('.card1');
+  cards.forEach((card, index) => {
+ 
+    gsap.set(card, {
+      opacity: 0,
+      y: 120,
+    });
+ 
+    gsap.to(card, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      delay: index * 0.12, 
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 88%',   
+        end: 'top 40%',     
+        toggleActions: 'play none none reverse', 
+      }
+    });
+ 
+    
+ 
+  });
+}
+cardAnimation2()
+cardAnimation();
+initMarquees()
 
 scrolled()
 textSrolled()

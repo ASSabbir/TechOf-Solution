@@ -277,25 +277,77 @@
     <section class="bg-zinc-950  px-[6vw] pt-[10vw] space-y-20">
         <div class="flex flex-col lg:flex-row gap-15 lg:gap-5">
             <h1 class="text-6xl md:text-8xl flex-1 font-semibold text-white">OUR WORKS</h1>
-            <div class="relative lg:flex-1 w-full h-150"
-                style="background-image: url('./assets/Img/1.webp'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/60   flex flex-col justify-between p-10 ">
 
-                    <h1 class="text-white text-4xl font-bold">Company Name</h1>
-                    <h1 class="text-white text-2xl">Description</h1>
+            <div class="card card1 lg:flex-1 relative  h-150 rounded-3xl overflow-hidden bg-[#111] flex-shrink-0">
+
+                <div class="imgLayer absolute inset-[-30px] bg-center bg-cover bg-no-repeat "
+                    style="background-image: url('./assets/Img/1.webp');">
                 </div>
+                <!-- <div class="absolute inset-0 rounded-3xl z-[1] pointer-events-none"
+                    style="background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85) 100%);"></div> -->
+
+                <div class="relative top-5 left-5 z-[9] flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-[7px] bg-white flex items-center justify-center">
+                        <img src="./asstes/logo2.png" alt="logo" class="w-5 h-5 object-contain" />
+                    </div>
+                    <span class="text-white text-xl font-bold funnel  tracking-[1.5px]">LOGOIPSUM</span>
+                </div>
+                <button
+                    class="arrowBtn absolute top-[18px] right-[18px] z-[3] w-10 h-10 rounded-full bg-white/85 flex items-center justify-center"
+                    style="opacity:0; visibility:hidden;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 12L12 4M12 4H6M12 4v6" stroke="#111" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class=" bottomTitle absolute bottom-5 left-5 right-5 z-[3]" style="opacity:0; visibility:hidden;">
+                    <p class="text-white/75 text-xl funnel font-semibold tracking-[1.8px] m-0">
+                        BRANDING, UX
+                    </p>
+                </div>
+                <div class="absolute inset-0 bg-black/30 flex flex-col justify-between p-10">
+                </div>
+                <div class="cursorDot absolute w-20 h-20 bg-black/55  rounded-full pointer-events-none z-10"
+                    style="opacity:0; transform: translate(-50%, -50%); top:0; left:0;"></div>
             </div>
         </div>
         <div class="flex h-150 relative flex-col lg:flex-row  w-full lg:-top-50">
 
             <div class="lg:w-1/2 w-full  grid lg:grid-cols-3 h-full">
+                <!-- card 2 -->
+                
+                <div class="card lg:col-span-2 card1 lg:flex-1 relative  h-150 rounded-3xl overflow-hidden bg-[#111] flex-shrink-0">
 
-                <div class="lg:col-span-2   relative h-150"
-                    style="background-image: url('./assets/Img/2.webp'); background-size: cover; background-position: center;">
-                    <div class="absolute inset-0 bg-black/60 flex flex-col justify-between p-10">
-                        <h1 class="text-white text-4xl font-bold">Company Name</h1>
-                        <h1 class="text-white text-2xl">Description</h1>
+                    <div class="imgLayer absolute inset-[-30px] bg-center bg-cover bg-no-repeat "
+                        style="background-image: url('./assets/Img/2.webp');">
                     </div>
+                    <!-- <div class="absolute inset-0 rounded-3xl z-[1] pointer-events-none"
+                    style="background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85) 100%);"></div> -->
+
+                    <div class="relative top-5 left-5 z-[9] flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-[7px] bg-white flex items-center justify-center">
+                            <img src="./asstes/logo2.png" alt="logo" class="w-5 h-5 object-contain" />
+                        </div>
+                        <span class="text-white text-xl font-bold funnel  tracking-[1.5px]">LOGOIPSUM</span>
+                    </div>
+                    <button
+                        class="arrowBtn absolute top-[18px] right-[18px] z-[3] w-10 h-10 rounded-full bg-white/85 flex items-center justify-center"
+                        style="opacity:0; visibility:hidden;">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 12L12 4M12 4H6M12 4v6" stroke="#111" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class=" bottomTitle absolute bottom-5 left-5 right-5 z-[3]"
+                        style="opacity:0; visibility:hidden;">
+                        <p class="text-white/75 text-xl funnel font-semibold tracking-[1.8px] m-0">
+                            BRANDING, UX
+                        </p>
+                    </div>
+                    <div class="absolute inset-0 bg-black/30 flex flex-col justify-between p-10">
+                    </div>
+                    <div class="cursorDot absolute w-20 h-20 bg-black/55  rounded-full pointer-events-none z-10"
+                        style="opacity:0; transform: translate(-50%, -50%); top:0; left:0;"></div>
                 </div>
 
                 <div class="col-span-1"></div>
@@ -311,13 +363,40 @@
 
             </div>
 
-            <div class="col-span-5 h-150 relative "
-                style="background-image: url('./assets/Img/3.webp'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black/60 flex flex-col justify-between p-10">
-                    <h1 class="text-white text-4xl font-bold">Company Name</h1>
-                    <h1 class="text-white text-2xl">Description</h1>
+            
+            <div class="card col-span-2 lg:col-span-5 card1 lg:flex-1 relative  h-150 rounded-3xl overflow-hidden bg-[#111] flex-shrink-0">
+
+                    <div class="imgLayer absolute inset-[-30px] bg-center bg-cover bg-no-repeat "
+                        style="background-image: url('./assets/Img/3.webp');">
+                    </div>
+                    <!-- <div class="absolute inset-0 rounded-3xl z-[1] pointer-events-none"
+                    style="background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85) 100%);"></div> -->
+
+                    <div class="relative top-5 left-5 z-[9] flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-[7px] bg-white flex items-center justify-center">
+                            <img src="./asstes/logo2.png" alt="logo" class="w-5 h-5 object-contain" />
+                        </div>
+                        <span class="text-white text-xl font-bold funnel  tracking-[1.5px]">LOGOIPSUM</span>
+                    </div>
+                    <button
+                        class="arrowBtn absolute top-[18px] right-[18px] z-[3] w-10 h-10 rounded-full bg-white/85 flex items-center justify-center"
+                        style="opacity:0; visibility:hidden;">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 12L12 4M12 4H6M12 4v6" stroke="#111" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class=" bottomTitle absolute bottom-5 left-5 right-5 z-[3]"
+                        style="opacity:0; visibility:hidden;">
+                        <p class="text-white/75 text-xl funnel font-semibold tracking-[1.8px] m-0">
+                            BRANDING, UX
+                        </p>
+                    </div>
+                    <div class="absolute inset-0 bg-black/30 flex flex-col justify-between p-10">
+                    </div>
+                    <div class="cursorDot absolute w-20 h-20 bg-black/55  rounded-full pointer-events-none z-10"
+                        style="opacity:0; transform: translate(-50%, -50%); top:0; left:0;"></div>
                 </div>
-            </div>
 
             <div class="col-span-1"></div>
         </div>
@@ -328,15 +407,115 @@
         </div>
     </section>
     <section class="bg-zinc-950 pt-10 text-white  flex items-center justify-center">
-        <div class="overflow-hidden fade-mask border-y border-neutral-700 py-6 w-full">
-            <div
-                class="marquee flex gap-14 text-5xl md:text-7xl lg:text-9xl tracking-wide selection:bg-white selection:text-black font-semibold lowercase whitespace-nowrap">
+        <div class=" overflow-hidden marquw fade-mask border-y border-neutral-400 py-6 w-full">
 
-                <span>Services</span>&copy;<span>Services</span>&copy;<span>Services</span>&copy;
-                <span>Services</span>&copy;<span>Services</span>&copy;<span>Services</span>&copy;
+            <div class="marquee_inner group flex gap-5 md:gap-14">
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
+                <div
+                    class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                    <span>services</span>
+                    <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                </div>
 
-                <span>Services</span>&copy;<span>Services</span>&copy;<span>Services</span>&copy;
-                <span>Services</span>&copy;<span>Services</span>&copy;<span>Services</span>&copy;
             </div>
         </div>
     </section>
@@ -488,30 +667,118 @@
 
 
     </section>
-    <section class="bg-slate-200 pt-32 ">
+    <section class="bg-slate-200 pt-32 text-zinc-700">
         <div class="py-32 ">
             <div class=" overflow-hidden marquw fade-mask border-y border-neutral-400 py-6 w-full">
-                <div class="marquee_inner flex gap-5 md:gap-14"
-                    >
-                   
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                    <div class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl text-zinc-800 tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap"><span class="">team</span><i class="fa-solid right-0 fa-angles-right  arrow_icon absolute"></i></div>
-                </div>
 
+                <div class="marquee_inner group flex gap-5 md:gap-14">
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>team</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="px-[5vw] pb-[10vw]">
@@ -521,7 +788,7 @@
                     <!-- LEFT COLUMN -->
                     <div class="flex flex-col  gap-5">
 
-                        
+
 
                         <!-- Headline -->
                         <h2 class="text-4xl sm:text-6xl font-bold leading-tight text-gray-900">
@@ -709,16 +976,118 @@
 
 
     </section>
-    <section class="bg-zinc-950 pt-40 text-white  flex items-center justify-center">
-        <div class="overflow-hidden fade-mask border-y border-neutral-700 py-6 w-full">
-            <div
-                class="marquee flex gap-14 text-9xl tracking-wide selection:bg-white selection:text-black font-semibold lowercase whitespace-nowrap">
+    <section class="bg-zinc-950 pt-40 text-white  ">
+        <div class="py-32 ">
+            <div class=" overflow-hidden marquw fade-mask border-y border-neutral-400 py-6 w-full">
 
-                <span>Reviews</span>&copy;<span>Reviews</span>&copy;<span>Reviews</span>&copy;
-                <span>Reviews</span>&copy;<span>Reviews</span>&copy;<span>Reviews</span>&copy;
+                <div class="marquee_inner group flex gap-5 md:gap-14">
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
+                    <div
+                        class="marquee_part relative flex  md:gap-14 text-5xl md:text-9xl  tracking-wide selection:bg-white selection:text-black font-semibold lowercase pr-20 md:pr-55 whitespace-nowrap">
+                        <span>Reviews</span>
+                        <i class="fa-solid fa-angles-right arrow_icon absolute right-0
+       transition-transform duration-700 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+       group-[.scrolling-down]:rotate-180"></i>
+                    </div>
 
-                <span>Reviews</span>&copy;<span>Reviews</span>&copy;<span>Reviews</span>&copy;
-                <span>Reviews</span>&copy;<span>Reviews</span>&copy;<span>Reviews</span>&copy;
+                </div>
             </div>
         </div>
     </section>
