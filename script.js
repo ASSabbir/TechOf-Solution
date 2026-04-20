@@ -377,7 +377,7 @@ const cardAnimation2=()=>{
  
   });
 }
-cardAnimation2()
+// cardAnimation2()
 cardAnimation();
 initMarquees()
 
