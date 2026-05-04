@@ -41,7 +41,7 @@ const scrolled = () => {
         }
 
         if (currentScroll > lastScroll) {
-            gsap.to(navbar, { y: "-100%", duration: 0.1, ease: "power3.out" });
+            gsap.to(navbar, { y: "-150%", duration: 0.1, ease: "power3.out" });
         }
         else {
             gsap.to(navbar, { y: "0%", duration: 0.1, ease: "power3.out" });
