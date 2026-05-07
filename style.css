@@ -104,8 +104,7 @@
   --color: #ffffff;
   font-family: inherit;
   display: inline-block;
-  width: 12em;
-  height: 2.6em;
+  
   line-height: 2.5em;
   margin: 20px;
   position: relative;
@@ -114,8 +113,8 @@
   border: 1px solid var(--color);
   transition: color 0.5s;
   z-index: 1;
-  font-size: 17px;
-  border-radius: 1px;
+ 
+  
   font-weight: 500;
   color: var(--color);
 }

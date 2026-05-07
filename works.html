@@ -1,276 +1,674 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechOf Solution</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-</head>
-
-<body class="bg-zinc-950  font-fellix text-white">
+  <body class="bg-zinc-950 font-fellix text-white">
     <section class="relative">
-        <nav id="navbar" class="fixed top-0 mt-2 left-0 w-full  px-10 z-50 transition-all duration-300">
-            <div id="navber-div" class="flex items-center justify-between px-18 py-1">
-                <img src="./assets/Img/logo.png" class="w-13" alt="">
+      <nav
+        id="navbar"
+        class="fixed top-0 mt-2 left-0 w-full px-10 z-50 transition-all duration-300"
+      >
+        <div
+          id="navber-div"
+          class="flex items-center justify-between px-18 py-1"
+        >
+          <img src="./assets/Img/logo.png" class="w-13" alt="" />
 
-                <div class="list-none flex gap-10 text-xl font-fellix">
-                    <a href="./index.html">
-                        <li class="nav-item overflow-hidden cursor-pointer">
-                            <span class="split-text inline-block">
-                                <span class="letter">
-                                    <span class="top">H</span>
-                                    <span class="bottom">H</span>
-                                </span>
-                                <span class="letter">
-                                    <span class="top">o</span>
-                                    <span class="bottom">o</span>
-                                </span>
-                                <span class="letter">
-                                    <span class="top">m</span>
-                                    <span class="bottom">m</span>
-                                </span>
-                                <span class="letter">
-                                    <span class="top">e</span>
-                                    <span class="bottom">e</span>
-                                </span>
-                            </span>
-                        </li>
-                    </a>
-                    <a href="./works.html">
-                        <li class="nav-item overflow-hidden cursor-pointer">
-                            <span class="split-text inline-flex">
+          <div class="list-none flex gap-10 text-xl font-fellix">
+            <a href="./index.html">
+              <li class="nav-item overflow-hidden cursor-pointer">
+                <span class="split-text inline-block">
+                  <span class="letter">
+                    <span class="top">H</span>
+                    <span class="bottom">H</span>
+                  </span>
+                  <span class="letter">
+                    <span class="top">o</span>
+                    <span class="bottom">o</span>
+                  </span>
+                  <span class="letter">
+                    <span class="top">m</span>
+                    <span class="bottom">m</span>
+                  </span>
+                  <span class="letter">
+                    <span class="top">e</span>
+                    <span class="bottom">e</span>
+                  </span>
+                </span>
+              </li>
+            </a>
+            <a href="./works.html">
+              <li class="nav-item overflow-hidden cursor-pointer">
+                <span class="split-text inline-flex">
+                  <span class="letter"
+                    ><span class="top">W</span
+                    ><span class="bottom">W</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">o</span
+                    ><span class="bottom">o</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">r</span
+                    ><span class="bottom">r</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">k</span
+                    ><span class="bottom">k</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">s</span
+                    ><span class="bottom">s</span></span
+                  >
+                </span>
+              </li>
+            </a>
+            <a href="./playground.html">
+              <li class="nav-item overflow-hidden cursor-pointer">
+                <span class="split-text inline-flex">
+                  <span class="letter"
+                    ><span class="top">P</span
+                    ><span class="bottom">P</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">l</span
+                    ><span class="bottom">l</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">a</span
+                    ><span class="bottom">a</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">y</span
+                    ><span class="bottom">y</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">g</span
+                    ><span class="bottom">g</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">r</span
+                    ><span class="bottom">r</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">o</span
+                    ><span class="bottom">o</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">u</span
+                    ><span class="bottom">u</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">n</span
+                    ><span class="bottom">n</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">d</span
+                    ><span class="bottom">d</span></span
+                  >
+                </span>
+              </li>
+            </a>
+          </div>
 
-                                <span class="letter"><span class="top">W</span><span class="bottom">W</span></span>
-                                <span class="letter"><span class="top">o</span><span class="bottom">o</span></span>
-                                <span class="letter"><span class="top">r</span><span class="bottom">r</span></span>
-                                <span class="letter"><span class="top">k</span><span class="bottom">k</span></span>
-                                <span class="letter"><span class="top">s</span><span class="bottom">s</span></span>
-
-                            </span>
-                        </li>
-                    </a>
-                    <a href="./playground.html">
-                        <li class="nav-item overflow-hidden cursor-pointer">
-                            <span class="split-text inline-flex">
-
-                                <span class="letter"><span class="top">P</span><span class="bottom">P</span></span>
-                                <span class="letter"><span class="top">l</span><span class="bottom">l</span></span>
-                                <span class="letter"><span class="top">a</span><span class="bottom">a</span></span>
-                                <span class="letter"><span class="top">y</span><span class="bottom">y</span></span>
-                                <span class="letter"><span class="top">g</span><span class="bottom">g</span></span>
-                                <span class="letter"><span class="top">r</span><span class="bottom">r</span></span>
-                                <span class="letter"><span class="top">o</span><span class="bottom">o</span></span>
-                                <span class="letter"><span class="top">u</span><span class="bottom">u</span></span>
-                                <span class="letter"><span class="top">n</span><span class="bottom">n</span></span>
-                                <span class="letter"><span class="top">d</span><span class="bottom">d</span></span>
-
-                            </span>
-                        </li>
-                    </a>
-                </div>
-
-                <button class="text-3xl all-btn border  px-5 border-zinc-500 nav-btn">
-                    Book A Meeting
-                </button>
-            </div>
-        </nav>
-        <div class=" px-30  space-y-10 pt-44">
-            <h1 class="font-semibold uppercase font-urbanist upp">Creative Tech & Marketing Agency</h1>
-            <div>
-
-                <h1 class="text-9xl font-semibold">Next-Level <span
-                        class="font-klimisk font-normal italic">Website</span>
-                </h1>
-                <h1 class="text-9xl font-semibold">That Make an Impact</h1>
-            </div>
-
+          <button class="text-3xl all-btn border px-5 border-zinc-500 nav-btn">
+            Book A Meeting
+          </button>
         </div>
+      </nav>
+      <div class="px-[6vw]  space-y-10 pt-44">
+        <h1 class="font-semibold uppercase font-urbanist upp">
+          Creative Tech & Marketing Agency
+        </h1>
+        <div>
+          <h1 class="text-6xl md:text-9xl font-semibold">
+            Next-Level
+            <span class="font-klimisk font-normal italic">Website</span>
+          </h1>
+          <h1 class="text-6xl md:text-9xl font-semibold">That Make an Impact</h1>
+        </div>
+      </div>
     </section>
-    <section class="py-55 scroll-card space-y-50">
-        <div class="px-[6vw] cardsingle flex">
-            <img class="w-1/2" src="https://img.freepik.com/premium-photo/website_921582-2791.jpg" alt="">
-            <div class="border-2 w-1/2 flex justify-center bg-black items-center">
-                <h1 class="text-6xl">7007 Studio</h1>
+    <section class="py-55 scroll-card space-y-5 ">
+        <!-- Card 1  -->
+      <div class="px-[6vw] cardsingle py-10 gap-10">
+        <div class="flex md:flex-row flex-col gap-">
+          <div
+            class="md:w-3/4 flex flex-col lg:flex-row overflow-hidden md:h-130 rounded-3xl border border-neutral-800 bg-[#181818]"
+          >
+            <!-- Image -->
+            <div class="lg:w-1/2 w-full">
+              <img
+                src="./assets/Img/2.webp"
+                alt="7007 Studio"
+                class="w-full h-130 object-cover object-center"
+              />
             </div>
-        </div>
-        <div class="px-[6vw] cardsingle flex">
-            <img class="w-1/2" src="https://img.freepik.com/premium-photo/website_921582-2791.jpg" alt="">
-            <div class="border-2 w-1/2 flex justify-center bg-black items-center">
-                <h1 class="text-6xl">7007 Studio</h1>
-            </div>
-        </div>
-        <div class="px-[6vw] cardsingle flex">
-            <img class="w-1/2" src="https://img.freepik.com/premium-photo/website_921582-2791.jpg" alt="">
-            <div class="border-2 w-1/2 flex justify-center bg-black items-center">
-                <h1 class="text-6xl">7007 Studio</h1>
-            </div>
-        </div>
-        <div class="px-[6vw] cardsingle flex">
-            <img class="w-1/2" src="https://img.freepik.com/premium-photo/website_921582-2791.jpg" alt="">
-            <div class="border-2 w-1/2 flex justify-center bg-black items-center">
-                <h1 class="text-6xl">7007 Studio</h1>
-            </div>
-        </div>
-        <div class="px-[6vw] cardsingle flex">
-            <img class="w-1/2" src="https://img.freepik.com/premium-photo/website_921582-2791.jpg" alt="">
-            <div class="border-2 w-1/2 flex justify-center bg-black items-center">
-                <h1 class="text-6xl">7007 Studio</h1>
-            </div>
-        </div>
-        <div class="px-[6vw]   flex">
-            <img class="w-1/2" src="https://img.freepik.com/premium-photo/website_921582-2791.jpg" alt="">
-            <div class="border-2 w-1/2 flex justify-center bg-black items-center">
-                <h1 class="text-6xl">7007 Studio</h1>
-            </div>
-        </div>
 
+            <!-- Content -->
+            <div
+              class="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col justify-between"
+            >
+              <!-- Top -->
+              <div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+                  7007 Studio
+                </h1>
 
+                <p
+                  class="text-neutral-400 text-sm sm:text-xl leading-relaxed font-urbanis mb-5"
+                >
+                  A modern agency portfolio built for a 3D design and animation
+                  studio, focused on immersive storytelling and visually
+                  striking presentation. Designed to showcase creative work
+                  through smooth interactions and engaging layouts.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap text-blue-400 gap-2 mb-5">
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >React</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >GSAP</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >ScrollTrigger</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >Responsive</span
+                  >
+                </div>
+              </div>
+
+              <!-- Bottom -->
+              <div class="flex items-center justify-between mt-4">
+                <p class="text-neutral-500 text-sm">
+                  Creative 3D Agency Website
+                </p>
+
+                <a href="https://7007studio.com/" target="_blank">
+                    <button
+                  class="px-4 rounded-sm all-btn text-sm border border-white  "
+                >
+                  View Project →
+                </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2">
+
+          </div>
+        </div>
+      </div>
+       <!-- CArd 2  -->
+      <div class="px-[6vw] cardsingle py-10 gap-10">
+        <div class="flex md:flex-row-reverse flex-col-reverse gap-">
+          <div
+            class="md:w-3/4 flex flex-col lg:flex-row overflow-hidden md:h-130 rounded-3xl border border-neutral-800 bg-[#181818]"
+          >
+            <!-- Image -->
+            <div class="lg:w-1/2 w-full">
+              <img
+                src="./assets/Img/1.webp"
+                alt="7007 Studio"
+                class="w-full h-130 object-cover object-center"
+              />
+            </div>
+
+            <!-- Content -->
+            <div
+              class="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col justify-between"
+            >
+              <!-- Top -->
+              <div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+                  Schedule Solutions
+                </h1>
+
+                <p
+                  class="text-neutral-400 text-sm sm:text-xl leading-relaxed mb-5"
+                >A modern portfolio website for a BPO company, designed to showcase services and brand identity with a clean and professional layout.
+Built with smooth animations and responsive design to deliver a seamless user experience across all devices.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap text-blue-400 gap-2 mb-">
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >React</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >GSAP</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >ScrollTrigger</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >Responsive</span
+                  >
+                </div>
+              </div>
+
+              <!-- Bottom -->
+              <div class="flex items-center justify-between mt-4">
+                <p class="text-neutral-500 text-sm">
+                  BPO Service Agency Website
+                </p>
+
+                <a href="https://schedulesolutionsbpo.com/" target="_blank">
+                    <button
+                  class="px-4 rounded-sm all-btn text-sm border border-white  "
+                >
+                  View Project →
+                </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2">
+
+          </div>
+        </div>
+      </div>
+       <!-- Card 3  -->
+      <div class="px-[6vw] cardsingle py-10 gap-10">
+        <div class="flex md:flex-row flex-col gap-">
+          <div
+            class="md:w-3/4 flex flex-col lg:flex-row overflow-hidden md:h-130 rounded-3xl border border-neutral-800 bg-[#181818]"
+          >
+            <!-- Image -->
+            <div class="lg:w-1/2 w-full">
+              <img
+                src="./assets/Img/3.webp"
+                alt="7007 Studio"
+                class="w-full h-130 object-cover object-center"
+              />
+            </div>
+
+            <!-- Content -->
+            <div
+              class="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col justify-between"
+            >
+              <!-- Top -->
+              <div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+                  The Juice Alluy
+                </h1>
+
+                <p
+                  class="text-neutral-400 text-sm sm:text-xl leading-relaxed font-urbanis mb-5"
+                >
+                  A full-stack coffee shop management system for handling orders, inventory, and operations.
+Built for smooth performance with a modern, responsive user experience.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap text-blue-400 gap-2 mb-5">
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >Next JS</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >GSAP</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >Express JS</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >MongoDB</span
+                  >
+                </div>
+              </div>
+
+              <!-- Bottom -->
+              <div class="flex items-center justify-between mt-4">
+                <p class="text-neutral-500 text-sm">
+                  Coffee Shop Management Website
+                </p>
+
+                <a href="https://the-juice-alluy-8744f.web.app/" target="_blank">
+                    <button
+                  class="px-4 rounded-sm all-btn text-sm border border-white  "
+                >
+                  View Project →
+                </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2">
+
+          </div>
+        </div>
+      </div>
+       <!-- CArd 2  -->
+      <div class="px-[6vw] cardsingle py-10 gap-10">
+        <div class="flex md:flex-row-reverse flex-col-reverse gap-">
+          <div
+            class="md:w-3/4 flex flex-col lg:flex-row overflow-hidden md:h-130 rounded-3xl border border-neutral-800 bg-[#181818]"
+          >
+            <!-- Image -->
+            <div class="lg:w-1/2 w-full">
+              <img
+                src="./assets/Img/4.webp"
+                alt="7007 Studio"
+                class="w-full h-130 object-cover object-center"
+              />
+            </div>
+
+            <!-- Content -->
+            <div
+              class="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col justify-between"
+            >
+              <!-- Top -->
+              <div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+                  Planet Of Health Pharmacy
+                </h1>
+
+                <p
+                  class="text-neutral-400 text-sm sm:text-xl leading-relaxed mb-5"
+                >A modern medicine management platform with full Russian and English language support for seamless accessibility.
+Designed to handle pharmacy operations efficiently with a scalable backend and responsive interface.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap text-blue-400 gap-2 mb-">
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >Next JS</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >Express JS</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >SQL</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
+                    >Responsive</span
+                  >
+                </div>
+              </div>
+
+              <!-- Bottom -->
+              <div class="flex items-center justify-between mt-4">
+                <p class="text-neutral-500 text-sm">
+                 Modern Medicine Management Website
+                </p>
+
+                <a href="https://planetazdorovo.com/" target="_blank">
+                    <button
+                  class="px-4 rounded-sm all-btn text-sm border border-white  "
+                >
+                  View Project →
+                </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2">
+
+          </div>
+        </div>
+      </div>
+      
+      
+      
     </section>
     <section>
-        <div class="border-b-[1px] border-zinc-400 mt-[4vw] ">
-            <div class="px-[6vw] py-[1vw] text-2xl flex justify-between">
-                <div>© Everything You Want to Know</div>
-                <div>Clarifications</div>
-            </div>
+      <div class="border-b-[1px] border-zinc-400 mt-[4vw]">
+        <div class="px-[6vw] py-[1vw] md:text-2xl flex justify-between">
+          <div>© Everything You Want to Know</div>
+          <div>Clarifications</div>
         </div>
-        <section class="py-20 px-[6vw] bg-black flex">
-            <h2 class="w-[40%] text-9xl font-bold text-white mb-12">FAQs</h2>
+      </div>
+      <section class="py-20 px-[6vw] bg-black flex flex-col md:flex-row">
+        <h2 class="w-[40%] text-9xl font-bold text-white mb-12">FAQs</h2>
 
-            <div class="faq-container space-y-4">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item border-b border-gray-700">
-                    <button class="faq-question w-full flex justify-between items-center py-6 text-left">
-                        <h3 class="text-2xl text-white font-medium">What services do you offer?</h3>
-                        <svg class="faq-icon w-6 h-6 text-white transition-transform duration-300" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
-                        style="max-height: 0;">
-                        <p class="text-gray-400 pb-6 text-lg">We offer web design, web development, branding, UI/UX
-                            design, and digital marketing services to help your business grow online.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="faq-item border-b border-gray-700">
-                    <button class="faq-question w-full flex justify-between items-center py-6 text-left">
-                        <h3 class="text-2xl text-white font-medium">How long does a project take?</h3>
-                        <svg class="faq-icon w-6 h-6 text-white transition-transform duration-300" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
-                        style="max-height: 0;">
-                        <p class="text-gray-400 pb-6 text-lg">Project timelines vary based on complexity. A simple
-                            website takes 2-3 weeks, while complex projects can take 6-8 weeks or more.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="faq-item border-b border-gray-700">
-                    <button class="faq-question w-full flex justify-between items-center py-6 text-left">
-                        <h3 class="text-2xl text-white font-medium">What is your pricing?</h3>
-                        <svg class="faq-icon w-6 h-6 text-white transition-transform duration-300" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
-                        style="max-height: 0;">
-                        <p class="text-gray-400 pb-6 text-lg">Our pricing depends on project scope and requirements.
-                            Contact us for a free consultation and custom quote tailored to your needs.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-item border-b border-gray-700">
-                    <button class="faq-question w-full flex justify-between items-center py-6 text-left">
-                        <h3 class="text-2xl text-white font-medium">Do you provide support after launch?</h3>
-                        <svg class="faq-icon w-6 h-6 text-white transition-transform duration-300" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
-                        style="max-height: 0;">
-                        <p class="text-gray-400 pb-6 text-lg">Yes! We provide ongoing maintenance, updates, and support
-                            packages to ensure your website runs smoothly after launch.</p>
-                    </div>
-                </div>
+        <div class="faq-container space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item border-b border-gray-700">
+            <button
+              class="faq-question w-full flex justify-between items-center py-6 text-left"
+            >
+              <h3 class="text-2xl text-white font-medium">
+                What services do you offer?
+              </h3>
+              <svg
+                class="faq-icon w-6 h-6 text-white transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
+              style="max-height: 0"
+            >
+              <p class="text-gray-400 pb-6 text-lg">
+                We offer web design, web development, branding, UI/UX design,
+                and digital marketing services to help your business grow
+                online.
+              </p>
             </div>
-        </section>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item border-b border-gray-700">
+            <button
+              class="faq-question w-full flex justify-between items-center py-6 text-left"
+            >
+              <h3 class="text-2xl text-white font-medium">
+                How long does a project take?
+              </h3>
+              <svg
+                class="faq-icon w-6 h-6 text-white transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
+              style="max-height: 0"
+            >
+              <p class="text-gray-400 pb-6 text-lg">
+                Project timelines vary based on complexity. A simple website
+                takes 2-3 weeks, while complex projects can take 6-8 weeks or
+                more.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item border-b border-gray-700">
+            <button
+              class="faq-question w-full flex justify-between items-center py-6 text-left"
+            >
+              <h3 class="text-2xl text-white font-medium">
+                What is your pricing?
+              </h3>
+              <svg
+                class="faq-icon w-6 h-6 text-white transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
+              style="max-height: 0"
+            >
+              <p class="text-gray-400 pb-6 text-lg">
+                Our pricing depends on project scope and requirements. Contact
+                us for a free consultation and custom quote tailored to your
+                needs.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item border-b border-gray-700">
+            <button
+              class="faq-question w-full flex justify-between items-center py-6 text-left"
+            >
+              <h3 class="text-2xl text-white font-medium">
+                Do you provide support after launch?
+              </h3>
+              <svg
+                class="faq-icon w-6 h-6 text-white transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
+              style="max-height: 0"
+            >
+              <p class="text-gray-400 pb-6 text-lg">
+                Yes! We provide ongoing maintenance, updates, and support
+                packages to ensure your website runs smoothly after launch.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
-    <footer class="bg-white text-black  px-[5vw]">
-        <div class="flex ">
-            <div class="flex-1">
-                <h1 class="text-[12vw] font-black">SAY HI!</h1>
-                <h1 class=" text-xl font-bold">Tell us about your project. ,<br> <span class="font-light">Let`s
-                        collaborate and make great stuff</span></h1>
-            </div>
-            <div class="flex flex-1 ml-60 items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-phone-icon lucide-phone">
-                    <path
-                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
-                </svg>
-                <h1 class="border-l-2 px-2">01798392494</h1>
-            </div>
+    <footer class="bg-white text-black px-[5vw]">
+      <div class="flex">
+        <div class="flex-1">
+          <h1 class="text-[12vw] font-black">SAY HI!</h1>
+          <h1 class="text-xl font-bold">
+            Tell us about your project. ,<br />
+            <span class="font-light"
+              >Let`s collaborate and make great stuff</span
+            >
+          </h1>
         </div>
-        <div class="mt-20 border-t-[1px] flex items-center justify-between">
-            <div class="">
-                <a target="_blank" href="https://www.facebook.com/techofsolution">
-                    <button class="text-xl all-btn2 p-1 border-2 bg-black  border-zinc-900 ">
-                   <i class="fa-brands fa-facebook-f"></i>
-                </button>
-                </a>
-                <a target="_blank" href="https://www.linkedin.com/company/techofsolution">
-                    <button class="text-xl all-btn2 p-1 border-2 bg-black  border-zinc-900 ">
-                   <i class="fa-brands fa-linkedin-in"></i>
-                </button>
-                </a>
-                <a target="_blank" href="https://discord.gg/j68RBQ3P">
-                    <button class="text-xl all-btn2 p-1 border-2 bg-black  border-zinc-900 ">
-                   <i class="fa-brands fa-discord"></i>
-                </button>
-                </a>
-                <a target="_blank" href="https://github.com/techofsolution">
-                    <button class="text-xl all-btn2 p-1 border-2 bg-black  border-zinc-900 ">
-                   <i class="fa-brands fa-github"></i>
-                </button>
-                </a>
-            </div>
-            <h1>&copy;2026 All Right Reserved</h1>
-            
-
+        <div class="flex flex-1 ml-60 items-center gap-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-phone-icon lucide-phone"
+          >
+            <path
+              d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+            />
+          </svg>
+          <h1 class="border-l-2 px-2">01798392494</h1>
         </div>
+      </div>
+      <div class="mt-20 border-t-[1px] flex items-center justify-between">
+        <div class="">
+          <a target="_blank" href="https://www.facebook.com/techofsolution">
+            <button
+              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </button>
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/company/techofsolution"
+          >
+            <button
+              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </button>
+          </a>
+          <a target="_blank" href="https://discord.gg/j68RBQ3P">
+            <button
+              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
+            >
+              <i class="fa-brands fa-discord"></i>
+            </button>
+          </a>
+          <a target="_blank" href="https://github.com/techofsolution">
+            <button
+              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
+            >
+              <i class="fa-brands fa-github"></i>
+            </button>
+          </a>
+        </div>
+        <h1>&copy;2026 All Right Reserved</h1>
+      </div>
     </footer>
-
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="script.js"></script>
-
-</body>
-
-
+  </body>
 </html>
