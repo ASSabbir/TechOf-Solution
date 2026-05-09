@@ -10,7 +10,7 @@ const scrolled = () => {
   const navbarDiv = document.getElementById("navber-div");
 
   let lastScroll = 0;
-  const scrollThreshold = 5; // 👈 important
+  const scrollThreshold = 1; // 👈 important
 
   window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
@@ -20,19 +20,20 @@ const scrolled = () => {
       return;
     }
 
+    
     if (currentScroll <= 0) {
       navbarDiv.classList.remove(
         "bg-zinc-950/60",
         "shadow-md",
         "backdrop-blur-md",
       );
-      gsap.to(navbar, { y: 0, duration: 0.2, ease: "power3.out" });
+      gsap.to(navbar, { y: 0, duration: 0.2, ease: "power1.out" });
     } else if (currentScroll > lastScroll) {
       // Scroll down → hide
-      gsap.to(navbar, { y: "-115%", duration: 0.2, ease: "power3.out" });
+      gsap.to(navbar, { y: "-115%", duration: 0.2, ease: "power1.out" });
     } else {
       // Scroll up → show
-      gsap.to(navbar, { y: "0%", duration: 0.2, ease: "power3.out" });
+      gsap.to(navbar, { y: "0%", duration: 0.2, ease: "power1.out" });
       navbarDiv.classList.add(
         "backdrop-blur-md",
         "bg-zinc-950/60",
