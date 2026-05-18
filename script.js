@@ -343,6 +343,7 @@ const cardAnimation2 = () => {
       opacity: 1,
       y: 0,
       duration: 0.8,
+      
       ease: "power3.out",
       delay: index * 0.12,
       scrollTrigger: {
@@ -354,6 +355,7 @@ const cardAnimation2 = () => {
     });
   });
 };
+
 // cardAnimation2()
 cardAnimation();
 initMarquees();
