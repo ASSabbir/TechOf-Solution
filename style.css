@@ -121,7 +121,7 @@
 .all-btn2 {
   --color: #ffffff;
   display: inline-block;
-  margin:20px 5px;
+  
   position: relative;
   cursor: pointer;
   overflow: hidden;
@@ -177,6 +177,10 @@
 
 
 .all-btn:active:before {
+  background: #ffffff;
+  transition: background 0s;
+}
+.all-btn2:active:before {
   background: #ffffff;
   transition: background 0s;
 }

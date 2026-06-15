@@ -165,45 +165,43 @@ const cardHover = () => {
 };
 
 const initMarquees = () => {
-  // 1. Wire Lenis into ScrollTrigger so they don't fight
-  //   lenis.on('scroll', ScrollTrigger.update)
   gsap.ticker.add((time) => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
 
   const tweens = [];
 
-  // 2. Scope each marquee independently
   document.querySelectorAll(".marquee_inner").forEach((inner) => {
     const parts = inner.querySelectorAll(".marquee_part");
+    const partsCount = parts.length;
 
-    gsap.set(inner, { xPercent: -50 });
+    // GPU hint
+    gsap.set(inner, { force3D: true });
 
-    const tween = gsap
-      .to(parts, {
-        xPercent: -120,
-        repeat: -1,
-        duration: 13,
-        ease: "linear",
-      })
-      .totalProgress(0.5);
+    // Shifting by exactly one "period" (item + gap) of the track
+    // makes the repeat snap-back visually seamless, since every
+    // part looks the same.
+    const tween = gsap.to(inner, {
+      xPercent: -(100 / partsCount),
+      duration: 10,
+      ease: "none",
+      repeat: -1,
+    }).totalProgress(0.5); // start mid-loop, optional
 
     tweens.push(tween);
   });
 
-  // 3. ONE shared scroll listener via ScrollTrigger
   let isDown = true;
 
   ScrollTrigger.create({
     onUpdate: (self) => {
       const down = self.direction === 1;
-      if (down === isDown) return; // no change, skip
-
+      if (down === isDown) return;
       isDown = down;
 
-      // Flip all marquee tweens
-      tweens.forEach((t) => gsap.to(t, { timeScale: isDown ? 1 : -1 }));
+      tweens.forEach((t) =>
+        gsap.to(t, { timeScale: isDown ? 1 : -1, overwrite: true })
+      );
 
-      // Toggle Tailwind class on all marquee wrappers (for arrow rotation)
       document.querySelectorAll(".marquee_inner").forEach((el) => {
         el.classList.toggle("scrolling-down", isDown);
       });
@@ -216,6 +214,7 @@ const cardAnimation = () => {
   cards.forEach((card) => {
     const imgLayer = card.querySelector(".imgLayer");
     const logo = card.querySelector(".logo");
+    const imglayerbg = card.querySelector(".imglayerbg");
     const arrowBtn = card.querySelector(".arrowBtn");
     const bottomTitle = card.querySelector(".bottomTitle");
     const cursorDot = card.querySelector(".cursorDot");
@@ -232,20 +231,20 @@ const cardAnimation = () => {
         ease: "power2.out",
       });
 
-      if (logo) {
-        gsap.set(logo, { visibility: "visible" });
-        gsap.fromTo(
-          logo,
-          { opacity: 0, y: -10 },
-          { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
-        );
-      }
+      
 
       gsap.set(arrowBtn, { visibility: "visible" });
       gsap.fromTo(
         arrowBtn,
         { opacity: 0, y: -10, scale: 0.8 },
         { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.7)" },
+      );
+
+      gsap.set(imglayerbg, { opacity: 1,visibility: "visible" });
+      gsap.fromTo(
+        imglayerbg,
+        {  y:100 },
+        {  y: 0 ,duration: 1, ease: "power3.out"},
       );
 
       gsap.set(bottomTitle, { visibility: "visible" });
@@ -286,6 +285,14 @@ const cardAnimation = () => {
         opacity: 0,
         y: -10,
         scale: 0.8,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: () => gsap.set(arrowBtn, { visibility: "hidden" }),
+      });
+      gsap.to(imglayerbg, {
+        opacity: 0,
+        y: 100,
+        
         duration: 0.3,
         ease: "power2.in",
         onComplete: () => gsap.set(arrowBtn, { visibility: "hidden" }),
@@ -360,7 +367,7 @@ const cardAnimation2 = () => {
 cardAnimation();
 initMarquees();
 
-scrolled();
+// scrolled();
 textSrolled();
 navlinkflipping();
 cardHover();
