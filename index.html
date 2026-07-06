@@ -21,24 +21,32 @@
   </head>
 
   <body class="bg-zinc-950 font-fellix text-white">
-    <!-- <div
+    <div
       id="loader"
-      class="fixed inset-0 z-[9999] flex flex-col items-center justify-center pointer-events-all"
+      class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
     >
       <div
         id="loaderTop"
         class="absolute top-0 left-0 w-full h-1/2 bg-black"
       ></div>
+
       <div
         id="loaderBottom"
         class="absolute bottom-0 left-0 w-full h-1/2 bg-black"
       ></div>
+
+      <div
+        class="loader-text right-10 absolute top-3/5 z-20 text-blue-500 text-6xl font-bold"
+      >
+        0%
+      </div>
+
       <div
         id="loaderLine"
         class="absolute left-0 w-0 h-[1.5px] bg-white z-10"
         style="top: 50%; transform: translateY(-50%)"
       ></div>
-    </div> -->
+    </div>
     <section class="relative">
       <nav class="left-0 w-full lg:px-10 py-4 z-50 transition-all duration-300">
         <div
@@ -1110,11 +1118,6 @@
                 Meet with our team<br />member
               </h2>
 
-              <!-- Tabs -->
-              <div class="flex gap-6 border-b border-gray-200">
-                developer team
-              </div>
-
               <!-- Description -->
               <h1 class="max-w-140 leading-5 text-lg text-gray-400">
                 What began over coffee-fueled brainstorming sessions has grown
@@ -1568,7 +1571,7 @@
                 <div class="flex items-center gap-6">
                   <div class="w-20 h-20 rounded-xl">
                     <img
-                      src="https://scontent.fdac198-2.fna.fbcdn.net/v/t39.30808-6/677316635_4578524192471026_2989940145725377066_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeFCxtS5wi2iTnD5oGYf7MOIOTb_jIaSyEQ5Nv-MhpLIRP9hRSIlp_5gB54IB_nDi4IgiF4E-GgE56AUBEWEIFW5&_nc_ohc=aEeKp6rRd-MQ7kNvwELTttS&_nc_oc=AdoGOvtuN1a-l5P8SFYo34gxddsG_nU4GqSmjZxviBo3vmVh_3FsBirhrumTXoBkPic&_nc_zt=23&_nc_ht=scontent.fdac198-2.fna&_nc_gid=ATXF0fdJp2gAdp-oQrmBQw&_nc_ss=7b2a8&oh=00_Af5bclWQ6VPArI8ETmsZ2NFoX8DsHNjlwSPcm0u5EKTH-A&oe=6A023ABA"
+                      src="https://i1.rgstatic.net/ii/profile.image/1061436566560768-1630077606807_Q512/Md-Nazmul-Hasan-18.jpg"
                       class="w-full h-full object-center object-cover rounded-xl"
                     />
                   </div>
@@ -1587,9 +1590,10 @@
                 class="slide w-full h-full shrink-0 bg-zinc-900 p-10 flex flex-col justify-between rounded-xl"
               >
                 <p class="text-gray-500 text-5xl tracking-tighter">
-                  “Very
-                  <span class="text-white">professional and fast delivery</span>
-                  . Loved working together.”
+                  “<span class="text-white">Outstanding</span> work! Delivered
+                  <span class="text-white">on time</span> with great
+                  <span class="text-white">attention to detail</span>. Highly
+                  recommended.”
                 </p>
                 <div class="flex items-center gap-6">
                   <div class="w-20 h-20 rounded-xl">
@@ -1619,7 +1623,7 @@
                 <div class="flex items-center gap-6">
                   <div class="w-20 h-20 rounded-xl">
                     <img
-                      src="https://scontent.fdac198-2.fna.fbcdn.net/v/t39.30808-6/686973733_1692323491951832_8016515877157181743_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeF3atZ1T3X9BQrFc0yJF1pVIhBtUGCKmNsiEG1QYIqY23TKWQJPhjuV8kjq6V0sk7xCI3MLQwBjPDGNoKbLYBjM&_nc_ohc=6J74c6kwbAoQ7kNvwG3lkdR&_nc_oc=AdqME-EobyoHsmfHxLC2V2Nd4Dmm57LNAVgH19QBnb9BgVsZHRsFeapAlZKUYdkDz9w&_nc_zt=23&_nc_ht=scontent.fdac198-2.fna&_nc_gid=IQFPFnNWGsdIgXQ2Rj_oWg&_nc_ss=7b2a8&oh=00_Af52mM8JJk1fKiQZtAmpibUTs7v_LxKpTq-OknsM32AkwQ&oe=6A0220F4"
+                      src="https://schedulesolutionsbpo.com/favicon.png"
                       class="w-full h-full object-center object-cover rounded-xl"
                     />
                   </div>
@@ -1660,9 +1664,8 @@
                 class="slide w-full h-full shrink-0 bg-zinc-900 p-10 flex flex-col justify-between rounded-xl"
               >
                 <p class="text-gray-500 text-5xl tracking-tighter">
-                  “Very
-                  <span class="text-white">professional and fast delivery</span>
-                  . Loved working together.”
+                  “Quick <span class="text-white">delivery</span> with
+                  <span class="text-white">excellent quality.</span> ”
                 </p>
                 <div class="flex items-center gap-6">
                   <div class="w-20 h-20 rounded-xl">
@@ -1689,14 +1692,14 @@
             >
               <!-- <i class="fa-solid fa-diagram-project text-6xl text-gray-500"></i> -->
               <span class="text-8xl font-glonto">120+</span>
-              <span class="text-3xl text-gray-500">Projects </span>
+              <span class="text-4xl text-gray-500">Projects </span>
             </div>
             <div
               class="bg-zinc-900 flex raleway justify-center flex-col items-center"
             >
               <!-- <i class="fa-solid fa-diagram-project text-6xl text-gray-500"></i> -->
               <span class="text-8xl font-glonto">3+</span>
-              <span class="text-3xl text-gray-500">Countries </span>
+              <span class="text-4xl text-gray-500">Countries </span>
             </div>
           </div>
         </div>
@@ -1738,7 +1741,7 @@
         </div>
       </div>
       <div class="mt-20 border-t-[1px] flex items-center justify-between">
-        <div class="">
+        <div class="py-5">
           <a target="_blank" href="https://www.facebook.com/techofsolution">
             <button
               class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"

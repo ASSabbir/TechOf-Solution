@@ -1,9 +1,14 @@
 gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis();
-requestAnimationFrame(function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
+
+// Sync ScrollTrigger with Lenis's smoothed scroll position
+lenis.on("scroll", ScrollTrigger.update);
+
+// Drive Lenis with GSAP's ticker ONLY (removed the manual rAF loop that was fighting with this)
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
 });
+gsap.ticker.lagSmoothing(0);
 
 const scrolled = () => {
   const navbar = document.getElementById("navbar");
@@ -165,9 +170,6 @@ const cardHover = () => {
 };
 
 const initMarquees = () => {
-  gsap.ticker.add((time) => lenis.raf(time * 1000));
-  gsap.ticker.lagSmoothing(0);
-
   const tweens = [];
 
   document.querySelectorAll(".marquee_inner").forEach((inner) => {
@@ -363,41 +365,76 @@ const cardAnimation2 = () => {
   });
 };
 const loaderAnimation = () => {
-    
- document.body.style.overflow = 'hidden';
- 
+  document.body.style.overflow = "hidden";
+
+  const loaderText = document.querySelector(".loader-text");
+
+  let progress = { value: 0 };
+
   const tl = gsap.timeline({
     onComplete: () => {
-      document.getElementById('loader').remove();
-      document.body.style.overflow = 'auto';
-    }
+      document.getElementById("loader").remove();
+      document.body.style.overflow = "auto";
+    },
   });
-  tl.to('#loaderLine', {
-    width: '100%',
-    duration: 1.0,
-    ease: 'power3.inOut',
-  })
 
-  .to('#loaderTop', {
+  // line animation + percentage together
+  tl.to(progress, {
+    value: 100,
+    duration: 1.5,
+    ease: "none",
+    snap: "value",
+    onUpdate: () => {
+      loaderText.innerHTML = `${progress.value}%`;
+    },
+  }, 0)
+
+  .to(
+    "#loaderLine",
+    {
+      width: "100%",
+      duration:2,
+      ease: "power3.inOut",
+    },
+    0
+  )
+
+  // exit animation
+  .to("#loaderTop", {
     yPercent: -100,
-    duration: 0.9,
-    ease: 'power4.inOut',
-    delay: 0.15,
+    duration: 1.3,
+    ease: "power4.inOut",
   })
-  .to('#loaderBottom', {
-    yPercent: 100,
-    duration: 0.9,
-    ease: 'power4.inOut',
-  }, '<')
 
-  .to('#loaderLine', {
-    opacity: 0,
-    duration: 0.4,
-    ease: 'power2.out',
-  }, '<');
-  };
+  .to(
+    "#loaderBottom",
+    {
+      yPercent: 100,
+      duration: 1.3,
+      ease: "power4.inOut",
+    },
+    "<"
+  )
+
+  .to(
+    [".loader-text", "#loaderLine"],
+    {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.out",
+      display:'none'
+    },
+    "<"
+  )
+  .from('.banner img',{
+    scale:1.8,
+    duration:1.2,
+    ease: "power4.inOut",
+  },"<")
+  
+};
  
-// loaderAnimation();
+loaderAnimation();
 // cardAnimation2()
 cardAnimation();
 initMarquees();
