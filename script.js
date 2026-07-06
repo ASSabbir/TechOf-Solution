@@ -397,7 +397,7 @@ const loaderAnimation = () => {
   }, '<');
   };
  
-loaderAnimation();
+// loaderAnimation();
 // cardAnimation2()
 cardAnimation();
 initMarquees();
