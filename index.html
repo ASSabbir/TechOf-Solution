@@ -21,7 +21,7 @@
   </head>
 
   <body class="bg-zinc-950 font-fellix text-white">
-    <div
+    <!-- <div
       id="loader"
       class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
     >
@@ -46,16 +46,19 @@
         class="absolute left-0 w-0 h-[1.5px] bg-white z-10"
         style="top: 50%; transform: translateY(-50%)"
       ></div>
-    </div>
+    </div> -->
     <section class="relative">
-      <nav class="left-0 w-full lg:px-10 py-4 z-50 transition-all duration-300">
+      <nav
+        class="left-0 w-full lg:px-10 py-4 z-50 transition-all duration-300 relative"
+      >
         <div
           id="navber-div"
-          class="flex items-center justify-between px-18 py-1"
+          class="flex items-center justify-between px-6 lg:px-18 py-1"
         >
-          <img src="./assets/Img/logo.png" class="w-13" alt="" />
+          <img src="./assets/Img/logo.png" class="w-10 lg:w-13" alt="" />
 
-          <div class="list-none flex gap-10 text-xl font-fellix">
+          <!-- Desktop nav links (unchanged) -->
+          <div class="list-none hidden lg:flex gap-10 text-xl font-fellix">
             <a href="./index.html">
               <li class="nav-item overflow-hidden cursor-pointer">
                 <span class="split-text inline-block">
@@ -152,11 +155,58 @@
             </a>
           </div>
 
+          <div class="hidden md:block">
+            <button
+              class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn"
+            >
+              Book A Meeting
+            </button>
+          </div>
+
+          <!-- Mobile hamburger button -->
           <button
-            class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn"
+            id="menuBtn"
+            class="lg:hidden relative w-8 h-6 flex flex-col justify-between items-center z-50"
+            aria-label="Toggle menu"
           >
-            Book A Meeting
+            <span
+              class="burger-line block w-full h-[2px] bg-white origin-center"
+            ></span>
+            <span
+              class="burger-line block w-full h-[2px] bg-white origin-center"
+            ></span>
+            <span
+              class="burger-line block w-full h-[2px] bg-white origin-center"
+            ></span>
           </button>
+        </div>
+
+        <!-- Mobile menu overlay -->
+        <div
+          id="mobileMenu"
+          class="lg:hidden fixed inset-0 h-screen w-full bg-zinc-950 z-40 flex flex-col items-center justify-center gap-8 pointer-events-none"
+        >
+          <a href="./index.html" class="mobile-link overflow-hidden">
+            <span class="inline-block text-3xl font-fellix text-white"
+              >Home</span
+            >
+          </a>
+          <a href="./works.html" class="mobile-link overflow-hidden">
+            <span class="inline-block text-3xl font-fellix text-white"
+              >Works</span
+            >
+          </a>
+          <a href="./playground.html" class="mobile-link overflow-hidden">
+            <span class="inline-block text-3xl font-fellix text-white"
+              >Playground</span
+            >
+          </a>
+          <a href="./playground.html" class="mobile-link overflow-hidden">
+            <span class="inline-block text-3xl font-fellix text-white"
+              >Book A Meeting</span
+            >
+          </a>
+          
         </div>
       </nav>
 
@@ -164,16 +214,62 @@
         <h1 class="font-semibold uppercase font-urbanist upp">
           Creative Tech & Marketing Agency
         </h1>
+        
         <div>
           <h1 class="text-4xl sm:text-6xl lg:text-9xl font-semibold">
             Building
-            <span class="font-klimisk font-normal italic">Website</span>
+            <span class="word-rotator translate-y-7 text-blue-500">
+              <span class="word-track" id="wordTrack">
+                <span class="word font-klimisk font-normal italic"
+                  >Website</span
+                >
+                <span class="word font-klimisk font-normal italic">App</span>
+                <span class="word font-klimisk font-normal italic"
+                  >AI / ML</span
+                >
+                <span class="word font-klimisk font-normal italic"
+                  >Research Paper</span
+                >
+                <span class="word font-klimisk font-normal italic"
+                  >Website</span
+                >
+                <span class="word font-klimisk font-normal italic">App</span>
+                <span class="word font-klimisk font-normal italic"
+                  >AI / ML</span
+                >
+                <span class="word font-klimisk font-normal italic"
+                  >Research Paper</span
+                >
+                <span class="word font-klimisk font-normal italic"
+                  >Website</span
+                >
+                <span class="word font-klimisk font-normal italic">App</span>
+                <span class="word font-klimisk font-normal italic"
+                  >AI / ML</span
+                >
+                <span class="word font-klimisk font-normal italic"
+                  >Research Paper</span
+                >
+                <span class="word font-klimisk font-normal italic"
+                  >Website</span
+                >
+                <span class="word font-klimisk font-normal italic">App</span>
+                <span class="word font-klimisk font-normal italic"
+                  >AI / ML</span
+                >
+                <span class="word font-klimisk font-normal italic"
+                  >Research Paper</span
+                >
+              </span>
+            </span>
+
             <!-- Websites / Software / Platforms / Systems / Solutions -->
           </h1>
           <h1 class="text-4xl sm:text-6xl lg:text-9xl font-semibold">
             That move the world
           </h1>
         </div>
+
         <div class="flex gap-2 text-xl md:text-3xl lg:text-4xl tracking-tight">
           <h1>On Time</h1>
           <h1 class="text-blue-400">/</h1>
@@ -194,10 +290,13 @@
             <div id="marquee-track" class="flex items-center w-max">
               <div class="marquee-group flex items-center gap-16 px-8">
                 <!-- OURA -->
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
                 <div class="flex items-center select-none">
                   <span
                     class="text-[22px] font-black tracking-[0.35em] uppercase"
-                    >OURA</span
+                    >7007 Studio</span
                   >
                 </div>
 
@@ -206,7 +305,7 @@
                 ></span>
 
                 <!-- Amazon -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center text-xl select-none">
                   Schedule Solutions
                 </div>
 
@@ -217,7 +316,7 @@
                 <!-- selfbook -->
                 <div class="flex items-center select-none">
                   <span class="text-[20px] font-bold tracking-tight"
-                    >selfbook</span
+                    >Bdcom</span
                   >
                 </div>
 
@@ -242,11 +341,11 @@
                       text-anchor="middle"
                       font-family="serif"
                     >
-                      H
+                      I
                     </text>
                   </svg>
                   <span class="text-[14px] font-bold tracking-[0.2em] uppercase"
-                    >Harvard</span
+                    >ITS</span
                   >
                 </div>
 
@@ -295,60 +394,47 @@
                 <!-- Urban Mattress -->
                 <div class="flex items-center select-none">
                   <span class="text-[15px] tracking-wide"
-                    ><strong>urban</strong> mattress</span
+                    ><strong>Planeta</strong> zdorovo</span
                   >
                 </div>
               </div>
-              <!-- ── END GROUP ── -->
-
-              <!-- Duplicate group for seamless loop -->
               <div class="marquee-group flex items-center gap-16 px-8">
+                <!-- OURA -->
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
                 <div class="flex items-center select-none">
                   <span
                     class="text-[22px] font-black tracking-[0.35em] uppercase"
-                    >OURA</span
+                    >7007 Studio</span
                   >
                 </div>
+
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
 
-                <div class="flex items-center select-none">
-                  <svg
-                    class="h-5 w-auto fill-neutral-700"
-                    viewBox="0 0 120 38"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <text
-                      x="0"
-                      y="26"
-                      font-size="26"
-                      font-family="Arial"
-                      font-weight="bold"
-                    >
-                      amazon
-                    </text>
-                    <path
-                      d="M70 32c-7.5 4-18.4 6-27.8 6-13.1 0-25-3.4-34-9-.7-.4-.1-1 .8-.7 12.5 5.2 28 8.3 44 8.3 10.8 0 22.7-1.6 33.6-4.8 1.6-.5 3 .8 1.4 1.7z"
-                    />
-                    <path
-                      d="M76 28.5c-.8-.7-5.2-.3-7.2-.1-.6.1-.7-.4-.1-.8 3.5-2.5 9.3-1.7 10-1 .7.8-.1 6.6-3.4 9.3-.5.4-1 .2-.8-.3.7-1.3 2.3-4 1.5-7.1z"
-                    />
-                  </svg>
+                <!-- Amazon -->
+                <div class="flex items-center text-xl select-none">
+                  Schedule Solutions
                 </div>
+
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
 
+                <!-- selfbook -->
                 <div class="flex items-center select-none">
                   <span class="text-[20px] font-bold tracking-tight"
-                    >selfbook</span
+                    >Bdcom</span
                   >
                 </div>
+
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
 
+                <!-- Harvard -->
                 <div class="flex items-center gap-2 select-none">
                   <svg
                     class="h-5 w-5 fill-neutral-700"
@@ -365,26 +451,30 @@
                       text-anchor="middle"
                       font-family="serif"
                     >
-                      H
+                      I
                     </text>
                   </svg>
                   <span class="text-[14px] font-bold tracking-[0.2em] uppercase"
-                    >Harvard</span
+                    >ITS</span
                   >
                 </div>
+
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
 
+                <!-- Stripe -->
                 <div class="flex items-center select-none">
                   <span class="text-[22px] font-black tracking-tight"
                     >stripe</span
                   >
                 </div>
+
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
 
+                <!-- Notion -->
                 <div class="flex items-center gap-2 select-none">
                   <svg
                     class="h-5 w-5 fill-neutral-700"
@@ -406,17 +496,128 @@
                     >notion</span
                   >
                 </div>
+
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
 
+                <!-- Urban Mattress -->
                 <div class="flex items-center select-none">
                   <span class="text-[15px] tracking-wide"
-                    ><strong>urban</strong> mattress</span
+                    ><strong>Planeta</strong> zdorovo</span
                   >
                 </div>
               </div>
-              <!-- ── END DUPLICATE GROUP ── -->
+              <div class="marquee-group flex items-center gap-16 px-8">
+                <!-- OURA -->
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center select-none">
+                  <span
+                    class="text-[22px] font-black tracking-[0.35em] uppercase"
+                    >7007 Studio</span
+                  >
+                </div>
+
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+
+                <!-- Amazon -->
+                <div class="flex items-center text-xl select-none">
+                  Schedule Solutions
+                </div>
+
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+
+                <!-- selfbook -->
+                <div class="flex items-center select-none">
+                  <span class="text-[20px] font-bold tracking-tight"
+                    >Bdcom</span
+                  >
+                </div>
+
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+
+                <!-- Harvard -->
+                <div class="flex items-center gap-2 select-none">
+                  <svg
+                    class="h-5 w-5 fill-neutral-700"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 2L4 8v10c0 10 7 19 16 22 9-3 16-12 16-22V8L20 2zm0 3.5l12 4.5v9c0 8-5.5 15-12 18-6.5-3-12-10-12-18v-9l12-4.5z"
+                    />
+                    <text
+                      x="20"
+                      y="27"
+                      font-size="13"
+                      text-anchor="middle"
+                      font-family="serif"
+                    >
+                      I
+                    </text>
+                  </svg>
+                  <span class="text-[14px] font-bold tracking-[0.2em] uppercase"
+                    >ITS</span
+                  >
+                </div>
+
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+
+                <!-- Stripe -->
+                <div class="flex items-center select-none">
+                  <span class="text-[22px] font-black tracking-tight"
+                    >stripe</span
+                  >
+                </div>
+
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+
+                <!-- Notion -->
+                <div class="flex items-center gap-2 select-none">
+                  <svg
+                    class="h-5 w-5 fill-neutral-700"
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M12 10h60l16 16v64H12V10z" />
+                    <path
+                      d="M72 10v16h16"
+                      fill="none"
+                      stroke="#0a0a0a"
+                      stroke-width="6"
+                    />
+                    <rect x="26" y="36" width="48" height="5" rx="2" />
+                    <rect x="26" y="50" width="36" height="5" rx="2" />
+                    <rect x="26" y="64" width="42" height="5" rx="2" />
+                  </svg>
+                  <span class="text-[18px] font-bold tracking-wide"
+                    >notion</span
+                  >
+                </div>
+
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+
+                <!-- Urban Mattress -->
+                <div class="flex items-center select-none">
+                  <span class="text-[15px] tracking-wide"
+                    ><strong>Planeta</strong> zdorovo</span
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -692,7 +893,7 @@
       </a>
     </section>
     <section
-      class="bg-zinc-950 pt-10 text-white flex items-center justify-center"
+      class="bg-zinc-950 pt-40 text-white flex items-center justify-center"
     >
       <div
         class="overflow-hidden marquw fade-mask border-y border-neutral-400 py-6 w-full"
@@ -821,11 +1022,11 @@
         </div>
       </div>
     </section>
-    <section class="bg-zinc-950 pt-30">
+    <section class="bg-zinc-950 pt-20">
       <div class="group">
-        <div class="inline-block py-14 ml-[6vw]">
+        <div class="inline-block py-14 px-[6vw] md:px-[1vw] md:ml-[6vw]">
           <div
-            class="text-7xl font-black overflow-hidden relative service-text leading-none"
+            class="text-4xl md:text-7xl font-black overflow-hidden relative service-text leading-none"
           >
             <h1
               class="block transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full"
@@ -838,13 +1039,15 @@
               Web Solution
             </h1>
           </div>
-          <h1 class="max-w-140 leading-5 text-lg text-gray-400 mt-12">
+          <h1 class="max-w-140 w-full leading-5 text-lg text-gray-400 mt-12">
             High-performance websites and applications built for clarity, speed,
             and user experience. We focus on scalable architecture, modern UI,
             and SEO-optimized development to ensure strong digital presence and
             long-term growth.
           </h1>
-          <div class="flex items-center gap-10 text-3xl mt-7">
+          <div
+            class="flex flex-col md:flex-row md:items-center gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
+          >
             <h1>Business Website</h1>
             <h1>E- commerce</h1>
             <h1>Animated Portfolio</h1>
@@ -860,9 +1063,9 @@
         </div>
       </div>
       <div class="group">
-        <div class="inline-block py-14 ml-[6vw]">
+        <div class="inline-block py-14 px-[6vw] md:px-[1vw] md:ml-[6vw]">
           <div
-            class="text-7xl font-black overflow-hidden relative service-text leading-none"
+            class="text-4xl md:text-7xl font-black overflow-hidden relative service-text leading-none"
           >
             <h1
               class="block py-2 transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full"
@@ -881,7 +1084,9 @@
             advanced solutions focused on innovation and real-world problem
             solving.
           </h1>
-          <div class="flex items-center gap-10 text-3xl mt-7">
+          <div
+            class="flex flex-col md:flex-row md:items-center gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
+          >
             <h1>AI Models</h1>
             <h1>Prediction Systems</h1>
             <h1>Chatbots</h1>
@@ -897,9 +1102,9 @@
         </div>
       </div>
       <div class="group">
-        <div class="inline-block py-14 ml-[6vw]">
+        <div class="inline-block py-14 px-[6vw] md:px-[1vw] md:ml-[6vw]">
           <div
-            class="text-7xl font-black overflow-hidden relative service-text leading-none"
+            class="text-4xl md:text-7xl font-black overflow-hidden relative service-text leading-none"
           >
             <h1
               class="block transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full"
@@ -918,7 +1123,9 @@
             high-quality research papers, thesis projects, and AI-based systems
             with proper structure and technical depth.
           </h1>
-          <div class="flex items-center gap-10 text-3xl mt-7">
+          <div
+            class="flex flex-col md:flex-row md:items-center gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
+          >
             <h1>Research Papers</h1>
             <h1>Thesis Projects</h1>
             <h1>AI Research</h1>
@@ -933,10 +1140,11 @@
           ></div>
         </div>
       </div>
+
       <div class="group pb-20">
-        <div class="inline-block py-14 ml-[6vw]">
+        <div class="inline-block py-14 px-[6vw] md:px-[1vw] md:ml-[6vw]">
           <div
-            class="text-7xl font-black overflow-hidden relative service-text leading-none"
+            class="text-4xl md:text-7xl font-black overflow-hidden relative service-text leading-none"
           >
             <h1
               class="block transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full"
@@ -949,12 +1157,14 @@
               App Development
             </h1>
           </div>
-          <h1 class="max-w-140 leading-5 text-lg text-gray-400 mt-12">
+          <h1 class="max-w-140 w-full leading-5 text-lg text-gray-400 mt-12">
             Modern mobile applications built for performance, usability, and
             smooth user experience. We create cross-platform and native apps
             designed to scale and deliver real business value.
           </h1>
-          <div class="flex items-center gap-10 text-3xl mt-7">
+          <div
+            class="flex flex-col md:flex-row md:items-center gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
+          >
             <h1>Android Apps</h1>
             <h1>iOS Apps</h1>
             <h1>Custom Mobile Solutions</h1>
@@ -1153,7 +1363,7 @@
               <!-- Bottom image -->
               <div class="rounded-2xl p-2 overflow-hidden aspect-[4/3] w-full">
                 <img
-                  src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80"
+                  src="./assets/Img/21.jpg"
                   alt="Team"
                   class="w-full h-full object-cover object-top"
                 />
@@ -1168,14 +1378,14 @@
               >
                 <div class="w-full aspect-square overflow-hidden bg-[#ceb89c]">
                   <img
-                    src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxwJf3veOSk9dcneQptFIIBDopiA7Q7-mzNy6TX5QFNj4oltYMBMEHpwAx&s=10"
                     alt="Nicolas K. Ellington"
                     class="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div class="p-4 flex flex-col gap-1">
-                  <p class="text-sm font-semibold text-gray-900 leading-snug">
-                    Nicolas K. Ellington
+                  <p class="text-xl font-semibold text-gray-900 leading-snug">
+                    Dr. Sheak Rashed Haider Noori
                   </p>
                   <p
                     class="text-[10px] font-semibold tracking-widest uppercase text-gray-400"
@@ -1183,39 +1393,6 @@
                     Founder
                   </p>
                   <hr class="border-gray-100 my-2" />
-                  <div class="flex gap-3 items-center">
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                        />
-                        <circle cx="4" cy="4" r="2" />
-                      </svg>
-                    </a>
-                  </div>
                 </div>
               </div>
 
@@ -1225,54 +1402,21 @@
               >
                 <div class="w-full aspect-square overflow-hidden bg-[#ceb89c]">
                   <img
-                    src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80"
+                    src="https://scontent.fdac198-1.fna.fbcdn.net/v/t39.30808-6/481076979_1497042875015249_3182750768544333219_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s960x960&_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHN_hNvHcEiU3ntjIul_8kRTBZtesX-C4tMFm16xf4LiyV2vrsAca6kdwX3Lx8B4Ax0gGjZ2Qaz4eMXG3CwhLDE&_nc_ohc=7foKwYz0-YgQ7kNvwECdClz&_nc_oc=Adpf9kscNCbzYwFZqBDpfyFd1oEWbIg9tJiqAPyo9gR2Eji3F1t1nHcP_oYLh7GWFz8&_nc_zt=23&_nc_ht=scontent.fdac198-1.fna&_nc_gid=93Y_O0KkLuKsrGZTbYp4Dg&_nc_ss=7b2a8&oh=00_AQA7shWyUR3MDMqUpKJg90DLIVbWqInQ91UIwhm39ZalQg&oe=6A51F34A"
                     alt="Carlos E. Ashcroft"
                     class="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div class="p-4 flex flex-col gap-1">
-                  <p class="text-sm font-semibold text-gray-900 leading-snug">
-                    Carlos E. Ashcroft
+                  <p class="text-xl font-semibold text-gray-900 leading-snug">
+                    Mustazir Billah
                   </p>
                   <p
                     class="text-[10px] font-semibold tracking-widest uppercase text-gray-400"
                   >
-                    CEO
+                    Full Stack developer
                   </p>
                   <hr class="border-gray-100 my-2" />
-                  <div class="flex gap-3 items-center">
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                        />
-                        <circle cx="4" cy="4" r="2" />
-                      </svg>
-                    </a>
-                  </div>
                 </div>
               </div>
 
@@ -1282,54 +1426,22 @@
               >
                 <div class="w-full aspect-square overflow-hidden bg-[#ceb89c]">
                   <img
-                    src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80"
+                    src="https://scontent.fdac198-2.fna.fbcdn.net/v/t39.30808-6/480528782_2783053831902964_3610698696713128261_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x2048&ctp=s2048x2048&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGq9T_KSqynl6Kfk-812uuE6IyMf8WNIa3ojIx_xY0hreKQ_CEwJWOLO9eOtH_RUzQqQH-lgcHQ2K1iWRF3Z0nL&_nc_ohc=o63CTh0IikIQ7kNvwEj90zw&_nc_oc=Adq1x3TnFbHrjqfbD8h6H6DayQRDcTuAcvAbrqLRTzxoKqvQBahtxB8Ldm4Xnth8Xao&_nc_zt=23&_nc_ht=scontent.fdac198-2.fna&_nc_gid=0Y1dTpKUZrGBvKOKAPvhIw&_nc_ss=7b2a8&oh=00_AQD76sUeOmk5uj39EgWY3jtPQMml9uAgTZT2E4mP4SnalQ&oe=6A521023"
+                    src=""
                     alt="Leonardo F. Ashton"
                     class="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div class="p-4 flex flex-col gap-1">
-                  <p class="text-sm font-semibold text-gray-900 leading-snug">
-                    Leonardo F. Ashton
+                  <p class="text-xl font-semibold text-gray-900 leading-snug">
+                    Abdullah Al Noman
                   </p>
                   <p
                     class="text-[10px] font-semibold tracking-widest uppercase text-gray-400"
                   >
-                    UX Designer
+                    AI ML Engineer
                   </p>
                   <hr class="border-gray-100 my-2" />
-                  <div class="flex gap-3 items-center">
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                        />
-                        <circle cx="4" cy="4" r="2" />
-                      </svg>
-                    </a>
-                  </div>
                 </div>
               </div>
 
@@ -1339,54 +1451,21 @@
               >
                 <div class="w-full aspect-square overflow-hidden bg-[#ceb89c]">
                   <img
-                    src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80"
+                    src="https://scontent.fdac198-1.fna.fbcdn.net/v/t39.30808-6/454757843_1161139388280832_3753467425005075647_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s960x960&_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeE43TfREEyzpzEH2rk6a61MZSiEKGGotOJlKIQoYai04iS9Zv8PdPdFTgwJnEizC3jFlgSXJ2i1JQ-TS-_Q6Kef&_nc_ohc=YTQyroECbIgQ7kNvwHXZ1oI&_nc_oc=AdqBdzWpEDAjV2itB1ECliP-ZqV4R5nIVQ5fKaDzK1D4u-vhkubKWykk21lsnMePunA&_nc_zt=23&_nc_ht=scontent.fdac198-1.fna&_nc_gid=fTx5H-x_-Rt0FhfpqjiI1w&_nc_ss=7b2a8&oh=00_AQDJluMbX34G2KVpkp2vm3c9Hge4Fxxi_92YQF8lxu5VPg&oe=6A5212F1"
                     alt="Ricardo P. Winslow"
                     class="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div class="p-4 flex flex-col gap-1">
-                  <p class="text-sm font-semibold text-gray-900 leading-snug">
-                    Ricardo P. Winslow
+                  <p class="text-xl font-semibold text-gray-900 leading-snug">
+                    Atik Al Sabbir
                   </p>
                   <p
                     class="text-[10px] font-semibold tracking-widest uppercase text-gray-400"
                   >
-                    UI Designer
+                    Full Stack Developer
                   </p>
                   <hr class="border-gray-100 my-2" />
-                  <div class="flex gap-3 items-center">
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="text-gray-800 hover:text-gray-500 transition-colors"
-                    >
-                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                        />
-                        <circle cx="4" cy="4" r="2" />
-                      </svg>
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1395,7 +1474,7 @@
       </div>
     </section>
 
-    <!-- Partners  -->
+    <!-- Review  -->
 
     <section class="bg-zinc-950 text-white">
       <div class="py-32">
@@ -1529,57 +1608,66 @@
     </section>
     <section class="bg-zinc-950">
       <div class="px-[5vw]">
-        <h1 class="text-8xl">
+        <h1 class="text-5xl md:text-6xl lg:text-8xl">
           <span>80% of our clients</span><br />
           ‍<span class="text-gray-500">become partners for more</span><br />
           <span class="text-gray-500"> than 2 years</span>
         </h1>
-        <div class="grid grid-cols-3 pt-40 gap-5 h-190">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 pt-20 lg:pt-40 gap-5 h-auto lg:h-190"
+        >
           <div
-            class="w-full bg-zinc-900 p-10 flex items-center flex-col justify-center"
+            class="w-full bg-zinc-900 p-6 lg:p-10 flex items-center flex-col justify-center order-2 md:order-1"
           >
-            <h1 class="text-8xl">4.8</h1>
-            <div class="text-blue-500 text-xl mt-5">
+            <h1 class="text-6xl lg:text-8xl">
+              <span id="ratingCount" data-target="4.8" data-decimal="true"
+                >0</span
+              >
+            </h1>
+            <div class="text-blue-500 text-lg lg:text-xl mt-5">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <h1 class="text-xl text-gray-400 mt-1">32 Reviews</h1>
+            <h1 class="text-lg lg:text-xl text-gray-400 mt-1">32 Reviews</h1>
           </div>
+
           <div
             id="carousel"
-            class="w-full bg-zinc-900 relative overflow-hidden cursor-pointer"
+            class="w-full bg-zinc-900 relative overflow-hidden cursor-pointer order-1 md:order-2 h-[500px] md:h-auto"
           >
             <div
               id="customCursor"
-              class="pointer-events-none z-50 flex justify-center items-center absolute w-32 h-32 rounded-full bg-blue-600 opacity-0 text-xl"
+              class="pointer-events-none z-50 flex justify-center items-center absolute w-32 h-32 rounded-full bg-blue-600 opacity-0 text-xl hidden md:flex"
             >
               Next
             </div>
 
             <div id="slides" class="flex w-full h-full pointer-events-none">
               <div
-                class="slide w-full h-full shrink-0 bg-zinc-900 p-10 flex flex-col justify-between rounded-xl"
+                class="slide w-full h-full shrink-0 bg-zinc-900 p-6 lg:p-10 flex flex-col justify-between rounded-xl"
               >
-                <p class="text-gray-500 text-5xl tracking-tighter">
-                  “Amazing
+                <p class="text-gray-500 text-2xl lg:text-5xl tracking-tighter">
+                  "Amazing
                   <span class="text-white">service and super clean</span>
-                  design. Highly recommended!”
+                  design. Highly recommended!"
                 </p>
-                <div class="flex items-center gap-6">
-                  <div class="w-20 h-20 rounded-xl">
+                <div class="flex items-center gap-4 lg:gap-6">
+                  <div class="w-14 h-14 lg:w-20 lg:h-20 rounded-xl">
                     <img
                       src="https://i1.rgstatic.net/ii/profile.image/1061436566560768-1630077606807_Q512/Md-Nazmul-Hasan-18.jpg"
                       class="w-full h-full object-center object-cover rounded-xl"
                     />
                   </div>
                   <div class="">
-                    <h4 class="text-white text-3xl font-semibold">
+                    <h4 class="text-white text-xl lg:text-3xl font-semibold">
                       Nazmul Hasan
                     </h4>
-                    <h4 class="text-gray-500 text-xl font-light mt-1">
+                    <h4
+                      class="text-gray-500 text-base lg:text-xl font-light mt-1"
+                    >
                       CEO, 7007 Studio
                     </h4>
                   </div>
@@ -1587,98 +1675,108 @@
               </div>
 
               <div
-                class="slide w-full h-full shrink-0 bg-zinc-900 p-10 flex flex-col justify-between rounded-xl"
+                class="slide w-full h-full shrink-0 bg-zinc-900 p-6 lg:p-10 flex flex-col justify-between rounded-xl"
               >
-                <p class="text-gray-500 text-5xl tracking-tighter">
-                  “<span class="text-white">Outstanding</span> work! Delivered
+                <p class="text-gray-500 text-2xl lg:text-5xl tracking-tighter">
+                  "<span class="text-white">Outstanding</span> work! Delivered
                   <span class="text-white">on time</span> with great
                   <span class="text-white">attention to detail</span>. Highly
-                  recommended.”
+                  recommended."
                 </p>
-                <div class="flex items-center gap-6">
-                  <div class="w-20 h-20 rounded-xl">
+                <div class="flex items-center gap-4 lg:gap-6">
+                  <div class="w-14 h-14 lg:w-20 lg:h-20 rounded-xl">
                     <img
                       src="https://www.investcorp.com/wp-content/uploads/2025/01/Ahmed-Abdulrahim_500x606.jpg"
                       class="w-full h-full object-center object-cover rounded-xl"
                     />
                   </div>
                   <div class="">
-                    <h4 class="text-white text-3xl font-semibold">
+                    <h4 class="text-white text-xl lg:text-3xl font-semibold">
                       James Walker
                     </h4>
-                    <h4 class="text-gray-500 text-xl font-light mt-1">
+                    <h4
+                      class="text-gray-500 text-base lg:text-xl font-light mt-1"
+                    >
                       Product Manager, Nexora Digital (USA)
                     </h4>
                   </div>
                 </div>
               </div>
               <div
-                class="slide w-full h-full shrink-0 bg-zinc-900 p-10 flex flex-col justify-between rounded-xl"
+                class="slide w-full h-full shrink-0 bg-zinc-900 p-6 lg:p-10 flex flex-col justify-between rounded-xl"
               >
-                <p class="text-gray-500 text-5xl tracking-tighter">
-                  “Top-notch
+                <p class="text-gray-500 text-2xl lg:text-5xl tracking-tighter">
+                  "Top-notch
                   <span class="text-white">animation and smooth</span> UI
-                  experience.”
+                  experience."
                 </p>
-                <div class="flex items-center gap-6">
-                  <div class="w-20 h-20 rounded-xl">
+                <div class="flex items-center gap-4 lg:gap-6">
+                  <div class="w-14 h-14 lg:w-20 lg:h-20 rounded-xl">
                     <img
                       src="https://schedulesolutionsbpo.com/favicon.png"
                       class="w-full h-full object-center object-cover rounded-xl"
                     />
                   </div>
                   <div class="">
-                    <h4 class="text-white text-3xl font-semibold">MD. EMON</h4>
-                    <h4 class="text-gray-500 text-xl font-light mt-1">
+                    <h4 class="text-white text-xl lg:text-3xl font-semibold">
+                      MD. EMON
+                    </h4>
+                    <h4
+                      class="text-gray-500 text-base lg:text-xl font-light mt-1"
+                    >
                       CEO, Founder of SCHEDULE SOLUTIONS
                     </h4>
                   </div>
                 </div>
               </div>
               <div
-                class="slide w-full h-full shrink-0 bg-zinc-900 p-10 flex flex-col justify-between rounded-xl"
+                class="slide w-full h-full shrink-0 bg-zinc-900 p-6 lg:p-10 flex flex-col justify-between rounded-xl"
               >
-                <p class="text-gray-500 text-5xl tracking-tighter">
-                  “Very
+                <p class="text-gray-500 text-2xl lg:text-5xl tracking-tighter">
+                  "Very
                   <span class="text-white">professional and fast delivery</span>
-                  . Loved working together.”
+                  . Loved working together."
                 </p>
-                <div class="flex items-center gap-6">
-                  <div class="w-20 h-20 rounded-xl">
+                <div class="flex items-center gap-4 lg:gap-6">
+                  <div class="w-14 h-14 lg:w-20 lg:h-20 rounded-xl">
                     <img
                       src="https://www.newnetworksfornature.org.uk/wp-content/uploads/2021/03/1_IMG_0576.jpg"
                       class="w-full h-full object-center object-cover rounded-xl"
                     />
                   </div>
                   <div class="">
-                    <h4 class="text-white text-3xl font-semibold">
+                    <h4 class="text-white text-xl lg:text-3xl font-semibold">
                       Lucas Martin
                     </h4>
-                    <h4 class="text-gray-500 text-xl font-light mt-1">
+                    <h4
+                      class="text-gray-500 text-base lg:text-xl font-light mt-1"
+                    >
                       Operations Director, InnovateX (France)
                     </h4>
                   </div>
                 </div>
               </div>
               <div
-                class="slide w-full h-full shrink-0 bg-zinc-900 p-10 flex flex-col justify-between rounded-xl"
+                class="slide w-full h-full shrink-0 bg-zinc-900 p-6 lg:p-10 flex flex-col justify-between rounded-xl"
               >
-                <p class="text-gray-500 text-5xl tracking-tighter">
-                  “Quick <span class="text-white">delivery</span> with
-                  <span class="text-white">excellent quality.</span> ”
+                <p class="text-gray-500 text-2xl lg:text-5xl tracking-tighter">
+                  "Quick <span class="text-white">delivery</span> with
+                  <span class="text-white">excellent quality.</span>"
                 </p>
-                <div class="flex items-center gap-6">
-                  <div class="w-20 h-20 rounded-xl">
+                <div class="flex items-center gap-4 lg:gap-6">
+                  <div class="w-14 h-14 lg:w-20 lg:h-20 rounded-xl">
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWV0L7qOBLa2fCWfd5Llyp4e__ZHtH0b652g&s"
                       class="w-full h-full object-center object-cover rounded-xl"
                     />
                   </div>
                   <div class="">
-                    <h4 class="text-white text-3xl font-semibold">
+                    <h4 class="text-white text-xl lg:text-3xl font-semibold">
                       Sadia Rahman
                     </h4>
-                    <h4 class="text-gray-500 text-xl font-light mt-1">
+                    <h4
+                      class="text-gray-500 text-base lg:text-xl font-light mt-1"
+                    >
                       Marketing Director, EcomHub
                     </h4>
                   </div>
@@ -1686,20 +1784,25 @@
               </div>
             </div>
           </div>
-          <div class="grid grid-rows-2 gap-5">
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-1 grid-rows-1 md:grid-rows-2 gap-5 order-3"
+          >
             <div
-              class="bg-zinc-900 flex raleway justify-center flex-col items-center"
+              class="bg-zinc-900 flex raleway justify-center flex-col items-center py-6 md:py-0"
             >
-              <!-- <i class="fa-solid fa-diagram-project text-6xl text-gray-500"></i> -->
-              <span class="text-8xl font-glonto">120+</span>
-              <span class="text-4xl text-gray-500">Projects </span>
+              <span class="text-5xl lg:text-8xl font-glonto">
+                <span id="projectsCount" data-target="120">0</span>+
+              </span>
+              <span class="text-xl lg:text-4xl text-gray-500">Projects </span>
             </div>
             <div
-              class="bg-zinc-900 flex raleway justify-center flex-col items-center"
+              class="bg-zinc-900 flex raleway justify-center flex-col items-center py-6 md:py-0"
             >
-              <!-- <i class="fa-solid fa-diagram-project text-6xl text-gray-500"></i> -->
-              <span class="text-8xl font-glonto">3+</span>
-              <span class="text-4xl text-gray-500">Countries </span>
+              <span class="text-5xl lg:text-8xl font-glonto">
+                <span id="countriesCount" data-target="3">0</span>+
+              </span>
+              <span class="text-xl lg:text-4xl text-gray-500">Countries </span>
             </div>
           </div>
         </div>
@@ -1710,7 +1813,7 @@
     ></section>
 
     <footer class="bg-white text-black px-[5vw]">
-      <div class="flex">
+      <div class="flex flex-col md:flex-row">
         <div class="flex-1">
           <h1 class="text-[12vw] font-black">SAY HI!</h1>
           <h1 class="text-xl font-bold">

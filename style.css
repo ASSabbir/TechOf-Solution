@@ -232,3 +232,38 @@
 .arrow_icon{
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+.word-rotator {
+  display: inline-block;
+  overflow: hidden;      /* clips everything outside the current word */
+  vertical-align: bottom;
+  height: 1.2em;         /* match your line-height */
+  position: relative;
+}
+
+.word-track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform; 
+}
+
+.word {
+  display: block;
+  height: 1.5em;
+  
+  font-weight: inherit;
+}
+.burger-line {
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+/* state when menu is open, toggled via JS */
+#menuBtn.open .burger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+#menuBtn.open .burger-line:nth-child(2) {
+  opacity: 0;
+}
+#menuBtn.open .burger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}

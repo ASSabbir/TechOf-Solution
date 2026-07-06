@@ -434,7 +434,7 @@ const loaderAnimation = () => {
   
 };
  
-loaderAnimation();
+// loaderAnimation();
 // cardAnimation2()
 cardAnimation();
 initMarquees();
@@ -443,3 +443,130 @@ initMarquees();
 textSrolled();
 navlinkflipping();
 cardHover();
+const rotateWords = () => {
+  const track = document.getElementById("wordTrack");
+  if (!track) return;
+
+  const words = track.querySelectorAll(".word");
+  const wordHeight = words[0].getBoundingClientRect().height;
+  const total = words.length;
+  let index = 0;
+
+  gsap.set(track, { y: 0 });
+
+  gsap.timeline({ repeat: -1 })
+    .to({}, { duration: 3 }) // hold current word for 3s
+    .add(() => {
+      index = (index + 1) % total;
+
+      // seamless loop: when we hit the last word, jump back to 0 with no animation,
+      // then the next tick continues normally — avoids a big "rewind" tween
+      if (index === 0) {
+        gsap.to(track, {
+          y: -wordHeight * (total - 1) - wordHeight,
+          duration: 0.8,
+          ease: "power3.inOut",
+          onComplete: () => gsap.set(track, { y: 0 }),
+        });
+      } else {
+        gsap.to(track, {
+          y: -wordHeight * index,
+          duration: 0.8,
+          ease: "power3.inOut",
+        });
+      }
+    })
+    .to({}, { duration: 0 }); // just a marker to repeat the timeline
+};
+
+rotateWords();
+const mobileMenuAnim = () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const links = mobileMenu.querySelectorAll(".mobile-link span, .mobile-link");
+
+  if (!menuBtn || !mobileMenu) return;
+
+  let isOpen = false;
+
+  // initial state
+  gsap.set(mobileMenu, { clipPath: "circle(0% at 100% 0%)" });
+  gsap.set(links, { y: 40, opacity: 0 });
+
+  menuBtn.addEventListener("click", () => {
+    isOpen = !isOpen;
+    menuBtn.classList.toggle("open", isOpen);
+
+    if (isOpen) {
+      mobileMenu.classList.remove("pointer-events-none");
+      document.body.style.overflow = "hidden";
+
+      gsap.to(mobileMenu, {
+        clipPath: "circle(150% at 100% 0%)",
+        duration: 0.7,
+        ease: "power3.inOut",
+      });
+
+      gsap.to(links, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.08,
+        delay: 0.25,
+        ease: "power3.out",
+      });
+    } else {
+      gsap.to(links, {
+        y: 20,
+        opacity: 0,
+        duration: 0.25,
+        stagger: 0.04,
+        ease: "power2.in",
+      });
+
+      gsap.to(mobileMenu, {
+        clipPath: "circle(0% at 100% 0%)",
+        duration: 0.6,
+        delay: 0.1,
+        ease: "power3.inOut",
+        onComplete: () => {
+          mobileMenu.classList.add("pointer-events-none");
+          document.body.style.overflow = "auto";
+        },
+      });
+    }
+  });
+};
+
+mobileMenuAnim();
+const countUpStats = () => {
+  const counters = document.querySelectorAll(
+    "#ratingCount, #projectsCount, #countriesCount"
+  );
+
+  counters.forEach((el) => {
+    const target = parseFloat(el.dataset.target);
+    const isDecimal = el.dataset.decimal === "true";
+    const counterObj = { val: 0 };
+
+    ScrollTrigger.create({
+      trigger: el,
+      start: "top 85%",
+      once: true, // fires only once — no re-triggering, no memory buildup
+      onEnter: () => {
+        gsap.to(counterObj, {
+          val: target,
+          duration: 2,
+          ease: "power2.out",
+          onUpdate: () => {
+            el.textContent = isDecimal
+              ? counterObj.val.toFixed(1)
+              : Math.round(counterObj.val);
+          },
+        });
+      },
+    });
+  });
+};
+
+countUpStats();
