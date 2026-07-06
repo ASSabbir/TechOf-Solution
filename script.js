@@ -362,7 +362,42 @@ const cardAnimation2 = () => {
     });
   });
 };
+const loaderAnimation = () => {
+    
+ document.body.style.overflow = 'hidden';
+ 
+  const tl = gsap.timeline({
+    onComplete: () => {
+      document.getElementById('loader').remove();
+      document.body.style.overflow = 'auto';
+    }
+  });
+  tl.to('#loaderLine', {
+    width: '100%',
+    duration: 1.0,
+    ease: 'power3.inOut',
+  })
 
+  .to('#loaderTop', {
+    yPercent: -100,
+    duration: 0.9,
+    ease: 'power4.inOut',
+    delay: 0.15,
+  })
+  .to('#loaderBottom', {
+    yPercent: 100,
+    duration: 0.9,
+    ease: 'power4.inOut',
+  }, '<')
+
+  .to('#loaderLine', {
+    opacity: 0,
+    duration: 0.4,
+    ease: 'power2.out',
+  }, '<');
+  };
+ 
+loaderAnimation();
 // cardAnimation2()
 cardAnimation();
 initMarquees();

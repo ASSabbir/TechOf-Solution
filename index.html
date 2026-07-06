@@ -21,6 +21,16 @@
   </head>
 
   <body class="bg-zinc-950  font-fellix text-white">
+    <div id="loader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center pointer-events-all">
+ 
+  <div id="loaderTop" class="absolute top-0 left-0 w-full h-1/2 bg-black"></div>
+  <div id="loaderBottom" class="absolute bottom-0 left-0 w-full h-1/2 bg-black"></div>
+  <div id="loaderLine"
+       class="absolute left-0 w-0 h-[1.5px] bg-white z-10"
+       style="top: 50%; transform: translateY(-50%);">
+  </div>
+ 
+</div>
     <section class="relative">
       <nav
        
