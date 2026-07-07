@@ -444,40 +444,65 @@ textSrolled();
 navlinkflipping();
 cardHover();
 const rotateWords = () => {
+  const rotator = document.getElementById("wordRotator");
   const track = document.getElementById("wordTrack");
-  if (!track) return;
+  if (!track || !rotator) return;
 
   const words = track.querySelectorAll(".word");
-  const wordHeight = words[0].getBoundingClientRect().height;
   const total = words.length;
   let index = 0;
+  let wordHeight = 0;
+  let tl;
 
-  gsap.set(track, { y: 0 });
+  const measure = () => {
+    wordHeight = words[0].getBoundingClientRect().height;
+    rotator.style.height = wordHeight + "px";
+    gsap.set(track, { y: -wordHeight * index });
+  };
 
-  gsap.timeline({ repeat: -1 })
-    .to({}, { duration: 3 }) // hold current word for 3s
-    .add(() => {
-      index = (index + 1) % total;
+  const buildTimeline = () => {
+    if (tl) tl.kill();
 
-      // seamless loop: when we hit the last word, jump back to 0 with no animation,
-      // then the next tick continues normally — avoids a big "rewind" tween
-      if (index === 0) {
-        gsap.to(track, {
-          y: -wordHeight * (total - 1) - wordHeight,
-          duration: 0.8,
-          ease: "power3.inOut",
-          onComplete: () => gsap.set(track, { y: 0 }),
-        });
-      } else {
-        gsap.to(track, {
-          y: -wordHeight * index,
-          duration: 0.8,
-          ease: "power3.inOut",
-        });
-      }
-    })
-    .to({}, { duration: 0 }); // just a marker to repeat the timeline
+    tl = gsap.timeline({ repeat: -1 })
+      .to({}, { duration: 3 }) // hold current word for 3s
+      .add(() => {
+        index++;
+
+        if (index === total - 1) {
+          // last item is the duplicate "Website" — animate to it normally,
+          // then instantly snap back to real index 0 with no visible jump
+          gsap.to(track, {
+            y: -wordHeight * index,
+            duration: 0.8,
+            ease: "power3.inOut",
+            onComplete: () => {
+              index = 0;
+              gsap.set(track, { y: 0 });
+            },
+          });
+        } else {
+          gsap.to(track, {
+            y: -wordHeight * index,
+            duration: 0.8,
+            ease: "power3.inOut",
+          });
+        }
+      });
+  };
+
+  measure();
+  buildTimeline();
+
+  // Recalculate on resize (debounced) so breakpoint font-size changes
+  // (text-4xl -> sm:text-6xl -> lg:text-9xl) never desync the track
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(measure, 150);
+  });
 };
+
+
 
 rotateWords();
 const mobileMenuAnim = () => {
