@@ -133,7 +133,7 @@
           </button>
         </div>
       </nav>
-      <div class="px-[6vw]  space-y-10 pt-44">
+      <div class="px-[6vw] space-y-10 pt-44">
         <h1 class="font-semibold uppercase font-urbanist upp">
           Creative Tech & Marketing Agency
         </h1>
@@ -142,311 +142,65 @@
             Next-Level
             <span class="font-klimisk font-normal italic">Website</span>
           </h1>
-          <h1 class="text-6xl md:text-9xl font-semibold">That Make an Impact</h1>
+          <h1 class="text-6xl md:text-9xl font-semibold">
+            That Make an Impact
+          </h1>
         </div>
       </div>
     </section>
-    <section class="py-55 scroll-card space-y-5 ">
-        <!-- Card 1  -->
-      <div class="px-[6vw] cardsingle py-10 gap-10">
-        <div class="flex md:flex-row flex-col gap-">
-          <div
-            class="md:w-3/4 flex flex-col lg:flex-row overflow-hidden md:h-130 rounded-3xl border border-neutral-800 bg-[#181818]"
+    <section class="py-55 scroll-card space-y-5">
+      <!-- Tabs -->
+      <div class="px-[6vw] mb-16">
+        <div
+          id="tabsWrapper"
+          class="relative inline-flex flex-wrap gap-1 bg-[#181818] border border-neutral-800 rounded-full p-1"
+        >
+          <span
+            id="tabPill"
+            class="absolute top-1 bottom-1 left-1 rounded-full bg-white z-0"
+            style="width: 0px"
+          ></span>
+
+          <button
+            class="tab-btn relative z-10 px-6 py-3 text-sm sm:text-base font-medium rounded-full"
+            data-category="website"
           >
-            <!-- Image -->
-            <div class="lg:w-1/2 w-full">
-              <img
-                src="./assets/Img/2.webp"
-                alt="7007 Studio"
-                class="w-full h-130 object-cover object-center"
-              />
-            </div>
-
-            <!-- Content -->
-            <div
-              class="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col justify-between"
-            >
-              <!-- Top -->
-              <div>
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
-                  7007 Studio
-                </h1>
-
-                <p
-                  class="text-neutral-400 text-sm sm:text-xl leading-relaxed font-urbanis mb-5"
-                >
-                  A modern agency portfolio built for a 3D design and animation
-                  studio, focused on immersive storytelling and visually
-                  striking presentation. Designed to showcase creative work
-                  through smooth interactions and engaging layouts.
-                </p>
-
-                <!-- Tech Stack -->
-                <div class="flex flex-wrap text-blue-400 gap-2 mb-5">
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >React</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >GSAP</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >ScrollTrigger</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >Responsive</span
-                  >
-                </div>
-              </div>
-
-              <!-- Bottom -->
-              <div class="flex items-center justify-between mt-4">
-                <p class="text-neutral-500 text-sm">
-                  Creative 3D Agency Website
-                </p>
-
-                <a href="https://7007studio.com/" target="_blank">
-                    <button
-                  class="px-4 rounded-sm all-btn text-sm border border-white  "
-                >
-                  View Project →
-                </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="w-1/2">
-
-          </div>
+            Website
+          </button>
+          <button
+            class="tab-btn relative z-10 px-6 py-3 text-sm sm:text-base font-medium rounded-full"
+            data-category="research"
+          >
+            Research Paper
+          </button>
+          <button
+            class="tab-btn relative z-10 px-6 py-3 text-sm sm:text-base font-medium rounded-full"
+            data-category="aiml"
+          >
+            AI / ML
+          </button>
+          <button
+            class="tab-btn relative z-10 px-6 py-3 text-sm sm:text-base font-medium rounded-full"
+            data-category="software"
+          >
+            Software
+          </button>
         </div>
       </div>
-       <!-- CArd 2  -->
-      <div class="px-[6vw] cardsingle py-10 gap-10">
-        <div class="flex md:flex-row-reverse flex-col-reverse gap-">
-          <div
-            class="md:w-3/4 flex flex-col lg:flex-row overflow-hidden md:h-130 rounded-3xl border border-neutral-800 bg-[#181818]"
-          >
-            <!-- Image -->
-            <div class="lg:w-1/2 w-full">
-              <img
-                src="./assets/Img/1.webp"
-                alt="7007 Studio"
-                class="w-full h-130 object-cover object-center"
-              />
-            </div>
 
-            <!-- Content -->
-            <div
-              class="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col justify-between"
-            >
-              <!-- Top -->
-              <div>
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
-                  Schedule Solutions
-                </h1>
+      <!-- Cards render here via JS -->
+      <div
+        id="cardsContainer"
+        class="space-y-5 grid-cols-2 grid gap-20 px-[6vw]"
+      ></div>
 
-                <p
-                  class="text-neutral-400 text-sm sm:text-xl leading-relaxed mb-5"
-                >A modern portfolio website for a BPO company, designed to showcase services and brand identity with a clean and professional layout.
-Built with smooth animations and responsive design to deliver a seamless user experience across all devices.
-                </p>
-
-                <!-- Tech Stack -->
-                <div class="flex flex-wrap text-blue-400 gap-2 mb-">
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >React</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >GSAP</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >ScrollTrigger</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >Responsive</span
-                  >
-                </div>
-              </div>
-
-              <!-- Bottom -->
-              <div class="flex items-center justify-between mt-4">
-                <p class="text-neutral-500 text-sm">
-                  BPO Service Agency Website
-                </p>
-
-                <a href="https://schedulesolutionsbpo.com/" target="_blank">
-                    <button
-                  class="px-4 rounded-sm all-btn text-sm border border-white  "
-                >
-                  View Project →
-                </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="w-1/2">
-
-          </div>
-        </div>
+      <div id="emptyState" class="px-[6vw] hidden text-center py-20">
+        <p class="text-neutral-500 text-xl">
+          No projects in this category yet.
+        </p>
       </div>
-       <!-- Card 3  -->
-      <div class="px-[6vw] cardsingle py-10 gap-10">
-        <div class="flex md:flex-row flex-col gap-">
-          <div
-            class="md:w-3/4 flex flex-col lg:flex-row overflow-hidden md:h-130 rounded-3xl border border-neutral-800 bg-[#181818]"
-          >
-            <!-- Image -->
-            <div class="lg:w-1/2 w-full">
-              <img
-                src="./assets/Img/3.webp"
-                alt="7007 Studio"
-                class="w-full h-130 object-cover object-center"
-              />
-            </div>
-
-            <!-- Content -->
-            <div
-              class="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col justify-between"
-            >
-              <!-- Top -->
-              <div>
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
-                  The Juice Alluy
-                </h1>
-
-                <p
-                  class="text-neutral-400 text-sm sm:text-xl leading-relaxed font-urbanis mb-5"
-                >
-                  A full-stack coffee shop management system for handling orders, inventory, and operations.
-Built for smooth performance with a modern, responsive user experience.
-                </p>
-
-                <!-- Tech Stack -->
-                <div class="flex flex-wrap text-blue-400 gap-2 mb-5">
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >Next JS</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >GSAP</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >Express JS</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >MongoDB</span
-                  >
-                </div>
-              </div>
-
-              <!-- Bottom -->
-              <div class="flex items-center justify-between mt-4">
-                <p class="text-neutral-500 text-sm">
-                  Coffee Shop Management Website
-                </p>
-
-                <a href="https://the-juice-alluy-8744f.web.app/" target="_blank">
-                    <button
-                  class="px-4 rounded-sm all-btn text-sm border border-white  "
-                >
-                  View Project →
-                </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="w-1/2">
-
-          </div>
-        </div>
-      </div>
-       <!-- CArd 2  -->
-      <div class="px-[6vw] cardsingle py-10 gap-10">
-        <div class="flex md:flex-row-reverse flex-col-reverse gap-">
-          <div
-            class="md:w-3/4 flex flex-col lg:flex-row overflow-hidden md:h-130 rounded-3xl border border-neutral-800 bg-[#181818]"
-          >
-            <!-- Image -->
-            <div class="lg:w-1/2 w-full">
-              <img
-                src="./assets/Img/4.webp"
-                alt="7007 Studio"
-                class="w-full h-130 object-cover object-center"
-              />
-            </div>
-
-            <!-- Content -->
-            <div
-              class="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col justify-between"
-            >
-              <!-- Top -->
-              <div>
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
-                  Planet Of Health Pharmacy
-                </h1>
-
-                <p
-                  class="text-neutral-400 text-sm sm:text-xl leading-relaxed mb-5"
-                >A modern medicine management platform with full Russian and English language support for seamless accessibility.
-Designed to handle pharmacy operations efficiently with a scalable backend and responsive interface.
-                </p>
-
-                <!-- Tech Stack -->
-                <div class="flex flex-wrap text-blue-400 gap-2 mb-">
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >Next JS</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >Express JS</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >SQL</span
-                  >
-                  <span
-                    class="px-3 py-1 text-xl border border-neutral-700 rounded-full"
-                    >Responsive</span
-                  >
-                </div>
-              </div>
-
-              <!-- Bottom -->
-              <div class="flex items-center justify-between mt-4">
-                <p class="text-neutral-500 text-sm">
-                 Modern Medicine Management Website
-                </p>
-
-                <a href="https://planetazdorovo.com/" target="_blank">
-                    <button
-                  class="px-4 rounded-sm all-btn text-sm border border-white  "
-                >
-                  View Project →
-                </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="w-1/2">
-
-          </div>
-        </div>
-      </div>
-      
-      
-      
     </section>
+
     <section>
       <div class="border-b-[1px] border-zinc-400 mt-[4vw]">
         <div class="px-[6vw] py-[1vw] md:text-2xl flex justify-between">
@@ -669,5 +423,372 @@ Designed to handle pharmacy operations efficiently with a scalable backend and r
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="script.js"></script>
+    <script>
+
+            const projects = [
+              {
+                category: "website",
+                title: "7007 Studio",
+                image: "./assets/Img/2.webp",
+                logo:'./assets/7007.png',
+                description:
+                  "A modern agency portfolio built for a 3D design and animation studio, focused on immersive storytelling and visually striking presentation. Designed to showcase creative work through smooth interactions and engaging layouts.",
+                tags: ["React", "GSAP", "ScrollTrigger", "Responsive"],
+                tagline: "Creative 3D Agency Website",
+                link: "https://7007studio.com/",
+                reverse: false,
+              },
+              {
+                category: "website",
+                title: "Schedule Solutions",
+                image: "./assets/Img/1.webp",
+                logo:'./assets/SS.png',
+                description:
+                  "A modern portfolio website for a BPO company, designed to showcase services and brand identity with a clean and professional layout. Built with smooth animations and responsive design to deliver a seamless user experience across all devices.",
+                tags: ["React", "GSAP", "ScrollTrigger", "Responsive"],
+                tagline: "BPO Service Agency Website",
+                link: "https://schedulesolutionsbpo.com/",
+                reverse: true,
+              },
+              {
+                category: "website",
+                title: "The Juice Alluy",
+                logo:'./assets/JA.png',
+                image: "./assets/Img/3.webp",
+                description:
+                  "A full-stack coffee shop management system for handling orders, inventory, and operations. Built for smooth performance with a modern, responsive user experience.",
+                tags: ["Next JS", "GSAP", "Express JS", "MongoDB"],
+                tagline: "Coffee Shop Management Website",
+                link: "https://the-juice-alluy-8744f.web.app/",
+                reverse: false,
+              },
+              {
+                category: "website",
+                title: "Planet Of Health Pharmacy",
+                logo:'./assets/Pa.png',
+                image: "./assets/Img/4.webp",
+                description:
+                  "A modern medicine management platform with full Russian and English language support for seamless accessibility. Designed to handle pharmacy operations efficiently with a scalable backend and responsive interface.",
+                tags: ["Next JS", "Express JS", "SQL", "Responsive"],
+                tagline: "Modern Medicine Management Website",
+                link: "https://planetazdorovo.com/",
+                reverse: true,
+              },{
+        category: "software",
+        title: "Milex",
+        logo: "https://milexair.com/frontend/wp-content/uploads/2024/07/logo-anroot-logex-01.png",
+        image: "./assets/Img/software/milex.webp",
+        description:
+          "A complete parcel management software built for internal business operations — handling shipment tracking, delivery workflows, agent management, and financial reconciliation in one unified system for full end-to-end business control.",
+        tags: ["React", "Node.js", "MongoDB", "JWT Auth"],
+        tagline: "Parcel Company Management Software",
+        link: "https://milex-erp.vercel.app/",
+        reverse: false,
+      },
+      {
+        category: "software",
+        title: "Khulna Hardware Mart",
+        logo: "./assets/khm-logo.png",
+        image: "./assets/Img/software/khm0.webp",
+        description:
+          "A full-scale hardware shop management system covering inventory, invoicing, customer and supplier records, revenue tracking, and stock control — built to run the store's entire day-to-day operations from a single dashboard.",
+        tags: ["React", "Express JS", "MongoDB", "Tailwind CSS"],
+        tagline: "Hardware Shop Management System",
+        link: "https://your-khulna-hardware-link.com/",
+        reverse: true,
+      },
+      {
+        category: "software",
+        title: "Ummahatul Muminin Womens Madrasha",
+        logo: "./assets/madrasha-logo.png",
+       image: "./assets/Img/software/umkun.webp",
+        description:
+          "A comprehensive LMS built specifically for the madrasha's academic and administrative needs — managing student attendance, fee payments, teacher salary disbursement, and digital class notes in one integrated learning management platform.",
+        tags: ["React", "Node.js", "MongoDB", "LMS"],
+        tagline: "Madrasha Learning Management System",
+        link: "https://your-madrasha-lms-link.com/",
+        reverse: false,
+      },
+              {
+                category: "research",
+                title: "BanglaPlate",
+                image: "./assets/Img/Research_Paper/banglaplate.webp",
+
+                description:
+                  "A robust automatic number plate detection and recognition system developed for Bangladeshi vehicles using YOLOv8. The research focuses on accurate real-time plate localization and character recognition to support intelligent transportation systems.",
+                tags: ["YOLOv8", "ANPR", "Computer Vision", "Transportation"],
+                tagline: "Bangla Vehicle Number Plate Recognition",
+                link: "https://ieeexplore.ieee.org/document/11013529",
+                reverse: false,
+              },
+              {
+                category: "research",
+                title: "AI-Driven Personal Item & Crime Pattern Tracker",
+                image: "./assets/Img/Research_Paper/aidriven.webp",
+                description:
+                  "An AI-powered research project that helps Bangladeshi consumers protect personal belongings by tracking lost items and analyzing crime patterns. The system combines intelligent reporting, location-based insights, and predictive analytics to improve public awareness and personal security.",
+                tags: ["AI", "Machine Learning", "Crime Analytics", "Bangladesh"],
+                tagline: "Smart Personal Security & Crime Analysis",
+                link: "https://www.researchgate.net/publication/406152567_AI-Driven_Personal_Item_Crime_Pattern_Tracker_for_Bangladeshi_Consumers",
+                reverse: false,
+              },
+              {
+                category: "research",
+                title: "AIoT for Road Safety",
+                image: "./assets/Img/Research_Paper/roadsafty.webp",
+                description:
+                  "A unified AIoT-based road safety system that integrates vehicle speed estimation with automatic license plate recognition for intelligent traffic monitoring in Bangladesh. The framework enables real-time detection of speeding vehicles and supports smarter traffic law enforcement.",
+                tags: ["AIoT", "YOLO", "Computer Vision", "Road Safety"],
+                tagline: "Vehicle Speed & License Plate Recognition",
+                link: "https://www.researchgate.net/publication/406152534_AIoT_for_Road_Safety_Unified_Vehicle_Speed_and_License_Plate_Recognition_in_Bangladesh",
+                reverse: true,
+              },
+              {
+                category: "research",
+                title: "BanglaMind",
+                image: "./assets/Img/Research_Paper/banglamind.webp",
+                description:
+                  "An AI-powered mental health chatbot designed to detect emotions and identify potential suicide risks among students through natural language conversations. The system provides early intervention support using Bangla language understanding and sentiment analysis.",
+                tags: ["NLP", "AI Chatbot", "Mental Health", "Bangla"],
+                tagline: "Emotion & Suicide Risk Detection",
+                link: "https://link.springer.com/chapter/10.1007/978-3-032-15346-3_9",
+                reverse: false,
+              },
+              {
+                category: "research",
+                title: "Automated Waste Classification and Sorting",
+                image: "./assets/Img/Research_Paper/waste.webp",
+
+                description:
+                  "A deep learning-based waste management system utilizing YOLOv8 to automatically classify and sort different types of waste materials. The proposed solution improves recycling efficiency while reducing manual effort through real-time object detection.",
+                tags: [
+                  "YOLOv8",
+                  "Computer Vision",
+                  "Waste Management",
+                  "Deep Learning",
+                ],
+                tagline: "Intelligent Waste Classification System",
+                link: "https://ieeexplore.ieee.org/document/11172269",
+                reverse: true,
+              },
+              {
+                category: "research",
+                title: "BanglaPlate",
+                image: "./assets/Img/Research_Paper/banglaplate.webp",
+
+                description:
+                  "A robust automatic number plate detection and recognition system developed for Bangladeshi vehicles using YOLOv8. The research focuses on accurate real-time plate localization and character recognition to support intelligent transportation systems.",
+                tags: ["YOLOv8", "ANPR", "Computer Vision", "Transportation"],
+                tagline: "Bangla Vehicle Number Plate Recognition",
+                link: "https://ieeexplore.ieee.org/document/11013529",
+                reverse: false,
+              },
+
+              // Add research / aiml projects like this:
+              // {
+              //   category: "research",
+              //   title: "Your Paper Title",
+              //   image: "./assets/Img/5.webp",
+              //   description: "...",
+              //   tags: ["Python", "PyTorch"],
+              //   tagline: "Research Paper",
+              //   link: "https://...",
+              //   reverse: false,
+              // },
+            ];
+
+            // ===== Builds one card's HTML from a project object =====
+            const buildCardHTML = (project) => {
+              return `
+          <a
+            href="${project.link}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card card  relative h-100 sm:h-150 rounded-3xl overflow-hidden bg-[#111] block"
+            data-category="${project.category}"
+          >
+            <div
+              class="imgLayer absolute inset-[-30px] bg-center bg-cover bg-no-repeat"
+              style="background-image: url('${project.image}')"
+            ></div>
+
+            <div
+              class="absolute imglayerbg select-none inset-0 rounded-xl z-[1] pointer-events-none"
+              style="
+                background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85) 100%);
+                opacity: 0;
+                visibility: hidden;
+              "
+            ></div>
+
+            <div class="relative top-5 left-5 z-[9] flex items-center gap-2">
+              <div class="w-7 h-7 rounded-[7px] bg-white flex items-center justify-center">
+                <img src="${project.logo}" alt="${project.title} logo" class="w-5 h-5 object-contain" />
+              </div>
+              <span class="text-white text-xl font-bold funnel tracking-[1.5px]">
+                ${project.title.toUpperCase()}
+              </span>
+            </div>
+
+            <button
+              class="arrowBtn absolute top-[18px] right-[18px] z-[3] w-10 h-10 rounded-full bg-white/85 flex items-center justify-center"
+              style="opacity: 0; visibility: hidden"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M4 12L12 4M12 4H6M12 4v6" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <div class="bottomTitle absolute bottom-5 left-5 right-5 z-[3]" style="opacity: 0; visibility: hidden">
+              <p class="text-white/75 text-lg sm:text-xl funnel font-semibold tracking-[1.8px] m-0">
+                ${project.description}
+              </p>
+            </div>
+
+            <div class="absolute inset-0 bg-black/30 flex flex-col justify-between p-10"></div>
+
+            <div
+              class="cursorDot absolute w-20 h-20 bg-black/55 rounded-full pointer-events-none z-10"
+              style="opacity: 0; transform: translate(-50%, -50%); top: 0; left: 0;"
+            ></div>
+          </a>
+        `;
+            };
+            // ===== Renders the full container from the array =====
+            const renderCards = () => {
+              const container = document.getElementById("cardsContainer");
+              container.innerHTML = projects.map(buildCardHTML).join("");
+            };
+
+            // ===== Tabs logic (filters the already-rendered DOM) =====
+            const projectTabs = () => {
+              const tabsWrapper = document.getElementById("tabsWrapper");
+              const tabButtons = document.querySelectorAll(".tab-btn");
+              const pill = document.getElementById("tabPill");
+              const emptyState = document.getElementById("emptyState");
+
+              if (!tabsWrapper || !tabButtons.length) return;
+
+              let activeCategory = tabButtons[0].dataset.category; // "website" — was hardcoded "all"
+
+              const setTextColors = (activeBtn) => {
+                tabButtons.forEach((btn) => {
+                  btn.classList.toggle("text-black", btn === activeBtn);
+                  btn.classList.toggle("text-white", btn !== activeBtn);
+                });
+              };
+
+              const movePill = (btn) => {
+                const btnRect = btn.getBoundingClientRect();
+                const wrapperRect = tabsWrapper.getBoundingClientRect();
+
+                gsap.to(pill, {
+                  x: btnRect.left - wrapperRect.left - 4,
+                  width: btnRect.width,
+                  duration: 0.45,
+                  ease: "power3.inOut",
+                });
+              };
+
+              // Instant filter, no animation — used ONLY on page load to avoid flashing all cards
+              const filterCardsInstant = (category) => {
+                const cards = document.querySelectorAll(".project-card");
+                cards.forEach((card) => {
+                  const isMatch = card.dataset.category === category;
+                  card.style.display = isMatch ? "" : "none";
+                });
+
+                const anyVisible = [...cards].some(
+                  (c) => c.dataset.category === category,
+                );
+                emptyState.classList.toggle("hidden", anyVisible);
+              };
+
+              // Animated filter — used on tab CLICK
+              const filterCards = (category) => {
+                const cards = document.querySelectorAll(".project-card");
+                const matching = [];
+                const nonMatching = [];
+
+                cards.forEach((card) => {
+                  const isMatch = card.dataset.category === category;
+                  (isMatch ? matching : nonMatching).push(card);
+                });
+
+                const tl = gsap.timeline();
+
+                if (nonMatching.length) {
+                  tl.to(nonMatching, {
+                    opacity: 0,
+                    y: -20,
+                    scale: 0.97,
+                    duration: 0.3,
+                    stagger: 0.03,
+                    ease: "power2.in",
+                    onComplete: () =>
+                      nonMatching.forEach((c) => (c.style.display = "none")),
+                  });
+                }
+
+                tl.add(() => {
+                  matching.forEach((c) => (c.style.display = ""));
+
+                  if (matching.length) {
+                    emptyState.classList.add("hidden");
+                    gsap.fromTo(
+                      matching,
+                      { opacity: 0, y: 25, scale: 0.97 },
+                      {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.5,
+                        stagger: 0.08,
+                        ease: "power3.out",
+                        onComplete: () => ScrollTrigger.refresh(),
+                      },
+                    );
+                  } else {
+                    emptyState.classList.remove("hidden");
+                    gsap.fromTo(
+                      emptyState,
+                      { opacity: 0, y: 15 },
+                      { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+                    );
+                  }
+                });
+              };
+
+              tabButtons.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                  const category = btn.dataset.category;
+                  if (category === activeCategory) return;
+                  activeCategory = category;
+
+                  setTextColors(btn);
+                  movePill(btn);
+                  filterCards(category);
+                });
+              });
+
+              const initBtn = tabButtons[0];
+              setTextColors(initBtn);
+              requestAnimationFrame(() => {
+                movePill(initBtn);
+                filterCardsInstant(activeCategory); // apply filter immediately on load, no flash
+              });
+
+              window.addEventListener("resize", () => {
+                const active = [...tabButtons].find(
+                  (b) => b.dataset.category === activeCategory,
+                );
+                if (active) movePill(active);
+              });
+            };
+
+            renderCards();
+            cardAnimation();
+            projectTabs();
+    </script>
   </body>
 </html>

@@ -340,30 +340,7 @@ const cardAnimation = () => {
     });
   });
 };
-const cardAnimation2 = () => {
-  const cards = document.querySelectorAll(".card1");
-  cards.forEach((card, index) => {
-    gsap.set(card, {
-      opacity: 0,
-      y: 120,
-    });
 
-    gsap.to(card, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      
-      ease: "power3.out",
-      delay: index * 0.12,
-      scrollTrigger: {
-        trigger: card,
-        start: "top 88%",
-        end: "top 40%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  });
-};
 const loaderAnimation = () => {
   document.body.style.overflow = "hidden";
 
@@ -435,7 +412,7 @@ const loaderAnimation = () => {
 };
  
 // loaderAnimation();
-// cardAnimation2()
+
 cardAnimation();
 initMarquees();
 
@@ -443,6 +420,7 @@ initMarquees();
 textSrolled();
 navlinkflipping();
 cardHover();
+
 const rotateWords = () => {
   const rotator = document.getElementById("wordRotator");
   const track = document.getElementById("wordTrack");
@@ -508,7 +486,7 @@ rotateWords();
 const mobileMenuAnim = () => {
   const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-  const links = mobileMenu.querySelectorAll(".mobile-link span, .mobile-link");
+  const links = document.querySelectorAll(".mobile-link span, .mobile-link");
 
   if (!menuBtn || !mobileMenu) return;
 
@@ -563,7 +541,10 @@ const mobileMenuAnim = () => {
   });
 };
 
+
+
 mobileMenuAnim();
+
 const countUpStats = () => {
   const counters = document.querySelectorAll(
     "#ratingCount, #projectsCount, #countriesCount"
@@ -595,3 +576,4 @@ const countUpStats = () => {
 };
 
 countUpStats();
+
