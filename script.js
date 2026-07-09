@@ -10,62 +10,7 @@ gsap.ticker.add((time) => {
 });
 gsap.ticker.lagSmoothing(0);
 
-const scrolled = () => {
-  const navbar = document.getElementById("navbar");
-  const navbarDiv = document.getElementById("navber-div");
-
-  let lastScroll = 0;
-  const scrollThreshold = 1; // 👈 important
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
-
-    // Ignore tiny scroll changes
-    if (Math.abs(currentScroll - lastScroll) < scrollThreshold) {
-      return;
-    }
-
-    
-    if (currentScroll <= 0) {
-      navbarDiv.classList.remove(
-        "bg-zinc-950/60",
-        "shadow-md",
-        "backdrop-blur-md",
-      );
-      gsap.to(navbar, { y: 0, duration: 0.2, ease: "power1.out" });
-    } else if (currentScroll > lastScroll) {
-      // Scroll down → hide
-      gsap.to(navbar, { y: "-115%", duration: 0.2, ease: "power1.out" });
-    } else {
-      // Scroll up → show
-      gsap.to(navbar, { y: "0%", duration: 0.2, ease: "power1.out" });
-      navbarDiv.classList.add(
-        "backdrop-blur-md",
-        "bg-zinc-950/60",
-        "shadow-md",
-      );
-    }
-
-    lastScroll = currentScroll;
-  });
-};
-
 const textSrolled = () => {
-  document.querySelectorAll(".cardsingle").forEach((card) => {
-    gsap.to(card, {
-      scale: 0.8,
-      opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        // markers:true,
-        trigger: card,
-        start: "top 10%",
-        end: "top -50%",
-        scrub: 1,
-      },
-    });
-  });
-
   document.querySelectorAll(".faq-question").forEach((button) => {
     button.addEventListener("click", () => {
       const faqItem = button.parentElement;
@@ -182,12 +127,14 @@ const initMarquees = () => {
     // Shifting by exactly one "period" (item + gap) of the track
     // makes the repeat snap-back visually seamless, since every
     // part looks the same.
-    const tween = gsap.to(inner, {
-      xPercent: -(100 / partsCount),
-      duration: 10,
-      ease: "none",
-      repeat: -1,
-    }).totalProgress(0.5); // start mid-loop, optional
+    const tween = gsap
+      .to(inner, {
+        xPercent: -(100 / partsCount),
+        duration: 10,
+        ease: "none",
+        repeat: -1,
+      })
+      .totalProgress(0.5); // start mid-loop, optional
 
     tweens.push(tween);
   });
@@ -201,7 +148,7 @@ const initMarquees = () => {
       isDown = down;
 
       tweens.forEach((t) =>
-        gsap.to(t, { timeScale: isDown ? 1 : -1, overwrite: true })
+        gsap.to(t, { timeScale: isDown ? 1 : -1, overwrite: true }),
       );
 
       document.querySelectorAll(".marquee_inner").forEach((el) => {
@@ -233,8 +180,6 @@ const cardAnimation = () => {
         ease: "power2.out",
       });
 
-      
-
       gsap.set(arrowBtn, { visibility: "visible" });
       gsap.fromTo(
         arrowBtn,
@@ -242,11 +187,11 @@ const cardAnimation = () => {
         { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.7)" },
       );
 
-      gsap.set(imglayerbg, { opacity: 1,visibility: "visible" });
+      gsap.set(imglayerbg, { opacity: 1, visibility: "visible" });
       gsap.fromTo(
         imglayerbg,
-        {  y:100 },
-        {  y: 0 ,duration: 1, ease: "power3.out"},
+        { y: 100 },
+        { y: 0, duration: 1, ease: "power3.out" },
       );
 
       gsap.set(bottomTitle, { visibility: "visible" });
@@ -294,7 +239,7 @@ const cardAnimation = () => {
       gsap.to(imglayerbg, {
         opacity: 0,
         y: 100,
-        
+
         duration: 0.3,
         ease: "power2.in",
         onComplete: () => gsap.set(arrowBtn, { visibility: "hidden" }),
@@ -356,67 +301,73 @@ const loaderAnimation = () => {
   });
 
   // line animation + percentage together
-  tl.to(progress, {
-    value: 100,
-    duration: 1.5,
-    ease: "none",
-    snap: "value",
-    onUpdate: () => {
-      loaderText.innerHTML = `${progress.value}%`;
-    },
-  }, 0)
-
-  .to(
-    "#loaderLine",
+  tl.to(
+    progress,
     {
-      width: "100%",
-      duration:2,
-      ease: "power3.inOut",
+      value: 100,
+      duration: 1.5,
+      ease: "none",
+      snap: "value",
+      onUpdate: () => {
+        loaderText.innerHTML = `${progress.value}%`;
+      },
     },
-    0
+    0,
   )
 
-  // exit animation
-  .to("#loaderTop", {
-    yPercent: -100,
-    duration: 1.3,
-    ease: "power4.inOut",
-  })
+    .to(
+      "#loaderLine",
+      {
+        width: "100%",
+        duration: 2,
+        ease: "power3.inOut",
+      },
+      0,
+    )
 
-  .to(
-    "#loaderBottom",
-    {
-      yPercent: 100,
+    // exit animation
+    .to("#loaderTop", {
+      yPercent: -100,
       duration: 1.3,
       ease: "power4.inOut",
-    },
-    "<"
-  )
+    })
 
-  .to(
-    [".loader-text", "#loaderLine"],
-    {
-      opacity: 0,
-      duration: 0.4,
-      ease: "power2.out",
-      display:'none'
-    },
-    "<"
-  )
-  .from('.banner img',{
-    scale:1.8,
-    duration:1.2,
-    ease: "power4.inOut",
-  },"<")
-  
+    .to(
+      "#loaderBottom",
+      {
+        yPercent: 100,
+        duration: 1.3,
+        ease: "power4.inOut",
+      },
+      "<",
+    )
+
+    .to(
+      [".loader-text", "#loaderLine"],
+      {
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.out",
+        display: "none",
+      },
+      "<",
+    )
+    .from(
+      ".banner img",
+      {
+        scale: 1.8,
+        duration: 1.2,
+        ease: "power4.inOut",
+      },
+      "<",
+    );
 };
- 
+
 // loaderAnimation();
 
 cardAnimation();
 initMarquees();
 
-// scrolled();
 textSrolled();
 navlinkflipping();
 cardHover();
@@ -441,7 +392,8 @@ const rotateWords = () => {
   const buildTimeline = () => {
     if (tl) tl.kill();
 
-    tl = gsap.timeline({ repeat: -1 })
+    tl = gsap
+      .timeline({ repeat: -1 })
       .to({}, { duration: 3 }) // hold current word for 3s
       .add(() => {
         index++;
@@ -479,8 +431,6 @@ const rotateWords = () => {
     resizeTimer = setTimeout(measure, 150);
   });
 };
-
-
 
 rotateWords();
 const mobileMenuAnim = () => {
@@ -541,13 +491,11 @@ const mobileMenuAnim = () => {
   });
 };
 
-
-
 mobileMenuAnim();
 
 const countUpStats = () => {
   const counters = document.querySelectorAll(
-    "#ratingCount, #projectsCount, #countriesCount"
+    "#ratingCount, #projectsCount, #countriesCount",
   );
 
   counters.forEach((el) => {
@@ -576,4 +524,67 @@ const countUpStats = () => {
 };
 
 countUpStats();
+const contactFormHandler = () => {
+  const form = document.getElementById("contactForm");
+  if (!form) return;
 
+  // Initialize with your EmailJS public key (same account as your bug reporting setup)
+  emailjs.init("siVG8IMv9HLqNG40E");
+
+  const submitBtn = document.getElementById("submitBtn");
+  const submitBtnText = document.getElementById("submitBtnText");
+  const formStatus = document.getElementById("formStatus");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtnText.textContent = "Sending...";
+    formStatus.classList.add("hidden");
+
+    emailjs
+      .sendForm("service_qnx153s", "template_4rxz9kn", form)
+      .then(() => {
+        submitBtnText.textContent = "Sent ✓";
+        formStatus.textContent =
+          "Thanks! We'll get back to you within 24 hours.";
+        formStatus.classList.remove("hidden", "text-red-400");
+        formStatus.classList.add("text-green-400");
+        form.reset();
+
+        setTimeout(() => {
+          submitBtnText.textContent = "Send Message →";
+          submitBtn.disabled = false;
+        }, 2500);
+      })
+      .catch(() => {
+        submitBtnText.textContent = "Send Message →";
+        submitBtn.disabled = false;
+        formStatus.textContent =
+          "Something went wrong. Please try again or email us directly.";
+        formStatus.classList.remove("hidden", "text-green-400");
+        formStatus.classList.add("text-red-400");
+      });
+  });
+};
+
+contactFormHandler();
+const footerReveal = () => {
+  document.querySelectorAll(".footer-reveal").forEach((el) => {
+    gsap.set(el, { y: 30, opacity: 0 });
+
+    gsap.to(el, {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 90%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+};
+
+footerReveal();

@@ -22,14 +22,17 @@
 
   <body class="bg-zinc-950 font-fellix text-white">
     <section class="relative">
-      <nav class="left-0 w-full lg:px-10 py-4 z-50 transition-all duration-300">
+      <nav
+        class="left-0 w-full lg:px-10 py-4 z-50 transition-all duration-300 relative"
+      >
         <div
           id="navber-div"
-          class="flex items-center justify-between px-18 py-1"
+          class="flex items-center justify-between px-6 lg:px-18 py-1"
         >
-          <img src="./assets/Img/logo.png" class="w-13" alt="" />
+          <img src="./assets/Img/logo.png" class="w-10 lg:w-13" alt="" />
 
-          <div class="list-none flex gap-10 text-xl font-fellix">
+          <!-- Desktop nav links (unchanged) -->
+          <div class="list-none hidden lg:flex gap-10 text-xl font-fellix">
             <a href="./index.html">
               <li class="nav-item overflow-hidden cursor-pointer">
                 <span class="split-text inline-block">
@@ -70,6 +73,41 @@
                   <span class="letter"
                     ><span class="top">k</span
                     ><span class="bottom">k</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">s</span
+                    ><span class="bottom">s</span></span
+                  >
+                </span>
+              </li>
+            </a>
+            <a href="./about.html">
+              <li class="nav-item overflow-hidden cursor-pointer">
+                <span class="split-text inline-flex">
+                  <span class="letter"
+                    ><span class="top">A</span
+                    ><span class="bottom">A</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">b</span
+                    ><span class="bottom">b</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">o</span
+                    ><span class="bottom">o</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">u</span
+                    ><span class="bottom">u</span></span
+                  >
+                  <span class="letter"
+                    ><span class="top">t</span
+                    ><span class="bottom">t</span></span
+                  >
+
+                  <span class="letter ml-2"
+                    ><span class="top">U</span
+                    ><span class="bottom">U</span></span
                   >
                   <span class="letter"
                     ><span class="top">s</span
@@ -126,21 +164,70 @@
             </a>
           </div>
 
+          <div class="hidden md:block">
+            <button
+              id="getInTouchbtn"
+              class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn"
+            >
+              Book A Meeting
+            </button>
+          </div>
+
+          <!-- Mobile hamburger button -->
           <button
-            class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn"
+            id="menuBtn"
+            class="lg:hidden relative w-8 h-6 flex flex-col justify-between items-center z-50"
+            aria-label="Toggle menu"
           >
-            Book A Meeting
+            <span
+              class="burger-line block w-full h-[2px] bg-white origin-center"
+            ></span>
+            <span
+              class="burger-line block w-full h-[2px] bg-white origin-center"
+            ></span>
+            <span
+              class="burger-line block w-full h-[2px] bg-white origin-center"
+            ></span>
           </button>
         </div>
+
+        <!-- Mobile menu overlay -->
+        <div
+          id="mobileMenu"
+          class="lg:hidden fixed inset-0 h-screen w-full bg-zinc-950 z-40 flex flex-col items-center justify-center gap-8 pointer-events-none"
+        >
+          <a href="./index.html" class="mobile-link overflow-hidden">
+            <span class="inline-block text-3xl font-fellix text-white"
+              >Home</span
+            >
+          </a>
+          <a href="./works.html" class="mobile-link overflow-hidden">
+            <span class="inline-block text-3xl font-fellix text-white"
+              >Works</span
+            >
+          </a>
+          <a href="./playground.html" class="mobile-link overflow-hidden">
+            <span class="inline-block text-3xl font-fellix text-white"
+              >Playground</span
+            >
+          </a>
+          <a href="./playground.html" class="mobile-link overflow-hidden">
+            <span class="inline-block text-3xl font-fellix text-white"
+              >Book A Meeting</span
+            >
+          </a>
+        </div>
       </nav>
-      <div class="px-[6vw] space-y-10 pt-44">
+      <div class="px-[6vw] space-y-10 pt-20">
         <h1 class="font-semibold uppercase font-urbanist upp">
           Creative Tech & Marketing Agency
         </h1>
         <div>
           <h1 class="text-6xl md:text-9xl font-semibold">
             Next-Level
-            <span class="font-klimisk font-normal italic">Website</span>
+            <span class="font-klimisk font-normal text-blue-500 italic"
+              >Servics</span
+            >
           </h1>
           <h1 class="text-6xl md:text-9xl font-semibold">
             That Make an Impact
@@ -349,72 +436,170 @@
         </div>
       </section>
     </section>
-    <footer class="bg-white text-black px-[5vw]">
-      <div class="flex">
-        <div class="flex-1">
-          <h1 class="text-[12vw] font-black">SAY HI!</h1>
-          <h1 class="text-xl font-bold">
-            Tell us about your project. ,<br />
-            <span class="font-light"
-              >Let`s collaborate and make great stuff</span
-            >
-          </h1>
-        </div>
-        <div class="flex flex-1 ml-60 items-center gap-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-phone-icon lucide-phone"
+    <section id="getInTouch" class="px-[6vw] py-28 border-t border-neutral-800">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <!-- Left: heading + context -->
+        <div class="reveal-up">
+          <h2
+            class="text-4xl sm:text-5xl lg:text-6xl font-semibold mt-4 mb-6 leading-tight"
           >
-            <path
-              d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-            />
-          </svg>
-          <h1 class="border-l-2 px-2">01798392494</h1>
+            Let's discuss your project.
+          </h2>
+          <p
+            class="text-neutral-400 text-lg leading-relaxed font-urbanis max-w-md"
+          >
+            Tell us what you're building. Drop your email and a short
+            description below — we'll get back to you within 24 hours to talk
+            through the details.
+          </p>
+
+          <div class="mt-10 flex items-center gap-3 text-neutral-400">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M4 4h16v16H4z" stroke-linejoin="round" />
+              <path
+                d="M4 6l8 7 8-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>techofsolution@gmail.com</span>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="reveal-up bg-zinc-900 rounded-3xl p-8 sm:p-10">
+          <form id="contactForm" class="flex flex-col gap-6">
+            <div>
+              <label class="block text-xl text-neutral-400 mb-2"
+                >Your Email</label
+              >
+              <input
+                type="email"
+                name="from_email"
+                required
+                placeholder="you@company.com"
+                class="w-full bg-zinc-950 border border-neutral-800 rounded-xl px-5 py-4 text-white placeholder-neutral-600 outline-none focus:border-blue-500 transition-colors duration-300"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xl text-neutral-400 mb-2"
+                >Project Description</label
+              >
+              <textarea
+                name="message"
+                required
+                rows="5"
+                placeholder="Tell us about your project, timeline, and goals..."
+                class="w-full bg-zinc-950 border border-neutral-800 rounded-xl px-5 py-4 text-white placeholder-neutral-600 outline-none focus:border-blue-500 transition-colors duration-300 resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="submitBtn"
+              class="relative bg-white text-black font-medium rounded-full px-8 py-4 transition-transform duration-300 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              <span id="submitBtnText">Send Message →</span>
+            </button>
+
+            <p id="formStatus" class="text-xl hidden"></p>
+          </form>
         </div>
       </div>
-      <div class="mt-20 border-t-[1px] flex items-center justify-between">
-        <div class="">
-          <a target="_blank" href="https://www.facebook.com/techofsolution">
-            <button
-              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
+    </section>
+
+    <footer class="bg-white text-black px-[6vw] pt-24 pb-10">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-0 items-end">
+        <div class="footer-reveal">
+          <p
+            class="text-blue-600 text-xl tracking-[0.2em] uppercase mb-4 font-semibold"
+          >
+            Let's Talk
+          </p>
+          <h1 class="text-[16vw] lg:text-[9vw] font-black leading-[0.9]">
+            SAY HI!
+          </h1>
+        </div>
+
+        <div class="footer-reveal flex flex-col gap-6 lg:items-end">
+          <p
+            class="text-xl sm:text-2xl font-bold max-w-sm lg:text-right leading-snug"
+          >
+            Tell us about your project.
+            <span class="block font-light text-neutral-500 mt-1">
+              Let's collaborate and make great stuff.
+            </span>
+          </p>
+
+          <a
+            href="tel:+8801798392494"
+            class="group flex items-center gap-3 text-lg font-medium border border-black/10 rounded-full px-5 py-3 w-fit transition-colors duration-300 hover:bg-black hover:text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <i class="fa-brands fa-facebook-f"></i>
-            </button>
+              <path
+                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+              />
+            </svg>
+            01798392494
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="mt-20 border-t border-black/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+      >
+        <div class="flex gap-3">
+          <a
+            target="_blank"
+            href="https://www.facebook.com/techofsolution"
+            class="social-btn w-11 h-11 rounded-full border border-black/10 flex items-center justify-center text-lg transition-all duration-300 hover:bg-black hover:text-white hover:-translate-y-1"
+          >
+            <i class="fa-brands fa-facebook-f"></i>
           </a>
           <a
             target="_blank"
             href="https://www.linkedin.com/company/techofsolution"
+            class="social-btn w-11 h-11 rounded-full border border-black/10 flex items-center justify-center text-lg transition-all duration-300 hover:bg-black hover:text-white hover:-translate-y-1"
           >
-            <button
-              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
-            >
-              <i class="fa-brands fa-linkedin-in"></i>
-            </button>
+            <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a target="_blank" href="https://discord.gg/j68RBQ3P">
-            <button
-              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
-            >
-              <i class="fa-brands fa-discord"></i>
-            </button>
+          <a
+            target="_blank"
+            href="https://discord.gg/j68RBQ3P"
+            class="social-btn w-11 h-11 rounded-full border border-black/10 flex items-center justify-center text-lg transition-all duration-300 hover:bg-black hover:text-white hover:-translate-y-1"
+          >
+            <i class="fa-brands fa-discord"></i>
           </a>
-          <a target="_blank" href="https://github.com/techofsolution">
-            <button
-              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
-            >
-              <i class="fa-brands fa-github"></i>
-            </button>
+          <a
+            target="_blank"
+            href="https://github.com/techofsolution"
+            class="social-btn w-11 h-11 rounded-full border border-black/10 flex items-center justify-center text-lg transition-all duration-300 hover:bg-black hover:text-white hover:-translate-y-1"
+          >
+            <i class="fa-brands fa-github"></i>
           </a>
         </div>
-        <h1>&copy;2026 All Right Reserved</h1>
+
+        <p class="text-neutral-500 text-xl">
+          &copy; 2026 TechOf Solutions Ltd. All Rights Reserved.
+        </p>
       </div>
     </footer>
 
@@ -424,182 +609,254 @@
     <script src="https://unpkg.com/split-type"></script>
     <script src="script.js"></script>
     <script>
+      const projects = [
+        {
+          category: "website",
+          title: "7007 Studio",
+          image: "./assets/Img/2.webp",
+          logo: "./assets/7007.png",
+          description:
+            "A modern agency portfolio built for a 3D design and animation studio, focused on immersive storytelling and visually striking presentation. Designed to showcase creative work through smooth interactions and engaging layouts.",
+          tags: ["React", "GSAP", "ScrollTrigger", "Responsive"],
+          tagline: "Creative 3D Agency Website",
+          link: "https://7007studio.com/",
+          reverse: false,
+        },
+        {
+          category: "website",
+          title: "Schedule Solutions",
+          image: "./assets/Img/1.webp",
+          logo: "./assets/SS.png",
+          description:
+            "A modern portfolio website for a BPO company, designed to showcase services and brand identity with a clean and professional layout. Built with smooth animations and responsive design to deliver a seamless user experience across all devices.",
+          tags: ["React", "GSAP", "ScrollTrigger", "Responsive"],
+          tagline: "BPO Service Agency Website",
+          link: "https://schedulesolutionsbpo.com/",
+        },
+        {
+          category: "website",
+          title: "The Juice Alluy",
+          logo: "./assets/JA.png",
+          image: "./assets/Img/3.webp",
+          description:
+            "A full-stack coffee shop management system for handling orders, inventory, and operations. Built for smooth performance with a modern, responsive user experience.",
+          tags: ["Next JS", "GSAP", "Express JS", "MongoDB"],
+          tagline: "Coffee Shop Management Website",
+          link: "https://the-juice-alluy-8744f.web.app/",
+          reverse: false,
+        },
+        {
+          category: "website",
+          title: "Planet Of Health Pharmacy",
+          logo: "./assets/Pa.png",
+          image: "./assets/Img/4.webp",
+          description:
+            "A modern medicine management platform with full Russian and English language support for seamless accessibility. Designed to handle pharmacy operations efficiently with a scalable backend and responsive interface.",
+          tags: ["Next JS", "Express JS", "SQL", "Responsive"],
+          tagline: "Modern Medicine Management Website",
+          link: "https://planetazdorovo.com/",
+        },
+        {
+          category: "website",
+          title: "Loopmi",
+          image: "./assets/Img/website/as.webp",
+          logo: "https://loopmi-client-en.vercel.app/assets/logo-CKNg7_Xn.png",
+          description:
+            "A full-featured e-commerce platform built for a Portuguese client, covering product catalogs, cart and checkout flows, and a clean, conversion-focused shopping experience tailored for the European market.",
 
-            const projects = [
-              {
-                category: "website",
-                title: "7007 Studio",
-                image: "./assets/Img/2.webp",
-                logo:'./assets/7007.png',
-                description:
-                  "A modern agency portfolio built for a 3D design and animation studio, focused on immersive storytelling and visually striking presentation. Designed to showcase creative work through smooth interactions and engaging layouts.",
-                tags: ["React", "GSAP", "ScrollTrigger", "Responsive"],
-                tagline: "Creative 3D Agency Website",
-                link: "https://7007studio.com/",
-                reverse: false,
-              },
-              {
-                category: "website",
-                title: "Schedule Solutions",
-                image: "./assets/Img/1.webp",
-                logo:'./assets/SS.png',
-                description:
-                  "A modern portfolio website for a BPO company, designed to showcase services and brand identity with a clean and professional layout. Built with smooth animations and responsive design to deliver a seamless user experience across all devices.",
-                tags: ["React", "GSAP", "ScrollTrigger", "Responsive"],
-                tagline: "BPO Service Agency Website",
-                link: "https://schedulesolutionsbpo.com/",
-                reverse: true,
-              },
-              {
-                category: "website",
-                title: "The Juice Alluy",
-                logo:'./assets/JA.png',
-                image: "./assets/Img/3.webp",
-                description:
-                  "A full-stack coffee shop management system for handling orders, inventory, and operations. Built for smooth performance with a modern, responsive user experience.",
-                tags: ["Next JS", "GSAP", "Express JS", "MongoDB"],
-                tagline: "Coffee Shop Management Website",
-                link: "https://the-juice-alluy-8744f.web.app/",
-                reverse: false,
-              },
-              {
-                category: "website",
-                title: "Planet Of Health Pharmacy",
-                logo:'./assets/Pa.png',
-                image: "./assets/Img/4.webp",
-                description:
-                  "A modern medicine management platform with full Russian and English language support for seamless accessibility. Designed to handle pharmacy operations efficiently with a scalable backend and responsive interface.",
-                tags: ["Next JS", "Express JS", "SQL", "Responsive"],
-                tagline: "Modern Medicine Management Website",
-                link: "https://planetazdorovo.com/",
-                reverse: true,
-              },{
-        category: "software",
-        title: "Milex",
-        logo: "https://milexair.com/frontend/wp-content/uploads/2024/07/logo-anroot-logex-01.png",
-        image: "./assets/Img/software/milex.webp",
-        description:
-          "A complete parcel management software built for internal business operations — handling shipment tracking, delivery workflows, agent management, and financial reconciliation in one unified system for full end-to-end business control.",
-        tags: ["React", "Node.js", "MongoDB", "JWT Auth"],
-        tagline: "Parcel Company Management Software",
-        link: "https://milex-erp.vercel.app/",
-        reverse: false,
-      },
-      {
-        category: "software",
-        title: "Khulna Hardware Mart",
-        logo: "./assets/khm-logo.png",
-        image: "./assets/Img/software/khm0.webp",
-        description:
-          "A full-scale hardware shop management system covering inventory, invoicing, customer and supplier records, revenue tracking, and stock control — built to run the store's entire day-to-day operations from a single dashboard.",
-        tags: ["React", "Express JS", "MongoDB", "Tailwind CSS"],
-        tagline: "Hardware Shop Management System",
-        link: "https://your-khulna-hardware-link.com/",
-        reverse: true,
-      },
-      {
-        category: "software",
-        title: "Ummahatul Muminin Womens Madrasha",
-        logo: "./assets/madrasha-logo.png",
-       image: "./assets/Img/software/umkun.webp",
-        description:
-          "A comprehensive LMS built specifically for the madrasha's academic and administrative needs — managing student attendance, fee payments, teacher salary disbursement, and digital class notes in one integrated learning management platform.",
-        tags: ["React", "Node.js", "MongoDB", "LMS"],
-        tagline: "Madrasha Learning Management System",
-        link: "https://your-madrasha-lms-link.com/",
-        reverse: false,
-      },
-              {
-                category: "research",
-                title: "BanglaPlate",
-                image: "./assets/Img/Research_Paper/banglaplate.webp",
+          link: "https://loopmi-client-en.vercel.app/",
+        },
+        {
+          category: "website",
+          title: "ChronoLux",
+          image: "./assets/Img/website/5.webp",
+          logo: "https://t3.ftcdn.net/jpg/05/80/96/04/360_F_580960493_t9bP94g2aGBivI3WA26HP5IzdIOAVFHX.jpg",
+          description:
+            "A premium watch e-commerce website built to highlight product craftsmanship — featuring detailed product galleries, collection browsing, and a smooth checkout experience for luxury timepiece buyers.",
+          tags: ["React", "Node.js", "MongoDB", "Stripe"],
+          tagline: "Watch E-commerce Website",
+          link: "https://watch.planetazdorovo.com/",
+        },
+        {
+          category: "website",
+          title: "LearnBridge",
+          image: "./assets/Img/website/learnbridge1.webp",
+          logo: "https://learnbridge-6f2b3.web.app/assets/icons8-book-96-CBy8Fa1t.png",
+          description:
+            "A learning management system built with three distinct roles — student, teacher, and admin — handling course delivery, assignments, grading, and platform-wide administration in one connected LMS.",
+          tags: ["React", "Express JS", "MongoDB", "Role-Based Auth"],
+          tagline: "LMS — Student, Teacher & Admin Roles",
+          link: "https://learnbridge-6f2b3.web.app/",
+          reverse: false,
+        },
+        {
+          category: "website",
+          title: "PlayLog",
+          logo: "https://i.pinimg.com/736x/5e/22/86/5e2286e02a8d3a65558ad3adf7534670.jpg",
+          image: "./assets/Img/website/s.webp",
+          description:
+            "A game review and discovery platform where users browse, rate, and review video games — built with a clean, content-first layout designed to make exploring reviews fast and enjoyable.",
+          tags: ["React", "Tailwind CSS", "REST API", "Responsive"],
+          tagline: "Game Review Website",
+          link: "https://clothes.planetazdorovo.com/",
+        },
+        {
+          category: "website",
+          title: "Velum Studio",
+          image: "./assets/Img/website/w3-01.webp",
+          logo: "https://png.pngtree.com/png-clipart/20230922/original/pngtree-clothing-logo-template-vector-icon-clothing-symbol-modern-vector-png-image_12520748.png",
+          description:
+            "A modern clothing e-commerce website with a considered, editorial-style layout — showcasing collections, offers, and new arrivals with a refined shopping experience across every device.",
+          tags: ["Next JS", "Tailwind CSS", "E-commerce", "Responsive"],
+          tagline: "Clothing E-commerce Website",
+          link: "https://clothes.planetazdorovo.com/",
+          reverse: false,
+        },
 
-                description:
-                  "A robust automatic number plate detection and recognition system developed for Bangladeshi vehicles using YOLOv8. The research focuses on accurate real-time plate localization and character recognition to support intelligent transportation systems.",
-                tags: ["YOLOv8", "ANPR", "Computer Vision", "Transportation"],
-                tagline: "Bangla Vehicle Number Plate Recognition",
-                link: "https://ieeexplore.ieee.org/document/11013529",
-                reverse: false,
-              },
-              {
-                category: "research",
-                title: "AI-Driven Personal Item & Crime Pattern Tracker",
-                image: "./assets/Img/Research_Paper/aidriven.webp",
-                description:
-                  "An AI-powered research project that helps Bangladeshi consumers protect personal belongings by tracking lost items and analyzing crime patterns. The system combines intelligent reporting, location-based insights, and predictive analytics to improve public awareness and personal security.",
-                tags: ["AI", "Machine Learning", "Crime Analytics", "Bangladesh"],
-                tagline: "Smart Personal Security & Crime Analysis",
-                link: "https://www.researchgate.net/publication/406152567_AI-Driven_Personal_Item_Crime_Pattern_Tracker_for_Bangladeshi_Consumers",
-                reverse: false,
-              },
-              {
-                category: "research",
-                title: "AIoT for Road Safety",
-                image: "./assets/Img/Research_Paper/roadsafty.webp",
-                description:
-                  "A unified AIoT-based road safety system that integrates vehicle speed estimation with automatic license plate recognition for intelligent traffic monitoring in Bangladesh. The framework enables real-time detection of speeding vehicles and supports smarter traffic law enforcement.",
-                tags: ["AIoT", "YOLO", "Computer Vision", "Road Safety"],
-                tagline: "Vehicle Speed & License Plate Recognition",
-                link: "https://www.researchgate.net/publication/406152534_AIoT_for_Road_Safety_Unified_Vehicle_Speed_and_License_Plate_Recognition_in_Bangladesh",
-                reverse: true,
-              },
-              {
-                category: "research",
-                title: "BanglaMind",
-                image: "./assets/Img/Research_Paper/banglamind.webp",
-                description:
-                  "An AI-powered mental health chatbot designed to detect emotions and identify potential suicide risks among students through natural language conversations. The system provides early intervention support using Bangla language understanding and sentiment analysis.",
-                tags: ["NLP", "AI Chatbot", "Mental Health", "Bangla"],
-                tagline: "Emotion & Suicide Risk Detection",
-                link: "https://link.springer.com/chapter/10.1007/978-3-032-15346-3_9",
-                reverse: false,
-              },
-              {
-                category: "research",
-                title: "Automated Waste Classification and Sorting",
-                image: "./assets/Img/Research_Paper/waste.webp",
+        {
+          category: "software",
+          title: "Milex",
+          logo: "https://milexair.com/frontend/wp-content/uploads/2024/07/logo-anroot-logex-01.png",
+          image: "./assets/Img/software/milex.webp",
+          description:
+            "A complete parcel management software built for internal business operations — handling shipment tracking, delivery workflows, agent management, and financial reconciliation in one unified system for full end-to-end business control.",
+          tags: ["React", "Node.js", "MongoDB", "JWT Auth"],
+          tagline: "Parcel Company Management Software",
+          link: "https://milex-erp.vercel.app/",
+          reverse: false,
+        },
+        {
+          category: "software",
+          title: "Khulna Hardware Mart",
+          logo: "./assets/Img/website/khmlogo.jpg",
+          image: "./assets/Img/software/khm0.webp",
+          description:
+            "A full-scale hardware shop management system covering inventory, invoicing, customer and supplier records, revenue tracking, and stock control — built to run the store's entire day-to-day operations from a single dashboard.",
+          tags: ["React", "Express JS", "MongoDB", "Tailwind CSS"],
+          tagline: "Hardware Shop Management System",
+          link: "https://your-khulna-hardware-link.com/",
+        },
+        {
+          category: "software",
+          title: "Ummahatul Muminin Womens Madrasha",
+          logo: "./assets/madrasha-logo.png",
+          image: "./assets/Img/software/umkun.webp",
+          description:
+            "A comprehensive LMS built specifically for the madrasha's academic and administrative needs — managing student attendance, fee payments, teacher salary disbursement, and digital class notes in one integrated learning management platform.",
+          tags: ["React", "Node.js", "MongoDB", "LMS"],
+          tagline: "Madrasha Learning Management System",
+          link: "https://your-madrasha-lms-link.com/",
+          reverse: false,
+        },
+        {
+          category: "research",
+          title: "BanglaPlate",
+          image: "./assets/Img/Research_Paper/banglaplate.webp",
 
-                description:
-                  "A deep learning-based waste management system utilizing YOLOv8 to automatically classify and sort different types of waste materials. The proposed solution improves recycling efficiency while reducing manual effort through real-time object detection.",
-                tags: [
-                  "YOLOv8",
-                  "Computer Vision",
-                  "Waste Management",
-                  "Deep Learning",
-                ],
-                tagline: "Intelligent Waste Classification System",
-                link: "https://ieeexplore.ieee.org/document/11172269",
-                reverse: true,
-              },
-              {
-                category: "research",
-                title: "BanglaPlate",
-                image: "./assets/Img/Research_Paper/banglaplate.webp",
+          description:
+            "A robust automatic number plate detection and recognition system developed for Bangladeshi vehicles using YOLOv8. The research focuses on accurate real-time plate localization and character recognition to support intelligent transportation systems.",
+          tags: ["YOLOv8", "ANPR", "Computer Vision", "Transportation"],
+          tagline: "Bangla Vehicle Number Plate Recognition",
+          link: "https://ieeexplore.ieee.org/document/11013529",
+          reverse: false,
+        },
+        {
+          category: "research",
+          title: "AI-Driven Personal Item & Crime Pattern Tracker",
+          image: "./assets/Img/Research_Paper/aidriven.webp",
+          description:
+            "An AI-powered research project that helps Bangladeshi consumers protect personal belongings by tracking lost items and analyzing crime patterns. The system combines intelligent reporting, location-based insights, and predictive analytics to improve public awareness and personal security.",
+          tags: ["AI", "Machine Learning", "Crime Analytics", "Bangladesh"],
+          tagline: "Smart Personal Security & Crime Analysis",
+          link: "https://www.researchgate.net/publication/406152567_AI-Driven_Personal_Item_Crime_Pattern_Tracker_for_Bangladeshi_Consumers",
+          reverse: false,
+        },
+        {
+          category: "research",
+          title: "AIoT for Road Safety",
+          image: "./assets/Img/Research_Paper/roadsafty.webp",
+          description:
+            "A unified AIoT-based road safety system that integrates vehicle speed estimation with automatic license plate recognition for intelligent traffic monitoring in Bangladesh. The framework enables real-time detection of speeding vehicles and supports smarter traffic law enforcement.",
+          tags: ["AIoT", "YOLO", "Computer Vision", "Road Safety"],
+          tagline: "Vehicle Speed & License Plate Recognition",
+          link: "https://www.researchgate.net/publication/406152534_AIoT_for_Road_Safety_Unified_Vehicle_Speed_and_License_Plate_Recognition_in_Bangladesh",
+        },
+        {
+          category: "research",
+          title: "BanglaMind",
+          image: "./assets/Img/Research_Paper/banglamind.webp",
+          description:
+            "An AI-powered mental health chatbot designed to detect emotions and identify potential suicide risks among students through natural language conversations. The system provides early intervention support using Bangla language understanding and sentiment analysis.",
+          tags: ["NLP", "AI Chatbot", "Mental Health", "Bangla"],
+          tagline: "Emotion & Suicide Risk Detection",
+          link: "https://link.springer.com/chapter/10.1007/978-3-032-15346-3_9",
+          reverse: false,
+        },
+        {
+          category: "aiml",
+          title: "CBC Blood Cancer Detector",
+          image: "./assets/Img/AI/63.webp",
+          logo: "./assets/aiml-logo.png",
+          description:
+            "An AI/ML-powered diagnostic support tool that analyzes Complete Blood Count (CBC) report data to flag early indicators of blood cancer. The system processes key blood parameters — WBC, RBC, platelet counts, and differential ratios — through a trained classification model to assist physicians in identifying high-risk patterns for further clinical investigation.",
+          link: "https://your-cbc-detector-link.com/",
+        },
+        {
+          category: "aiml",
+          title: "HemaVision ML",
+          image: "./assets/Img/AI/64.webp",
+          logo: "./assets/research-logo.png",
+          description:
+            "A machine learning system for automated hematology insights, trained on clinical flow cytometry data to assist in blood cancer detection. Developed in collaboration with the Department of Pediatric Hematology & Oncology at Bangladesh Medical University, the system analyzes marker expression panels (CD34, CD117, Anti-MPO, CD33, and more) across immunophenotyping tubes to flag leukemia patterns such as AML, generating structured flowcytometry reports for physician review.",
+          
+          link: "https://your-hemavision-paper-link.com/",
+          
+        },
+        {
+          category: "research",
+          title: "Automated Waste Classification and Sorting",
+          image: "./assets/Img/Research_Paper/waste.webp",
 
-                description:
-                  "A robust automatic number plate detection and recognition system developed for Bangladeshi vehicles using YOLOv8. The research focuses on accurate real-time plate localization and character recognition to support intelligent transportation systems.",
-                tags: ["YOLOv8", "ANPR", "Computer Vision", "Transportation"],
-                tagline: "Bangla Vehicle Number Plate Recognition",
-                link: "https://ieeexplore.ieee.org/document/11013529",
-                reverse: false,
-              },
+          description:
+            "A deep learning-based waste management system utilizing YOLOv8 to automatically classify and sort different types of waste materials. The proposed solution improves recycling efficiency while reducing manual effort through real-time object detection.",
+          tags: [
+            "YOLOv8",
+            "Computer Vision",
+            "Waste Management",
+            "Deep Learning",
+          ],
+          tagline: "Intelligent Waste Classification System",
+          link: "https://ieeexplore.ieee.org/document/11172269",
+        },
+        {
+          category: "research",
+          title: "BanglaPlate",
+          image: "./assets/Img/Research_Paper/banglaplate.webp",
 
-              // Add research / aiml projects like this:
-              // {
-              //   category: "research",
-              //   title: "Your Paper Title",
-              //   image: "./assets/Img/5.webp",
-              //   description: "...",
-              //   tags: ["Python", "PyTorch"],
-              //   tagline: "Research Paper",
-              //   link: "https://...",
-              //   reverse: false,
-              // },
-            ];
+          description:
+            "A robust automatic number plate detection and recognition system developed for Bangladeshi vehicles using YOLOv8. The research focuses on accurate real-time plate localization and character recognition to support intelligent transportation systems.",
+          tags: ["YOLOv8", "ANPR", "Computer Vision", "Transportation"],
+          tagline: "Bangla Vehicle Number Plate Recognition",
+          link: "https://ieeexplore.ieee.org/document/11013529",
+          reverse: false,
+        },
 
-            // ===== Builds one card's HTML from a project object =====
-            const buildCardHTML = (project) => {
-              return `
+        // Add research / aiml projects like this:
+        // {
+        //   category: "research",
+        //   title: "Your Paper Title",
+        //   image: "./assets/Img/5.webp",
+        //   description: "...",
+        //   tags: ["Python", "PyTorch"],
+        //   tagline: "Research Paper",
+        //   link: "https://...",
+        //   reverse: false,
+        // },
+      ];
+
+      // ===== Builds one card's HTML from a project object =====
+      const buildCardHTML = (project) => {
+        return `
           <a
             href="${project.link}"
             target="_blank"
@@ -653,142 +910,142 @@
             ></div>
           </a>
         `;
-            };
-            // ===== Renders the full container from the array =====
-            const renderCards = () => {
-              const container = document.getElementById("cardsContainer");
-              container.innerHTML = projects.map(buildCardHTML).join("");
-            };
+      };
+      // ===== Renders the full container from the array =====
+      const renderCards = () => {
+        const container = document.getElementById("cardsContainer");
+        container.innerHTML = projects.map(buildCardHTML).join("");
+      };
 
-            // ===== Tabs logic (filters the already-rendered DOM) =====
-            const projectTabs = () => {
-              const tabsWrapper = document.getElementById("tabsWrapper");
-              const tabButtons = document.querySelectorAll(".tab-btn");
-              const pill = document.getElementById("tabPill");
-              const emptyState = document.getElementById("emptyState");
+      // ===== Tabs logic (filters the already-rendered DOM) =====
+      const projectTabs = () => {
+        const tabsWrapper = document.getElementById("tabsWrapper");
+        const tabButtons = document.querySelectorAll(".tab-btn");
+        const pill = document.getElementById("tabPill");
+        const emptyState = document.getElementById("emptyState");
 
-              if (!tabsWrapper || !tabButtons.length) return;
+        if (!tabsWrapper || !tabButtons.length) return;
 
-              let activeCategory = tabButtons[0].dataset.category; // "website" — was hardcoded "all"
+        let activeCategory = tabButtons[0].dataset.category; // "website" — was hardcoded "all"
 
-              const setTextColors = (activeBtn) => {
-                tabButtons.forEach((btn) => {
-                  btn.classList.toggle("text-black", btn === activeBtn);
-                  btn.classList.toggle("text-white", btn !== activeBtn);
-                });
-              };
+        const setTextColors = (activeBtn) => {
+          tabButtons.forEach((btn) => {
+            btn.classList.toggle("text-black", btn === activeBtn);
+            btn.classList.toggle("text-white", btn !== activeBtn);
+          });
+        };
 
-              const movePill = (btn) => {
-                const btnRect = btn.getBoundingClientRect();
-                const wrapperRect = tabsWrapper.getBoundingClientRect();
+        const movePill = (btn) => {
+          const btnRect = btn.getBoundingClientRect();
+          const wrapperRect = tabsWrapper.getBoundingClientRect();
 
-                gsap.to(pill, {
-                  x: btnRect.left - wrapperRect.left - 4,
-                  width: btnRect.width,
-                  duration: 0.45,
-                  ease: "power3.inOut",
-                });
-              };
+          gsap.to(pill, {
+            x: btnRect.left - wrapperRect.left - 4,
+            width: btnRect.width,
+            duration: 0.45,
+            ease: "power3.inOut",
+          });
+        };
 
-              // Instant filter, no animation — used ONLY on page load to avoid flashing all cards
-              const filterCardsInstant = (category) => {
-                const cards = document.querySelectorAll(".project-card");
-                cards.forEach((card) => {
-                  const isMatch = card.dataset.category === category;
-                  card.style.display = isMatch ? "" : "none";
-                });
+        // Instant filter, no animation — used ONLY on page load to avoid flashing all cards
+        const filterCardsInstant = (category) => {
+          const cards = document.querySelectorAll(".project-card");
+          cards.forEach((card) => {
+            const isMatch = card.dataset.category === category;
+            card.style.display = isMatch ? "" : "none";
+          });
 
-                const anyVisible = [...cards].some(
-                  (c) => c.dataset.category === category,
-                );
-                emptyState.classList.toggle("hidden", anyVisible);
-              };
+          const anyVisible = [...cards].some(
+            (c) => c.dataset.category === category,
+          );
+          emptyState.classList.toggle("hidden", anyVisible);
+        };
 
-              // Animated filter — used on tab CLICK
-              const filterCards = (category) => {
-                const cards = document.querySelectorAll(".project-card");
-                const matching = [];
-                const nonMatching = [];
+        // Animated filter — used on tab CLICK
+        const filterCards = (category) => {
+          const cards = document.querySelectorAll(".project-card");
+          const matching = [];
+          const nonMatching = [];
 
-                cards.forEach((card) => {
-                  const isMatch = card.dataset.category === category;
-                  (isMatch ? matching : nonMatching).push(card);
-                });
+          cards.forEach((card) => {
+            const isMatch = card.dataset.category === category;
+            (isMatch ? matching : nonMatching).push(card);
+          });
 
-                const tl = gsap.timeline();
+          const tl = gsap.timeline();
 
-                if (nonMatching.length) {
-                  tl.to(nonMatching, {
-                    opacity: 0,
-                    y: -20,
-                    scale: 0.97,
-                    duration: 0.3,
-                    stagger: 0.03,
-                    ease: "power2.in",
-                    onComplete: () =>
-                      nonMatching.forEach((c) => (c.style.display = "none")),
-                  });
-                }
+          if (nonMatching.length) {
+            tl.to(nonMatching, {
+              opacity: 0,
+              y: -20,
+              scale: 0.97,
+              duration: 0.3,
+              stagger: 0.03,
+              ease: "power2.in",
+              onComplete: () =>
+                nonMatching.forEach((c) => (c.style.display = "none")),
+            });
+          }
 
-                tl.add(() => {
-                  matching.forEach((c) => (c.style.display = ""));
+          tl.add(() => {
+            matching.forEach((c) => (c.style.display = ""));
 
-                  if (matching.length) {
-                    emptyState.classList.add("hidden");
-                    gsap.fromTo(
-                      matching,
-                      { opacity: 0, y: 25, scale: 0.97 },
-                      {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.5,
-                        stagger: 0.08,
-                        ease: "power3.out",
-                        onComplete: () => ScrollTrigger.refresh(),
-                      },
-                    );
-                  } else {
-                    emptyState.classList.remove("hidden");
-                    gsap.fromTo(
-                      emptyState,
-                      { opacity: 0, y: 15 },
-                      { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
-                    );
-                  }
-                });
-              };
+            if (matching.length) {
+              emptyState.classList.add("hidden");
+              gsap.fromTo(
+                matching,
+                { opacity: 0, y: 25, scale: 0.97 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  duration: 0.5,
+                  stagger: 0.08,
+                  ease: "power3.out",
+                  onComplete: () => ScrollTrigger.refresh(),
+                },
+              );
+            } else {
+              emptyState.classList.remove("hidden");
+              gsap.fromTo(
+                emptyState,
+                { opacity: 0, y: 15 },
+                { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+              );
+            }
+          });
+        };
 
-              tabButtons.forEach((btn) => {
-                btn.addEventListener("click", () => {
-                  const category = btn.dataset.category;
-                  if (category === activeCategory) return;
-                  activeCategory = category;
+        tabButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const category = btn.dataset.category;
+            if (category === activeCategory) return;
+            activeCategory = category;
 
-                  setTextColors(btn);
-                  movePill(btn);
-                  filterCards(category);
-                });
-              });
+            setTextColors(btn);
+            movePill(btn);
+            filterCards(category);
+          });
+        });
 
-              const initBtn = tabButtons[0];
-              setTextColors(initBtn);
-              requestAnimationFrame(() => {
-                movePill(initBtn);
-                filterCardsInstant(activeCategory); // apply filter immediately on load, no flash
-              });
+        const initBtn = tabButtons[0];
+        setTextColors(initBtn);
+        requestAnimationFrame(() => {
+          movePill(initBtn);
+          filterCardsInstant(activeCategory); // apply filter immediately on load, no flash
+        });
 
-              window.addEventListener("resize", () => {
-                const active = [...tabButtons].find(
-                  (b) => b.dataset.category === activeCategory,
-                );
-                if (active) movePill(active);
-              });
-            };
+        window.addEventListener("resize", () => {
+          const active = [...tabButtons].find(
+            (b) => b.dataset.category === activeCategory,
+          );
+          if (active) movePill(active);
+        });
+      };
 
-            renderCards();
-            cardAnimation();
-            projectTabs();
+      renderCards();
+      cardAnimation();
+      projectTabs();
     </script>
   </body>
 </html>

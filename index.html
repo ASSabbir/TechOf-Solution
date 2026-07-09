@@ -130,7 +130,7 @@
                     ><span class="top">t</span
                     ><span class="bottom">t</span></span
                   >
-                  
+
                   <span class="letter ml-2"
                     ><span class="top">U</span
                     ><span class="bottom">U</span></span
@@ -192,6 +192,7 @@
 
           <div class="hidden md:block">
             <button
+              id="getInTouchbtn"
               class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn"
             >
               Book A Meeting
@@ -245,8 +246,8 @@
       </nav>
 
       <div class="px-4 md:px-15 lg:px-30 space-y-10 mt-10">
-        <h1 class="font-semibold uppercase font-urbanist upp">
-          Creative Tech & Marketing Agency
+        <h1 class="font-semibold text-gray-300 uppercase font-urbanist upp">
+          Technology & Digital Innovation Company
         </h1>
 
         <div>
@@ -293,7 +294,9 @@
           </h1>
         </div>
 
-        <div class="flex gap-2 text-xl md:text-3xl lg:text-4xl tracking-tight">
+        <div
+          class="flex gap-2 text-gray-400 text-xl md:text-3xl lg:text-4xl tracking-tight"
+        >
           <h1>On Time</h1>
           <h1 class="text-blue-400">/</h1>
           <h1>On Budget</h1>
@@ -301,14 +304,14 @@
           <h1>Never Settle</h1>
         </div>
       </div>
-      <div class="px-4 md:px-15 lg:px-30 space-y-10 mt-30 pb-5 md:pb-10">
+      <div class="px-4 md:px-15 lg:px-30 bg-w space-y-10 mt-30 pb-5 md:pb-10">
         <div class="flex items-center gap-2">
           <i class="fa-solid fa-o text-blue-400 text-2xl"></i>
-          <h1 class="uppercase font-urbanist upp">TRUSTED by</h1>
+          <h1 class="uppercase font-urbanist upp text-gray-300">TRUSTED by</h1>
         </div>
-        <div class="w-full">
+        <div class="w-full bg-w">
           <div
-            class="relative overflow-hidden w-full py-3 md:py-7 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-28 before:bg-gradient-to-r before:from-black before:to-transparent before:z-10 before:pointer-events-none after:content-[''] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-28 after:bg-gradient-to-l after:from-black after:to-transparent after:z-10 after:pointer-events-none"
+            class="relative overflow-hidden w-full py-3 md:py-7 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-50 before:bg-gradient-to-r before:from-zinc-950 before:to-transparent before:z-10 before:pointer-events-none after:content-[''] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-50 after:bg-gradient-to-l after:from-zinc-950 after:to-transparent after:z-10 after:pointer-events-none"
           >
             <div id="marquee-track" class="flex items-center w-max">
               <div class="marquee-group flex items-center gap-16 px-8">
@@ -316,10 +319,15 @@
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-6 select-none">
+                  <img
+                    src="./assets/Img/partners/conveyor.jpeg"
+                    class="w-10"
+                    alt=""
+                  />
                   <span
                     class="text-[22px] font-black tracking-[0.35em] uppercase"
-                    >7007 Studio</span
+                    >Conveyor Group</span
                   >
                 </div>
 
@@ -328,7 +336,12 @@
                 ></span>
 
                 <!-- Amazon -->
-                <div class="flex items-center text-xl select-none">
+                <div class="flex items-center text-xl gap-5 select-none">
+                  <img
+                    src="./assets/Img/partners/favicon.png"
+                    class="w-10 bg-white"
+                    alt=""
+                  />
                   Schedule Solutions
                 </div>
 
@@ -337,9 +350,14 @@
                 ></span>
 
                 <!-- selfbook -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/lea.jpeg"
+                    class="w-10 bg-white rounded-full"
+                    alt="Techof solution"
+                  />
                   <span class="text-[20px] font-bold tracking-tight"
-                    >Bdcom</span
+                    >Sheer Leathers</span
                   >
                 </div>
 
@@ -348,27 +366,14 @@
                 ></span>
 
                 <!-- Harvard -->
-                <div class="flex items-center gap-2 select-none">
-                  <svg
-                    class="h-5 w-5 fill-neutral-700"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M20 2L4 8v10c0 10 7 19 16 22 9-3 16-12 16-22V8L20 2zm0 3.5l12 4.5v9c0 8-5.5 15-12 18-6.5-3-12-10-12-18v-9l12-4.5z"
-                    />
-                    <text
-                      x="20"
-                      y="27"
-                      font-size="13"
-                      text-anchor="middle"
-                      font-family="serif"
-                    >
-                      I
-                    </text>
-                  </svg>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/milex.jpeg"
+                    class="w-10 bg-white"
+                    alt="Techof solution"
+                  />
                   <span class="text-[14px] font-bold tracking-[0.2em] uppercase"
-                    >ITS</span
+                    >Milex</span
                   >
                 </div>
 
@@ -377,10 +382,22 @@
                 ></span>
 
                 <!-- Stripe -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-4 select-none">
+                  <img
+                    src="./assets/Img/partners/ottos.jpeg"
+                    class="w-10 bg-white rounded-full"
+                    alt="Techof solution"
+                  />
                   <span class="text-[22px] font-black tracking-tight"
-                    >stripe</span
+                    >OTTO Outfits</span
                   >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center text-xl gap-5 select-none">
+                  <img src="./assets/7007.png" class="w-8 bg-white" alt="" />
+                  7007 Studio
                 </div>
 
                 <span
@@ -389,24 +406,13 @@
 
                 <!-- Notion -->
                 <div class="flex items-center gap-2 select-none">
-                  <svg
-                    class="h-5 w-5 fill-neutral-700"
-                    viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 10h60l16 16v64H12V10z" />
-                    <path
-                      d="M72 10v16h16"
-                      fill="none"
-                      stroke="#0a0a0a"
-                      stroke-width="6"
-                    />
-                    <rect x="26" y="36" width="48" height="5" rx="2" />
-                    <rect x="26" y="50" width="36" height="5" rx="2" />
-                    <rect x="26" y="64" width="42" height="5" rx="2" />
-                  </svg>
+                  <img
+                    src="./assets/Img/partners/texco.jpeg"
+                    class="w-15 p-2 bg-white"
+                    alt="Techof solution"
+                  />
                   <span class="text-[18px] font-bold tracking-wide"
-                    >notion</span
+                    >TeXco tech</span
                   >
                 </div>
 
@@ -415,9 +421,53 @@
                 ></span>
 
                 <!-- Urban Mattress -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/website/khmlogo.jpg"
+                    class="w-10 bg-white"
+                    alt="Techof solution"
+                  />
                   <span class="text-[15px] tracking-wide"
-                    ><strong>Planeta</strong> zdorovo</span
+                    ><strong>Khulna</strong> Hardware</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center gap-4 select-none">
+                  <img
+                    src="./assets/Img/partners/1.jpeg"
+                    class="w-18 bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[22px] font-black tracking-tight"
+                    >De Tempete</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/2.jpeg"
+                    class="w-13 p-1 bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[14px] font-bold tracking-[0.2em] uppercase"
+                    >RADIANT</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/s.jpeg"
+                    class="w-10 bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[20px] font-bold tracking-tight"
+                    >Sattar&Co.</span
                   >
                 </div>
               </div>
@@ -426,10 +476,15 @@
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-6 select-none">
+                  <img
+                    src="./assets/Img/partners/conveyor.jpeg"
+                    class="w-10"
+                    alt=""
+                  />
                   <span
                     class="text-[22px] font-black tracking-[0.35em] uppercase"
-                    >7007 Studio</span
+                    >Conveyor Group</span
                   >
                 </div>
 
@@ -438,7 +493,12 @@
                 ></span>
 
                 <!-- Amazon -->
-                <div class="flex items-center text-xl select-none">
+                <div class="flex items-center text-xl gap-5 select-none">
+                  <img
+                    src="./assets/Img/partners/favicon.png"
+                    class="w-10 bg-white"
+                    alt=""
+                  />
                   Schedule Solutions
                 </div>
 
@@ -447,9 +507,14 @@
                 ></span>
 
                 <!-- selfbook -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/lea.jpeg"
+                    class="w-10 bg-white rounded-full"
+                    alt="Techof solution"
+                  />
                   <span class="text-[20px] font-bold tracking-tight"
-                    >Bdcom</span
+                    >Sheer Leathers</span
                   >
                 </div>
 
@@ -458,27 +523,14 @@
                 ></span>
 
                 <!-- Harvard -->
-                <div class="flex items-center gap-2 select-none">
-                  <svg
-                    class="h-5 w-5 fill-neutral-700"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M20 2L4 8v10c0 10 7 19 16 22 9-3 16-12 16-22V8L20 2zm0 3.5l12 4.5v9c0 8-5.5 15-12 18-6.5-3-12-10-12-18v-9l12-4.5z"
-                    />
-                    <text
-                      x="20"
-                      y="27"
-                      font-size="13"
-                      text-anchor="middle"
-                      font-family="serif"
-                    >
-                      I
-                    </text>
-                  </svg>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/milex.jpeg"
+                    class="w-10 bg-white"
+                    alt="Techof solution"
+                  />
                   <span class="text-[14px] font-bold tracking-[0.2em] uppercase"
-                    >ITS</span
+                    >Milex</span
                   >
                 </div>
 
@@ -487,10 +539,22 @@
                 ></span>
 
                 <!-- Stripe -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-4 select-none">
+                  <img
+                    src="./assets/Img/partners/ottos.jpeg"
+                    class="w-10 bg-white rounded-full"
+                    alt="Techof solution"
+                  />
                   <span class="text-[22px] font-black tracking-tight"
-                    >stripe</span
+                    >OTTO Outfits</span
                   >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center text-xl gap-5 select-none">
+                  <img src="./assets/7007.png" class="w-8 bg-white" alt="" />
+                  7007 Studio
                 </div>
 
                 <span
@@ -499,24 +563,13 @@
 
                 <!-- Notion -->
                 <div class="flex items-center gap-2 select-none">
-                  <svg
-                    class="h-5 w-5 fill-neutral-700"
-                    viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 10h60l16 16v64H12V10z" />
-                    <path
-                      d="M72 10v16h16"
-                      fill="none"
-                      stroke="#0a0a0a"
-                      stroke-width="6"
-                    />
-                    <rect x="26" y="36" width="48" height="5" rx="2" />
-                    <rect x="26" y="50" width="36" height="5" rx="2" />
-                    <rect x="26" y="64" width="42" height="5" rx="2" />
-                  </svg>
+                  <img
+                    src="./assets/Img/partners/texco.jpeg"
+                    class="w-15 p-2 bg-white"
+                    alt="Techof solution"
+                  />
                   <span class="text-[18px] font-bold tracking-wide"
-                    >notion</span
+                    >TeXco tech</span
                   >
                 </div>
 
@@ -525,9 +578,53 @@
                 ></span>
 
                 <!-- Urban Mattress -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/website/khmlogo.jpg"
+                    class="w-10 bg-white"
+                    alt="Techof solution"
+                  />
                   <span class="text-[15px] tracking-wide"
-                    ><strong>Planeta</strong> zdorovo</span
+                    ><strong>Khulna</strong> Hardware</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center gap-4 select-none">
+                  <img
+                    src="./assets/Img/partners/1.jpeg"
+                    class="w-18 bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[22px] font-black tracking-tight"
+                    >De Tempete</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/2.jpeg"
+                    class="w-13 p-1 bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[14px] font-bold tracking-[0.2em] uppercase"
+                    >RADIANT</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/s.jpeg"
+                    class="w-10 bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[20px] font-bold tracking-tight"
+                    >Sattar&Co.</span
                   >
                 </div>
               </div>
@@ -536,10 +633,15 @@
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-6 select-none">
+                  <img
+                    src="./assets/Img/partners/conveyor.jpeg"
+                    class="w-10"
+                    alt=""
+                  />
                   <span
                     class="text-[22px] font-black tracking-[0.35em] uppercase"
-                    >7007 Studio</span
+                    >Conveyor Group</span
                   >
                 </div>
 
@@ -548,7 +650,12 @@
                 ></span>
 
                 <!-- Amazon -->
-                <div class="flex items-center text-xl select-none">
+                <div class="flex items-center text-xl gap-5 select-none">
+                  <img
+                    src="./assets/Img/partners/favicon.png"
+                    class="w-10 bg-white"
+                    alt=""
+                  />
                   Schedule Solutions
                 </div>
 
@@ -557,9 +664,14 @@
                 ></span>
 
                 <!-- selfbook -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/lea.jpeg"
+                    class="w-10 bg-white rounded-full"
+                    alt="Techof solution"
+                  />
                   <span class="text-[20px] font-bold tracking-tight"
-                    >Bdcom</span
+                    >Sheer Leathers</span
                   >
                 </div>
 
@@ -568,27 +680,14 @@
                 ></span>
 
                 <!-- Harvard -->
-                <div class="flex items-center gap-2 select-none">
-                  <svg
-                    class="h-5 w-5 fill-neutral-700"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M20 2L4 8v10c0 10 7 19 16 22 9-3 16-12 16-22V8L20 2zm0 3.5l12 4.5v9c0 8-5.5 15-12 18-6.5-3-12-10-12-18v-9l12-4.5z"
-                    />
-                    <text
-                      x="20"
-                      y="27"
-                      font-size="13"
-                      text-anchor="middle"
-                      font-family="serif"
-                    >
-                      I
-                    </text>
-                  </svg>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/milex.jpeg"
+                    class="w-10 bg-white"
+                    alt="Techof solution"
+                  />
                   <span class="text-[14px] font-bold tracking-[0.2em] uppercase"
-                    >ITS</span
+                    >Milex</span
                   >
                 </div>
 
@@ -597,10 +696,22 @@
                 ></span>
 
                 <!-- Stripe -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-4 select-none">
+                  <img
+                    src="./assets/Img/partners/ottos.jpeg"
+                    class="w-10 bg-white rounded-full"
+                    alt="Techof solution"
+                  />
                   <span class="text-[22px] font-black tracking-tight"
-                    >stripe</span
+                    >OTTO Outfits</span
                   >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center text-xl gap-5 select-none">
+                  <img src="./assets/7007.png" class="w-8 bg-white" alt="" />
+                  7007 Studio
                 </div>
 
                 <span
@@ -609,24 +720,13 @@
 
                 <!-- Notion -->
                 <div class="flex items-center gap-2 select-none">
-                  <svg
-                    class="h-5 w-5 fill-neutral-700"
-                    viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 10h60l16 16v64H12V10z" />
-                    <path
-                      d="M72 10v16h16"
-                      fill="none"
-                      stroke="#0a0a0a"
-                      stroke-width="6"
-                    />
-                    <rect x="26" y="36" width="48" height="5" rx="2" />
-                    <rect x="26" y="50" width="36" height="5" rx="2" />
-                    <rect x="26" y="64" width="42" height="5" rx="2" />
-                  </svg>
+                  <img
+                    src="./assets/Img/partners/texco.jpeg"
+                    class="w-15 p-2 bg-white"
+                    alt="Techof solution"
+                  />
                   <span class="text-[18px] font-bold tracking-wide"
-                    >notion</span
+                    >TeXco tech</span
                   >
                 </div>
 
@@ -635,9 +735,53 @@
                 ></span>
 
                 <!-- Urban Mattress -->
-                <div class="flex items-center select-none">
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/website/khmlogo.jpg"
+                    class="w-10 bg-white"
+                    alt="Techof solution"
+                  />
                   <span class="text-[15px] tracking-wide"
-                    ><strong>Planeta</strong> zdorovo</span
+                    ><strong>Khulna</strong> Hardware</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center gap-4 select-none">
+                  <img
+                    src="./assets/Img/partners/1.jpeg"
+                    class="w-18 bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[22px] font-black tracking-tight"
+                    >De Tempete</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/2.jpeg"
+                    class="w-13 p-1 bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[14px] font-bold tracking-[0.2em] uppercase"
+                    >RADIANT</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/s.jpeg"
+                    class="w-10 bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[20px] font-bold tracking-tight"
+                    >Sattar&Co.</span
                   >
                 </div>
               </div>
@@ -1062,14 +1206,14 @@
               Web Solution
             </h1>
           </div>
-          <h1 class="max-w-140 w-full leading-5 text-lg text-gray-400 mt-12">
+          <h1 class="max-w-140 w-full leading-5 text-lg text-gray-500 mt-12">
             High-performance websites and applications built for clarity, speed,
             and user experience. We focus on scalable architecture, modern UI,
             and SEO-optimized development to ensure strong digital presence and
             long-term growth.
           </h1>
           <div
-            class="flex flex-col md:flex-row md:items-center gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
+            class="flex flex-col md:flex-row md:items-center gap-1 text-gray-400 md:gap-10 text-2xl md:text-3xl mt-7"
           >
             <h1>Business Website</h1>
             <h1>E- commerce</h1>
@@ -1101,14 +1245,14 @@
               AI & Machine Learning
             </h1>
           </div>
-          <h1 class="max-w-140 leading-5 text-lg text-gray-400 mt-12">
+          <h1 class="max-w-140 leading-5 text-lg text-gray-500 mt-12">
             Intelligent systems powered by AI and machine learning to analyze
             data, automate workflows, and deliver smart predictions. We build
             advanced solutions focused on innovation and real-world problem
             solving.
           </h1>
           <div
-            class="flex flex-col md:flex-row md:items-center gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
+            class="flex flex-col md:flex-row md:items-center text-gray-400 gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
           >
             <h1>AI Models</h1>
             <h1>Prediction Systems</h1>
@@ -1140,14 +1284,14 @@
               Research & Academic Solutions
             </h1>
           </div>
-          <h1 class="max-w-140 leading-5 text-lg text-gray-400 mt-12">
+          <h1 class="max-w-140 leading-5 text-lg text-gray-500 mt-12">
             Advanced research and academic support focused on innovation,
             accuracy, and real-world implementation. We assist in building
             high-quality research papers, thesis projects, and AI-based systems
             with proper structure and technical depth.
           </h1>
           <div
-            class="flex flex-col md:flex-row md:items-center gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
+            class="flex flex-col md:flex-row md:items-center text-gray-400 gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
           >
             <h1>Research Papers</h1>
             <h1>Thesis Projects</h1>
@@ -1180,11 +1324,14 @@
               Software Development
             </h1>
           </div>
-          <h1 class="max-w-140 w-full leading-5 text-lg text-gray-400 mt-12">
-            Powerful business software designed to streamline operations, improve productivity, and support business growth. We build secure, scalable, and customized solutions tailored to your organization's needs.
+          <h1 class="max-w-140 w-full leading-5 text-lg text-gray-500 mt-12">
+            Powerful business software designed to streamline operations,
+            improve productivity, and support business growth. We build secure,
+            scalable, and customized solutions tailored to your organization's
+            needs.
           </h1>
           <div
-            class="flex flex-col md:flex-row md:items-center gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
+            class="flex flex-col md:flex-row md:items-center text-gray-400 gap-1 md:gap-10 text-2xl md:text-3xl mt-7"
           >
             <h1>CRM Software</h1>
             <h1>HRM & Payroll Systems</h1>
@@ -1411,7 +1558,7 @@
                   <p
                     class="text-[10px] font-semibold tracking-widest uppercase text-gray-400"
                   >
-                    Founder
+                    Founder & CEO
                   </p>
                   <hr class="border-gray-100 my-2" />
                 </div>
@@ -1450,7 +1597,7 @@
                     src="./assets/Img/35.jpg"
                     src=""
                     alt="Leonardo F. Ashton"
-                    class="w-full h-full  object-cover"
+                    class="w-full h-full object-cover"
                   />
                 </div>
                 <div class="p-4 flex flex-col gap-1">
@@ -1832,73 +1979,170 @@
     <section
       class="bg-zinc-950 pt-40 text-white flex items-center justify-center"
     ></section>
-
-    <footer class="bg-white text-black px-[5vw]">
-      <div class="flex flex-col md:flex-row">
-        <div class="flex-1">
-          <h1 class="text-[12vw] font-black">SAY HI!</h1>
-          <h1 class="text-xl font-bold">
-            Tell us about your project. ,<br />
-            <span class="font-light"
-              >Let`s collaborate and make great stuff</span
-            >
-          </h1>
-        </div>
-        <div class="flex flex-1 ml-60 items-center gap-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-phone-icon lucide-phone"
+    <section id="getInTouch" class="px-[6vw] py-28 border-t border-neutral-800">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <!-- Left: heading + context -->
+        <div class="reveal-up">
+          <h2
+            class="text-4xl sm:text-5xl lg:text-6xl font-semibold mt-4 mb-6 leading-tight"
           >
-            <path
-              d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-            />
-          </svg>
-          <h1 class="border-l-2 px-2">01798392494</h1>
+            Let's discuss your project.
+          </h2>
+          <p
+            class="text-neutral-400 text-lg leading-relaxed font-urbanis max-w-md"
+          >
+            Tell us what you're building. Drop your email and a short
+            description below — we'll get back to you within 24 hours to talk
+            through the details.
+          </p>
+
+          <div class="mt-10 flex items-center gap-3 text-neutral-400">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M4 4h16v16H4z" stroke-linejoin="round" />
+              <path
+                d="M4 6l8 7 8-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>techofsolution@gmail.com</span>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="reveal-up bg-zinc-900 rounded-3xl p-8 sm:p-10">
+          <form id="contactForm" class="flex flex-col gap-6">
+            <div>
+              <label class="block text-xl text-neutral-400 mb-2"
+                >Your Email</label
+              >
+              <input
+                type="email"
+                name="from_email"
+                required
+                placeholder="you@company.com"
+                class="w-full bg-zinc-950 border border-neutral-800 rounded-xl px-5 py-4 text-white placeholder-neutral-600 outline-none focus:border-blue-500 transition-colors duration-300"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xl text-neutral-400 mb-2"
+                >Project Description</label
+              >
+              <textarea
+                name="message"
+                required
+                rows="5"
+                placeholder="Tell us about your project, timeline, and goals..."
+                class="w-full bg-zinc-950 border border-neutral-800 rounded-xl px-5 py-4 text-white placeholder-neutral-600 outline-none focus:border-blue-500 transition-colors duration-300 resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="submitBtn"
+              class="relative bg-white text-black font-medium rounded-full px-8 py-4 transition-transform duration-300 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              <span id="submitBtnText">Send Message →</span>
+            </button>
+
+            <p id="formStatus" class="text-xl hidden"></p>
+          </form>
         </div>
       </div>
-      <div class="mt-20 border-t-[1px] flex items-center justify-between">
-        <div class="py-5">
-          <a target="_blank" href="https://www.facebook.com/techofsolution">
-            <button
-              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
+    </section>
+
+    <footer class="bg-white text-black px-[6vw] pt-24 pb-10">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-0 items-end">
+        <div class="footer-reveal">
+          <p
+            class="text-blue-600 text-xl tracking-[0.2em] uppercase mb-4 font-semibold"
+          >
+            Let's Talk
+          </p>
+          <h1 class="text-[16vw] lg:text-[9vw] font-black leading-[0.9]">
+            SAY HI!
+          </h1>
+        </div>
+
+        <div class="footer-reveal flex flex-col gap-6 lg:items-end">
+          <p
+            class="text-xl sm:text-2xl font-bold max-w-sm lg:text-right leading-snug"
+          >
+            Tell us about your project.
+            <span class="block font-light text-neutral-500 mt-1">
+              Let's collaborate and make great stuff.
+            </span>
+          </p>
+
+          <a
+            href="tel:+8801798392494"
+            class="group flex items-center gap-3 text-lg font-medium border border-black/10 rounded-full px-5 py-3 w-fit transition-colors duration-300 hover:bg-black hover:text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <i class="fa-brands fa-facebook-f"></i>
-            </button>
+              <path
+                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+              />
+            </svg>
+            01798392494
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="mt-20 border-t border-black/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+      >
+        <div class="flex gap-3">
+          <a
+            target="_blank"
+            href="https://www.facebook.com/techofsolution"
+            class="social-btn w-11 h-11 rounded-full border border-black/10 flex items-center justify-center text-lg transition-all duration-300 hover:bg-black hover:text-white hover:-translate-y-1"
+          >
+            <i class="fa-brands fa-facebook-f"></i>
           </a>
           <a
             target="_blank"
             href="https://www.linkedin.com/company/techofsolution"
+            class="social-btn w-11 h-11 rounded-full border border-black/10 flex items-center justify-center text-lg transition-all duration-300 hover:bg-black hover:text-white hover:-translate-y-1"
           >
-            <button
-              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
-            >
-              <i class="fa-brands fa-linkedin-in"></i>
-            </button>
+            <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a target="_blank" href="https://discord.gg/j68RBQ3P">
-            <button
-              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
-            >
-              <i class="fa-brands fa-discord"></i>
-            </button>
+          <a
+            target="_blank"
+            href="https://discord.gg/j68RBQ3P"
+            class="social-btn w-11 h-11 rounded-full border border-black/10 flex items-center justify-center text-lg transition-all duration-300 hover:bg-black hover:text-white hover:-translate-y-1"
+          >
+            <i class="fa-brands fa-discord"></i>
           </a>
-          <a target="_blank" href="https://github.com/techofsolution">
-            <button
-              class="text-xl all-btn2 p-1 border-2 bg-black border-zinc-900"
-            >
-              <i class="fa-brands fa-github"></i>
-            </button>
+          <a
+            target="_blank"
+            href="https://github.com/techofsolution"
+            class="social-btn w-11 h-11 rounded-full border border-black/10 flex items-center justify-center text-lg transition-all duration-300 hover:bg-black hover:text-white hover:-translate-y-1"
+          >
+            <i class="fa-brands fa-github"></i>
           </a>
         </div>
-        <h1>&copy;2026 All Right Reserved</h1>
+
+        <p class="text-neutral-500 text-xl">
+          &copy; 2026 TechOf Solutions Ltd. All Rights Reserved.
+        </p>
       </div>
     </footer>
 
@@ -1906,6 +2150,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
     <script>
       (function () {
@@ -2037,6 +2282,27 @@
         );
       });
       const ele = document.querySelectorAll(".service-text");
+      
+
+      const bookMeetingScroll = () => {
+        const bookBtn = document.getElementById("getInTouchbtn");
+        const target = document.getElementById("getInTouch");
+
+        if (!target || !bookBtn) return; // fixed: check the element itself, not .length
+
+        bookBtn.addEventListener("click", () => {
+          if (typeof lenis !== "undefined" && lenis) {
+            lenis.scrollTo(target, {
+              duration: 1.5,
+              easing: (t) => 1 - Math.pow(1 - t, 3),
+            });
+          } else {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      };
+
+      bookMeetingScroll();
     </script>
   </body>
 </html>
