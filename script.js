@@ -175,7 +175,7 @@ const cardAnimation = () => {
     // Mouse Enter
     card.addEventListener("mouseenter", () => {
       gsap.to(imgLayer, {
-        scale: 1.1,
+        scale: 1.05,
         duration: 0.6,
         ease: "power2.out",
       });
@@ -286,84 +286,7 @@ const cardAnimation = () => {
   });
 };
 
-const loaderAnimation = () => {
-  document.body.style.overflow = "hidden";
 
-  const loaderText = document.querySelector(".loader-text");
-
-  let progress = { value: 0 };
-
-  const tl = gsap.timeline({
-    onComplete: () => {
-      document.getElementById("loader").remove();
-      document.body.style.overflow = "auto";
-    },
-  });
-
-  // line animation + percentage together
-  tl.to(
-    progress,
-    {
-      value: 100,
-      duration: 1.5,
-      ease: "none",
-      snap: "value",
-      onUpdate: () => {
-        loaderText.innerHTML = `${progress.value}%`;
-      },
-    },
-    0,
-  )
-
-    .to(
-      "#loaderLine",
-      {
-        width: "100%",
-        duration: 2,
-        ease: "power3.inOut",
-      },
-      0,
-    )
-
-    // exit animation
-    .to("#loaderTop", {
-      yPercent: -100,
-      duration: 1.3,
-      ease: "power4.inOut",
-    })
-
-    .to(
-      "#loaderBottom",
-      {
-        yPercent: 100,
-        duration: 1.3,
-        ease: "power4.inOut",
-      },
-      "<",
-    )
-
-    .to(
-      [".loader-text", "#loaderLine"],
-      {
-        opacity: 0,
-        duration: 0.4,
-        ease: "power2.out",
-        display: "none",
-      },
-      "<",
-    )
-    .from(
-      ".banner img",
-      {
-        scale: 1.8,
-        duration: 1.2,
-        ease: "power4.inOut",
-      },
-      "<",
-    );
-};
-
-// loaderAnimation();
 
 cardAnimation();
 initMarquees();
@@ -587,4 +510,149 @@ const footerReveal = () => {
   });
 };
 
+
 footerReveal();
+const bookMeetingScroll = () => {
+  const bookBtns = document.querySelectorAll(".getInTouchBtn");
+  if (!bookBtns.length) return;
+
+  bookBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const target = document.getElementById("getInTouch");
+
+      if (target) {
+        // Already on the page that has the contact section — just scroll to it
+        if (typeof lenis !== "undefined" && lenis) {
+          lenis.scrollTo(target, {
+            duration: 1.5,
+            easing: (t) => 1 - Math.pow(1 - t, 3),
+          });
+        } else {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else {
+        // Not on the home page — redirect there with a hash, scroll happens after load
+        window.location.href = "./index.html#getInTouch";
+      }
+    });
+  });
+};
+const scrollToHashOnLoad = () => {
+  if (window.location.hash === "#getInTouch") {
+    const target = document.getElementById("getInTouch");
+    if (!target) return;
+
+    // slight delay so Lenis has finished initializing before we scroll
+    setTimeout(() => {
+      if (typeof lenis !== "undefined" && lenis) {
+        lenis.scrollTo(target, {
+          duration: 1.5,
+          easing: (t) => 1 - Math.pow(1 - t, 3),
+        });
+      } else {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 300);
+  }
+};
+console.log('dsds')
+const backToTopButton = () => {
+  const btns = document.querySelectorAll(".scrollTopBtn");
+  if (!btns.length) return;
+
+  const getScrollProgress = () => {
+    const scrollY = window.pageYOffset;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    if (maxScroll <= 0) return 0;
+    return Math.min(1, Math.max(0, scrollY / maxScroll));
+  };
+
+  let visible = false;
+  const progressObj = { value: 0 };
+
+  const updateProgress = () => {
+    const progress = getScrollProgress();
+    const targetPercent = progress * 100;
+
+    gsap.to(progressObj, {
+      value: targetPercent,
+      duration: 0.2,
+      ease: "none",
+      overwrite: "auto",
+      onUpdate: () => {
+        const deg = progressObj.value * 3.6; // 0–100% → 0–360deg
+        btns.forEach((btn) => {
+          btn.style.background = `conic-gradient(#2B7FFF ${deg}deg, rgba(255,255,255,0.15) ${deg}deg)`;
+        });
+      },
+    });
+
+    const shouldShow = window.pageYOffset > 100;
+
+    if (shouldShow && !visible) {
+      visible = true;
+      gsap.to(btns, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        ease: "power3.out",
+        pointerEvents: "auto",
+      });
+    } else if (!shouldShow && visible) {
+      visible = false;
+      gsap.to(btns, {
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.3,
+        ease: "power2.in",
+        pointerEvents: "none",
+      });
+    }
+  };
+
+  if (typeof lenis !== "undefined" && lenis) {
+    lenis.on("scroll", updateProgress);
+  } else {
+    window.addEventListener("scroll", updateProgress, { passive: true });
+  }
+
+  window.addEventListener("resize", updateProgress);
+  updateProgress();
+
+  btns.forEach((btn) => {
+    btn.addEventListener("mouseenter", () => {
+      gsap.to(btn, { scale: 1.08, duration: 0.3, ease: "power2.out" });
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      gsap.to(btn, { scale: 1, duration: 0.3, ease: "power2.out" });
+    });
+
+    btn.addEventListener("mousedown", () => {
+      gsap.to(btn, { scale: 0.94, duration: 0.15, ease: "power2.out" });
+    });
+
+    btn.addEventListener("mouseup", () => {
+      gsap.to(btn, { scale: 1.08, duration: 0.15, ease: "power2.out" });
+    });
+
+    btn.addEventListener("click", () => {
+      if (typeof lenis !== "undefined" && lenis) {
+        lenis.scrollTo(0, {
+          duration: 1.6,
+          easing: (t) => 1 - Math.pow(1 - t, 4),
+        });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  });
+};
+
+backToTopButton();
+
+backToTopButton();
+bookMeetingScroll();
+scrollToHashOnLoad();
+
+

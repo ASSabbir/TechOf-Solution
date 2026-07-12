@@ -21,32 +21,33 @@
   </head>
 
   <body class="bg-zinc-950 font-fellix text-white">
-    <!-- <div
-      id="loader"
-      class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
+    
+    <button
+      aria-label="Back to top"
+      class="scrollTopBtn fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[999] w-14 h-14 sm:w-16 sm:h-16 rounded-full opacity-0 pointer-events-none scale-90"
+      style="
+        background: conic-gradient(white 0%, rgba(255, 255, 255, 0.15) 0%);
+        padding: 2px;
+      "
     >
       <div
-        id="loaderTop"
-        class="absolute top-0 left-0 w-full h-1/2 bg-black"
-      ></div>
-
-      <div
-        id="loaderBottom"
-        class="absolute bottom-0 left-0 w-full h-1/2 bg-black"
-      ></div>
-
-      <div
-        class="loader-text right-10 absolute top-3/5 z-20 text-blue-500 text-6xl font-bold"
+        class="w-full h-full rounded-full bg-black/70 backdrop-blur-xl flex items-center justify-center"
       >
-        0%
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
       </div>
+    </button>
 
-      <div
-        id="loaderLine"
-        class="absolute left-0 w-0 h-[1.5px] bg-white z-10"
-        style="top: 50%; transform: translateY(-50%)"
-      ></div>
-    </div> -->
     <section class="relative">
       <nav
         class="left-0 w-full lg:px-10 py-4 z-50 transition-all duration-300 relative"
@@ -192,8 +193,7 @@
 
           <div class="hidden md:block">
             <button
-              id="getInTouchbtn"
-              class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn"
+              class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn getInTouchBtn"
             >
               Book A Meeting
             </button>
@@ -232,16 +232,12 @@
               >Works</span
             >
           </a>
-          <a href="./playground.html" class="mobile-link overflow-hidden">
+          <a href="./about.html" class="mobile-link overflow-hidden">
             <span class="inline-block text-3xl font-fellix text-white"
-              >Playground</span
+              >About Us</span
             >
           </a>
-          <a href="./playground.html" class="mobile-link overflow-hidden">
-            <span class="inline-block text-3xl font-fellix text-white"
-              >Book A Meeting</span
-            >
-          </a>
+          
         </div>
       </nav>
 
@@ -304,6 +300,7 @@
           <h1>Never Settle</h1>
         </div>
       </div>
+
       <div class="px-4 md:px-15 lg:px-30 bg-w space-y-10 mt-30 pb-5 md:pb-10">
         <div class="flex items-center gap-2">
           <i class="fa-solid fa-o text-blue-400 text-2xl"></i>
@@ -395,6 +392,19 @@
                 <span
                   class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
                 ></span>
+                <div class="flex items-center gap-3 select-none">
+                  <img
+                    src="./assets/Img/partners/um.jpg"
+                    class="w-10 bg-white rounded-full"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[20px] font-bold tracking-tight"
+                    >مدرسة أمهات المؤمنين للبنات</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
                 <div class="flex items-center text-xl gap-5 select-none">
                   <img src="./assets/7007.png" class="w-8 bg-white" alt="" />
                   7007 Studio
@@ -413,6 +423,21 @@
                   />
                   <span class="text-[18px] font-bold tracking-wide"
                     >TeXco tech</span
+                  >
+                </div>
+                <span
+                  class="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"
+                ></span>
+
+                <!-- Notion -->
+                <div class="flex items-center gap-2 select-none">
+                  <img
+                    src="./assets/Img/partners/ph.jpg"
+                    class="w-15  bg-white"
+                    alt="Techof solution"
+                  />
+                  <span class="text-[18px] font-bold tracking-wide"
+                    >Планета Здоровья Аптека</span
                   >
                 </div>
 
@@ -470,6 +495,7 @@
                     >Sattar&Co.</span
                   >
                 </div>
+                
               </div>
               <div class="marquee-group flex items-center gap-16 px-8">
                 <!-- OURA -->
@@ -873,7 +899,7 @@
             <p
               class="text-white/75 text-xl funnel font-semibold tracking-[1.8px] m-0"
             >
-              Portfolio Website - React JS, GSAP, Framer Motion, Tailwind CSS
+              A modern portfolio website for a BPO company, designed to showcase services and brand identity with a clean and professional layout. Built with smooth animations and responsive design to deliver a seamless user experience across all devices
             </p>
           </div>
           <div
@@ -953,7 +979,7 @@
               <p
                 class="text-white/75 text-xl funnel font-semibold tracking-[1.8px] m-0"
               >
-                Portfolio Website - React JS, GSAP, Framer Motion, Tailwind CSS
+               A modern agency portfolio built for a 3D design and animation studio, focused on immersive storytelling and visually striking presentation. Designed to showcase creative work through smooth interactions and engaging layouts.
               </p>
             </div>
             <div
@@ -1035,7 +1061,7 @@
             <p
               class="text-white/75 text-xl funnel font-semibold tracking-[1.8px] m-0"
             >
-              E-commerce Website - Next JS, Express JS, Mongo DB
+              A full-stack coffee shop management system for handling orders, inventory, and operations. Built for smooth performance with a modern, responsive user experience.
             </p>
           </div>
           <div
@@ -1504,7 +1530,7 @@
               </h1>
 
               <!-- CTA -->
-              <div class="flex items-center gap-3 cursor-pointer group w-fit">
+              <a  target="_blank" href="https://www.linkedin.com/company/techofsolution/" class="flex items-center gap-3 cursor-pointer group w-fit">
                 <div
                   class="w-9 h-9 rounded-full bg-gray-900 flex items-center justify-center flex-shrink-0 group-hover:bg-gray-700 transition-colors"
                 >
@@ -1526,7 +1552,7 @@
                   class="text-xs font-semibold tracking-widest uppercase underline underline-offset-4 text-gray-900"
                   >Join with us</span
                 >
-              </div>
+              </a>
 
               <!-- Bottom image -->
               <div class="rounded-2xl p-2 overflow-hidden aspect-[4/3] w-full">
@@ -1619,8 +1645,8 @@
               >
                 <div class="w-full aspect-square overflow-hidden bg-[#ceb89c]">
                   <img
-                    src="https://scontent.fdac198-1.fna.fbcdn.net/v/t39.30808-6/454757843_1161139388280832_3753467425005075647_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s960x960&_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeE43TfREEyzpzEH2rk6a61MZSiEKGGotOJlKIQoYai04iS9Zv8PdPdFTgwJnEizC3jFlgSXJ2i1JQ-TS-_Q6Kef&_nc_ohc=YTQyroECbIgQ7kNvwHXZ1oI&_nc_oc=AdqBdzWpEDAjV2itB1ECliP-ZqV4R5nIVQ5fKaDzK1D4u-vhkubKWykk21lsnMePunA&_nc_zt=23&_nc_ht=scontent.fdac198-1.fna&_nc_gid=fTx5H-x_-Rt0FhfpqjiI1w&_nc_ss=7b2a8&oh=00_AQDJluMbX34G2KVpkp2vm3c9Hge4Fxxi_92YQF8lxu5VPg&oe=6A5212F1"
-                    alt="Ricardo P. Winslow"
+                    src="./assets/Img/as.webp"
+                    alt="Atik Al Sabbir"
                     class="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -1799,7 +1825,7 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <h1 class="text-lg lg:text-xl text-gray-400 mt-1">32 Reviews</h1>
+            <h1 class="text-lg lg:text-xl text-gray-400 mt-1">57 Reviews</h1>
           </div>
 
           <div
@@ -1824,10 +1850,7 @@
                 </p>
                 <div class="flex items-center gap-4 lg:gap-6">
                   <div class="w-14 h-14 lg:w-20 lg:h-20 rounded-xl">
-                    <img
-                      src="https://scontent.fdac198-2.fna.fbcdn.net/v/t39.30808-6/677316635_4578524192471026_2989940145725377066_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x1536&ctp=s1536x1536&_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFCxtS5wi2iTnD5oGYf7MOIOTb_jIaSyEQ5Nv-MhpLIRP9hRSIlp_5gB54IB_nDi4IgiF4E-GgE56AUBEWEIFW5&_nc_ohc=dXOHR9I8PtMQ7kNvwERzEMQ&_nc_oc=AdrZVR8HkysPc4CcdKKpprZXYjHXHD3dt51iFGSBKIaaQ3R7vaZvfxGo5DJBfMCjNBQ&_nc_zt=23&_nc_ht=scontent.fdac198-2.fna&_nc_gid=_kH93YU_6WZhzI3yJylS6Q&_nc_ss=7b2a8&oh=00_AQDWmblsZWpvHH_2pu9EDzATRzfj5k52HC6p4p5eBcBT4Q&oe=6A51FD7A"
-                      class="w-full h-full object-center object-cover rounded-xl"
-                    />
+                    <img src="./assets/Img/nh.webp" />
                   </div>
                   <div class="">
                     <h4 class="text-white text-xl lg:text-3xl font-semibold">
@@ -1960,7 +1983,7 @@
               class="bg-zinc-900 flex raleway justify-center flex-col items-center py-6 md:py-0"
             >
               <span class="text-5xl lg:text-8xl font-glonto">
-                <span id="projectsCount" data-target="120">0</span>+
+                <span id="projectsCount" data-target="132">0</span>+
               </span>
               <span class="text-xl lg:text-4xl text-gray-500">Projects </span>
             </div>
@@ -1968,7 +1991,7 @@
               class="bg-zinc-900 flex raleway justify-center flex-col items-center py-6 md:py-0"
             >
               <span class="text-5xl lg:text-8xl font-glonto">
-                <span id="countriesCount" data-target="3">0</span>+
+                <span id="countriesCount" data-target="7">0</span>+
               </span>
               <span class="text-xl lg:text-4xl text-gray-500">Countries </span>
             </div>
@@ -1986,13 +2009,13 @@
           <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-semibold mt-4 mb-6 leading-tight"
           >
-            Let's discuss your project.
+            Let's discuss about your project.
           </h2>
           <p
             class="text-neutral-400 text-lg leading-relaxed font-urbanis max-w-md"
           >
             Tell us what you're building. Drop your email and a short
-            description below — we'll get back to you within 24 hours to talk
+            description below. we'll get back to you within 24 hours to talk
             through the details.
           </p>
 
@@ -2141,7 +2164,7 @@
         </div>
 
         <p class="text-neutral-500 text-xl">
-          &copy; 2026 TechOf Solutions Ltd. All Rights Reserved.
+          &copy; 2026 TechOf Solutions. All Rights Reserved.
         </p>
       </div>
     </footer>
@@ -2282,27 +2305,26 @@
         );
       });
       const ele = document.querySelectorAll(".service-text");
-      
+const heroEntrance = () => {
+  const eyebrow = document.querySelector(".upp");
+  const heroLine1 = document.querySelector("h1.flex.flex-wrap");
+  const heroLine2 = heroLine1?.nextElementSibling;
+  const tagline = document.querySelector(".tracking-tight")?.closest(".flex.gap-2");
 
-      const bookMeetingScroll = () => {
-        const bookBtn = document.getElementById("getInTouchbtn");
-        const target = document.getElementById("getInTouch");
+  const targets = [eyebrow, heroLine1, heroLine2, tagline].filter(Boolean);
+  if (!targets.length) return;
 
-        if (!target || !bookBtn) return; // fixed: check the element itself, not .length
+  gsap.set(targets, { y: 30, opacity: 0 });
 
-        bookBtn.addEventListener("click", () => {
-          if (typeof lenis !== "undefined" && lenis) {
-            lenis.scrollTo(target, {
-              duration: 1.5,
-              easing: (t) => 1 - Math.pow(1 - t, 3),
-            });
-          } else {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        });
-      };
+  gsap.timeline({ delay: 0.2 })
+    .to(eyebrow, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" })
+    .to(heroLine1, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.3")
+    .to(heroLine2, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.5")
+    .to(tagline, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, "-=0.4");
+};
 
-      bookMeetingScroll();
+heroEntrance();
+
     </script>
   </body>
 </html>

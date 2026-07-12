@@ -20,6 +20,32 @@
     />
   </head>
   <body class="bg-zinc-950 font-fellix text-white">
+    
+    <button
+      aria-label="Back to top"
+      class="scrollTopBtn fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[999] w-14 h-14 sm:w-16 sm:h-16 rounded-full opacity-0 pointer-events-none scale-90"
+      style="
+        background: conic-gradient(white 0%, rgba(255, 255, 255, 0.15) 0%);
+        padding: 2px;
+      "
+    >
+      <div
+        class="w-full h-full rounded-full bg-black/70 backdrop-blur-xl flex items-center justify-center"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </div>
+    </button>
     <section class="relative">
       <nav
         class="left-0 w-full lg:px-10 py-4 z-50 transition-all duration-300 relative"
@@ -165,8 +191,7 @@
 
           <div class="hidden md:block">
             <button
-              id="getInTouchbtn"
-              class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn"
+              class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn getInTouchBtn"
             >
               Book A Meeting
             </button>
@@ -205,16 +230,12 @@
               >Works</span
             >
           </a>
-          <a href="./playground.html" class="mobile-link overflow-hidden">
+          <a href="./about.html" class="mobile-link overflow-hidden">
             <span class="inline-block text-3xl font-fellix text-white"
-              >Playground</span
+              >About Us</span
             >
           </a>
-          <a href="./playground.html" class="mobile-link overflow-hidden">
-            <span class="inline-block text-3xl font-fellix text-white"
-              >Book A Meeting</span
-            >
-          </a>
+          
         </div>
       </nav>
       <!-- ============ HERO ============ -->
@@ -222,7 +243,7 @@
         <p
           class="hero-eyebrow text-sm sm:text-base tracking-[0.2em] uppercase mb-6"
         >
-          About TechOf Solutions
+          About TechOf Solution
         </p>
 
         <h1
@@ -235,14 +256,14 @@
         >
           We Give It
           <span class="font-klimisk italic font-normal text-blue-500"
-            >Lift&nbsp;—&nbsp;Off.</span
+            >Lift&nbsp;<span class="text-white">—</span>&nbsp;Off.</span
           >
         </h1>
 
         <p
-          class="hero-sub text-neutral-400 text-xl sm:text-xl max-w-2xl mt-8 leading-relaxed font-urbanis"
+          class="hero-sub text-neutral-400  text-xl sm:text-xl max-w-2xl mt-8 leading-relaxed font-urbanis"
         >
-          TechOf Solutions. is a Bangladesh-based technology partner turning
+          TechOf Solution. is a Bangladesh-based technology partner turning
           ambitious ideas into scalable web, mobile, AI, and enterprise systems.
         </p>
       </section>
@@ -260,9 +281,9 @@
               Tech + Off = TechOf.
             </h2>
             <p
-              class="text-neutral-400 text-xl leading-relaxed font-urbanis max-w-xl"
+              class="text-neutral-400 text-xl text-justify leading-relaxed font-urbanis max-w-xl"
             >
-              The name isn't decoration. "Off" is our nod to takeoff — the exact
+              The name isn't decoration. "Off" is our nod to takeoff the exact
               moment an idea leaves the ground and becomes real. TechOf
               Solutions exists to give technology that same lift: turning
               grounded ideas into systems that actually fly.
@@ -308,8 +329,8 @@
         <p
           class="text-neutral-400 text-xl sm:text-xl leading-relaxed font-urbanis max-w-2xl reveal-up"
         >
-          TechOf Solutions delivers advanced web, mobile, AI, and
-          enterprise-grade digital solutions from Dhaka, Bangladesh — while
+          TechOf Solution delivers advanced web, mobile, AI, and
+          enterprise-grade digital solutions from Dhaka, Bangladesh  while
           investing in technology education and research to grow the next
           generation of digital creators.
         </p>
@@ -318,16 +339,16 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-16">
           <div class="bg-zinc-900 rounded-2xl p-8 reveal-up">
             <span class="text-6xl lg:text-7xl font-glonto text-white">
-              <span id="statFounders" data-target="3">0</span>
+              <span id="statFounders" data-target="7">0</span>
             </span>
             <p class="text-neutral-500 text-xl mt-2">Client Country</p>
           </div>
           <div class="bg-zinc-900 rounded-2xl p-8 reveal-up">
             <span class="text-6xl lg:text-7xl font-glonto text-white">
-              <span id="statRnd" data-target="40">0</span>%
+              <span id="statRnd" data-target="132">0</span>
             </span>
             <p class="text-neutral-500 text-xl mt-2">
-              Profit Reinvested in R&amp;D
+              Project Deliver Sucessfully
             </p>
           </div>
           <div class="bg-zinc-900 rounded-2xl p-8 reveal-up">
@@ -372,8 +393,7 @@
               <div class="h-px bg-neutral-800 mb-5"></div>
 
               <p class="text-neutral-400 leading-relaxed text-sm sm:text-base">
-                Former Director &amp; Vice President of the Dhaka Chamber of
-                Commerce and Industry, and COO of BDCOM Online Ltd.
+                Former Director & Vice President of the <span class="text-blue-400 italic">Dhaka Chamber of Commerce and Industry</span>, and COO of <span class="text-blue-400 italic">BDCOM Online Ltd</span>. Former Director & Sr. Vice President of the Dhaka Chamber of Commerce and Industry and Managing Director of BDCOM Online Limited
               </p>
             </div>
           </div>
@@ -484,8 +504,8 @@
               class="text-neutral-400 text-lg leading-relaxed font-urbanis mb-6"
             >
               To be South Asia's most trusted, innovative, and research-driven
-              technology powerhouse — shaping the future through intelligent
-              systems, digital transformation, and human-centered design.
+              technology powerhouse shaping the future through intelligent
+              systems, digital transformation, and humancentered design.
             </p>
             <ul class="space-y-3">
               <li class="flex items-start gap-3 text-neutral-400 text-base">
@@ -518,7 +538,7 @@
       </section>
       <section class="px-[6vw] py-28 border-t border-neutral-800">
         <span class="text-blue-500 text-sm tracking-widest reveal-up"
-          >06 — GIVING BACK</span
+          >05 — GIVING BACK</span
         >
         <h2
           class="text-4xl sm:text-5xl lg:text-6xl font-semibold mt-4 max-w-3xl leading-tight reveal-up"
@@ -541,13 +561,13 @@
               <h3
                 class="text-2xl sm:text-4xl lg:text-5xl font-semibold text-white max-w-2xl mb-4 leading-snug"
               >
-                A room full of final-year students, nervous about their defense.
+                A room full of finalyear students, Sharing knowledge about Research & Defense.
               </h3>
 
               <p
                 class="text-neutral-300 text-sm sm:text-lg max-w-xl leading-relaxed font-urbanis mb-8"
               >
-                Final defense pressure is real — we've been there too. So TechOf
+                Final defense pressure is real we've been there too. So TechOf
                 Solutions sat down with the 64th batch CSE students before their
                 big day, walked through what actually matters in a defense, and
                 made clear that our door stays open if any of them need
@@ -579,7 +599,7 @@
       <!-- ============ 05 — CORE VALUES ============ -->
       <section class="px-[6vw] py-28 border-t border-neutral-800">
         <span class="text-blue-500 text-sm tracking-widest reveal-up"
-          >05 — CORE VALUES</span
+          >06 — CORE VALUES</span
         >
         <h2
           class="text-4xl sm:text-5xl lg:text-6xl font-semibold mt-4 mb-16 max-w-3xl leading-tight reveal-up"
@@ -591,7 +611,7 @@
           <div
             class="value-card bg-zinc-900 rounded-2xl p-8 reveal-up transition-colors duration-300 hover:bg-zinc-800"
           >
-            <span class="text-neutral-600 text-sm">01</span>
+            <span class="text-neutral-600 text-3xl font-bold"><i class="fa-solid fa-heart-circle-plus"></i></span>
             <h3 class="text-xl font-semibold text-white mt-3 mb-3">
               Customer-Caring
             </h3>
@@ -603,7 +623,7 @@
           <div
             class="value-card bg-zinc-900 rounded-2xl p-8 reveal-up transition-colors duration-300 hover:bg-zinc-800"
           >
-            <span class="text-neutral-600 text-sm">02</span>
+            <span class="text-neutral-600 text-3xl"><i class="fa-solid fa-compass-drafting"></i></span>
             <h3 class="text-xl font-semibold text-white mt-3 mb-3">
               Perfection-Craving
             </h3>
@@ -615,7 +635,7 @@
           <div
             class="value-card bg-zinc-900 rounded-2xl p-8 reveal-up transition-colors duration-300 hover:bg-zinc-800"
           >
-            <span class="text-neutral-600 text-sm">03</span>
+            <span class="text-neutral-600 text-3xl"><i class="fa-solid fa-layer-group"></i></span>
             <h3 class="text-xl font-semibold text-white mt-3 mb-3">
               Boundary-Breaking
             </h3>
@@ -627,7 +647,7 @@
           <div
             class="value-card bg-zinc-900 rounded-2xl p-8 reveal-up transition-colors duration-300 hover:bg-zinc-800"
           >
-            <span class="text-neutral-600 text-sm">04</span>
+            <span class="text-neutral-600 text-3xl"><i class="fa-solid fa-handshake"></i></span>
             <h3 class="text-xl font-semibold text-white mt-3 mb-3">
               Trust-Driven
             </h3>
@@ -638,7 +658,7 @@
           <div
             class="value-card bg-zinc-900 rounded-2xl p-8 reveal-up transition-colors duration-300 hover:bg-zinc-800"
           >
-            <span class="text-neutral-600 text-sm">05</span>
+            <span class="text-neutral-600 text-3xl"><i class="fa-solid fa-arrow-trend-up"></i></span>
             <h3 class="text-xl font-semibold text-white mt-3 mb-3">
               Growth-Chasing
             </h3>
@@ -649,88 +669,7 @@
           </div>
         </div>
       </section>
-      <section
-        id="getInTouch"
-        class="px-[6vw] py-28 border-t border-neutral-800"
-      >
-        <div class="grid lg:grid-cols-2 gap-16 items-start">
-          <!-- Left: heading + context -->
-          <div class="reveal-up">
-            <h2
-              class="text-4xl sm:text-5xl lg:text-6xl font-semibold mt-4 mb-6 leading-tight"
-            >
-              Let's discuss your project.
-            </h2>
-            <p
-              class="text-neutral-400 text-lg leading-relaxed font-urbanis max-w-md"
-            >
-              Tell us what you're building. Drop your email and a short
-              description below — we'll get back to you within 24 hours to talk
-              through the details.
-            </p>
-
-            <div class="mt-10 flex items-center gap-3 text-neutral-400">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M4 4h16v16H4z" stroke-linejoin="round" />
-                <path
-                  d="M4 6l8 7 8-7"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span>techofsolution@gmail.com</span>
-            </div>
-          </div>
-
-          <!-- Right: form -->
-          <div class="reveal-up bg-zinc-900 rounded-3xl p-8 sm:p-10">
-            <form id="contactForm" class="flex flex-col gap-6">
-              <div>
-                <label class="block text-xl text-neutral-400 mb-2"
-                  >Your Email</label
-                >
-                <input
-                  type="email"
-                  name="from_email"
-                  required
-                  placeholder="you@company.com"
-                  class="w-full bg-zinc-950 border border-neutral-800 rounded-xl px-5 py-4 text-white placeholder-neutral-600 outline-none focus:border-blue-500 transition-colors duration-300"
-                />
-              </div>
-
-              <div>
-                <label class="block text-xl text-neutral-400 mb-2"
-                  >Project Description</label
-                >
-                <textarea
-                  name="message"
-                  required
-                  rows="5"
-                  placeholder="Tell us about your project, timeline, and goals..."
-                  class="w-full bg-zinc-950 border border-neutral-800 rounded-xl px-5 py-4 text-white placeholder-neutral-600 outline-none focus:border-blue-500 transition-colors duration-300 resize-none"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                id="submitBtn"
-                class="relative bg-white text-black font-medium rounded-full px-8 py-4 transition-transform duration-300 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                <span id="submitBtnText">Send Message →</span>
-              </button>
-
-              <p id="formStatus" class="text-xl hidden"></p>
-            </form>
-          </div>
-        </div>
-      </section>
+      
 
       <footer class="bg-white text-black px-[6vw] pt-24 pb-10">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-0 items-end">

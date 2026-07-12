@@ -21,6 +21,32 @@
   </head>
 
   <body class="bg-zinc-950 font-fellix text-white">
+    
+    <button
+      aria-label="Back to top"
+      class="scrollTopBtn fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[999] w-14 h-14 sm:w-16 sm:h-16 rounded-full opacity-0 pointer-events-none scale-90"
+      style="
+        background: conic-gradient(white 0%, rgba(255, 255, 255, 0.15) 0%);
+        padding: 2px;
+      "
+    >
+      <div
+        class="w-full h-full rounded-full bg-black/70 backdrop-blur-xl flex items-center justify-center"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </div>
+    </button>
     <section class="relative">
       <nav
         class="left-0 w-full lg:px-10 py-4 z-50 transition-all duration-300 relative"
@@ -166,8 +192,7 @@
 
           <div class="hidden md:block">
             <button
-              id="getInTouchbtn"
-              class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn"
+              class="text-xl all-btn2 border px-5 py-2 border-zinc-500 nav-btn getInTouchBtn"
             >
               Book A Meeting
             </button>
@@ -206,21 +231,17 @@
               >Works</span
             >
           </a>
-          <a href="./playground.html" class="mobile-link overflow-hidden">
+          <a href="./about.html" class="mobile-link overflow-hidden">
             <span class="inline-block text-3xl font-fellix text-white"
-              >Playground</span
+              >About Us</span
             >
           </a>
-          <a href="./playground.html" class="mobile-link overflow-hidden">
-            <span class="inline-block text-3xl font-fellix text-white"
-              >Book A Meeting</span
-            >
-          </a>
+          
         </div>
       </nav>
       <div class="px-[6vw] space-y-10 pt-20">
         <h1 class="font-semibold uppercase font-urbanist upp">
-          Creative Tech & Marketing Agency
+           Technology & Digital Innovation Company
         </h1>
         <div>
           <h1 class="text-6xl md:text-9xl font-semibold">
@@ -238,47 +259,49 @@
     <section class="py-55 scroll-card space-y-5">
       <!-- Tabs -->
       <div class="px-[6vw] mb-16">
-        <div
-          id="tabsWrapper"
-          class="relative inline-flex flex-wrap gap-1 bg-[#181818] border border-neutral-800 rounded-full p-1"
-        >
-          <span
-            id="tabPill"
-            class="absolute top-1 bottom-1 left-1 rounded-full bg-white z-0"
-            style="width: 0px"
-          ></span>
+  <div class="overflow-x-auto scrollbar-hide -mx-[6vw] px-[6vw] sm:mx-0 sm:px-0">
+    <div
+      id="tabsWrapper"
+      class="relative inline-flex flex-nowrap gap-1 bg-[#181818] border border-neutral-800 rounded-full p-1 w-max"
+    >
+      <span
+        id="tabPill"
+        class="absolute top-1 bottom-1 left-1 rounded-full bg-white z-0"
+        style="width: 0px"
+      ></span>
 
-          <button
-            class="tab-btn relative z-10 px-6 py-3 text-sm sm:text-base font-medium rounded-full"
-            data-category="website"
-          >
-            Website
-          </button>
-          <button
-            class="tab-btn relative z-10 px-6 py-3 text-sm sm:text-base font-medium rounded-full"
-            data-category="research"
-          >
-            Research Paper
-          </button>
-          <button
-            class="tab-btn relative z-10 px-6 py-3 text-sm sm:text-base font-medium rounded-full"
-            data-category="aiml"
-          >
-            AI / ML
-          </button>
-          <button
-            class="tab-btn relative z-10 px-6 py-3 text-sm sm:text-base font-medium rounded-full"
-            data-category="software"
-          >
-            Software
-          </button>
-        </div>
-      </div>
+      <button
+        class="tab-btn relative z-10 px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-base font-medium rounded-full whitespace-nowrap"
+        data-category="website"
+      >
+        Website
+      </button>
+      <button
+        class="tab-btn relative z-10 px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-base font-medium rounded-full whitespace-nowrap"
+        data-category="research"
+      >
+        Research Paper
+      </button>
+      <button
+        class="tab-btn relative z-10 px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-base font-medium rounded-full whitespace-nowrap"
+        data-category="aiml"
+      >
+        AI / ML
+      </button>
+      <button
+        class="tab-btn relative z-10 px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-base font-medium rounded-full whitespace-nowrap"
+        data-category="software"
+      >
+        Software
+      </button>
+    </div>
+  </div>
+</div>
 
       <!-- Cards render here via JS -->
       <div
         id="cardsContainer"
-        class="space-y-5 grid-cols-2 grid gap-20 px-[6vw]"
+        class="space-y-5 lg:grid-cols-2 grid gap-20 px-[6vw]"
       ></div>
 
       <div id="emptyState" class="px-[6vw] hidden text-center py-20">
@@ -296,7 +319,7 @@
         </div>
       </div>
       <section class="py-20 px-[6vw] bg-black flex flex-col md:flex-row">
-        <h2 class="w-[40%] text-9xl font-bold text-white mb-12">FAQs</h2>
+        <h2 class="w-[40%] text-[8vw] font-bold text-white mb-12">FAQs</h2>
 
         <div class="faq-container space-y-4">
           <!-- FAQ Item 1 -->
@@ -436,85 +459,7 @@
         </div>
       </section>
     </section>
-    <section id="getInTouch" class="px-[6vw] py-28 border-t border-neutral-800">
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
-        <!-- Left: heading + context -->
-        <div class="reveal-up">
-          <h2
-            class="text-4xl sm:text-5xl lg:text-6xl font-semibold mt-4 mb-6 leading-tight"
-          >
-            Let's discuss your project.
-          </h2>
-          <p
-            class="text-neutral-400 text-lg leading-relaxed font-urbanis max-w-md"
-          >
-            Tell us what you're building. Drop your email and a short
-            description below — we'll get back to you within 24 hours to talk
-            through the details.
-          </p>
-
-          <div class="mt-10 flex items-center gap-3 text-neutral-400">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M4 4h16v16H4z" stroke-linejoin="round" />
-              <path
-                d="M4 6l8 7 8-7"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <span>techofsolution@gmail.com</span>
-          </div>
-        </div>
-
-        <!-- Right: form -->
-        <div class="reveal-up bg-zinc-900 rounded-3xl p-8 sm:p-10">
-          <form id="contactForm" class="flex flex-col gap-6">
-            <div>
-              <label class="block text-xl text-neutral-400 mb-2"
-                >Your Email</label
-              >
-              <input
-                type="email"
-                name="from_email"
-                required
-                placeholder="you@company.com"
-                class="w-full bg-zinc-950 border border-neutral-800 rounded-xl px-5 py-4 text-white placeholder-neutral-600 outline-none focus:border-blue-500 transition-colors duration-300"
-              />
-            </div>
-
-            <div>
-              <label class="block text-xl text-neutral-400 mb-2"
-                >Project Description</label
-              >
-              <textarea
-                name="message"
-                required
-                rows="5"
-                placeholder="Tell us about your project, timeline, and goals..."
-                class="w-full bg-zinc-950 border border-neutral-800 rounded-xl px-5 py-4 text-white placeholder-neutral-600 outline-none focus:border-blue-500 transition-colors duration-300 resize-none"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              id="submitBtn"
-              class="relative bg-white text-black font-medium rounded-full px-8 py-4 transition-transform duration-300 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              <span id="submitBtnText">Send Message →</span>
-            </button>
-
-            <p id="formStatus" class="text-xl hidden"></p>
-          </form>
-        </div>
-      </div>
-    </section>
+    
 
     <footer class="bg-white text-black px-[6vw] pt-24 pb-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-0 items-end">
@@ -617,10 +562,9 @@
           logo: "./assets/7007.png",
           description:
             "A modern agency portfolio built for a 3D design and animation studio, focused on immersive storytelling and visually striking presentation. Designed to showcase creative work through smooth interactions and engaging layouts.",
-          tags: ["React", "GSAP", "ScrollTrigger", "Responsive"],
-          tagline: "Creative 3D Agency Website",
+  
           link: "https://7007studio.com/",
-          reverse: false,
+          
         },
         {
           category: "website",
@@ -629,8 +573,7 @@
           logo: "./assets/SS.png",
           description:
             "A modern portfolio website for a BPO company, designed to showcase services and brand identity with a clean and professional layout. Built with smooth animations and responsive design to deliver a seamless user experience across all devices.",
-          tags: ["React", "GSAP", "ScrollTrigger", "Responsive"],
-          tagline: "BPO Service Agency Website",
+         
           link: "https://schedulesolutionsbpo.com/",
         },
         {
@@ -640,10 +583,9 @@
           image: "./assets/Img/3.webp",
           description:
             "A full-stack coffee shop management system for handling orders, inventory, and operations. Built for smooth performance with a modern, responsive user experience.",
-          tags: ["Next JS", "GSAP", "Express JS", "MongoDB"],
-          tagline: "Coffee Shop Management Website",
+        
           link: "https://the-juice-alluy-8744f.web.app/",
-          reverse: false,
+          
         },
         {
           category: "website",
@@ -652,8 +594,7 @@
           image: "./assets/Img/4.webp",
           description:
             "A modern medicine management platform with full Russian and English language support for seamless accessibility. Designed to handle pharmacy operations efficiently with a scalable backend and responsive interface.",
-          tags: ["Next JS", "Express JS", "SQL", "Responsive"],
-          tagline: "Modern Medicine Management Website",
+         
           link: "https://planetazdorovo.com/",
         },
         {
@@ -673,8 +614,7 @@
           logo: "https://t3.ftcdn.net/jpg/05/80/96/04/360_F_580960493_t9bP94g2aGBivI3WA26HP5IzdIOAVFHX.jpg",
           description:
             "A premium watch e-commerce website built to highlight product craftsmanship — featuring detailed product galleries, collection browsing, and a smooth checkout experience for luxury timepiece buyers.",
-          tags: ["React", "Node.js", "MongoDB", "Stripe"],
-          tagline: "Watch E-commerce Website",
+         
           link: "https://watch.planetazdorovo.com/",
         },
         {
@@ -684,10 +624,9 @@
           logo: "https://learnbridge-6f2b3.web.app/assets/icons8-book-96-CBy8Fa1t.png",
           description:
             "A learning management system built with three distinct roles — student, teacher, and admin — handling course delivery, assignments, grading, and platform-wide administration in one connected LMS.",
-          tags: ["React", "Express JS", "MongoDB", "Role-Based Auth"],
-          tagline: "LMS — Student, Teacher & Admin Roles",
+         
           link: "https://learnbridge-6f2b3.web.app/",
-          reverse: false,
+          
         },
         {
           category: "website",
@@ -696,8 +635,7 @@
           image: "./assets/Img/website/s.webp",
           description:
             "A game review and discovery platform where users browse, rate, and review video games — built with a clean, content-first layout designed to make exploring reviews fast and enjoyable.",
-          tags: ["React", "Tailwind CSS", "REST API", "Responsive"],
-          tagline: "Game Review Website",
+          
           link: "https://clothes.planetazdorovo.com/",
         },
         {
@@ -707,10 +645,9 @@
           logo: "https://png.pngtree.com/png-clipart/20230922/original/pngtree-clothing-logo-template-vector-icon-clothing-symbol-modern-vector-png-image_12520748.png",
           description:
             "A modern clothing e-commerce website with a considered, editorial-style layout — showcasing collections, offers, and new arrivals with a refined shopping experience across every device.",
-          tags: ["Next JS", "Tailwind CSS", "E-commerce", "Responsive"],
-          tagline: "Clothing E-commerce Website",
+         
           link: "https://clothes.planetazdorovo.com/",
-          reverse: false,
+          
         },
 
         {
@@ -720,10 +657,9 @@
           image: "./assets/Img/software/milex.webp",
           description:
             "A complete parcel management software built for internal business operations — handling shipment tracking, delivery workflows, agent management, and financial reconciliation in one unified system for full end-to-end business control.",
-          tags: ["React", "Node.js", "MongoDB", "JWT Auth"],
-          tagline: "Parcel Company Management Software",
+          
           link: "https://milex-erp.vercel.app/",
-          reverse: false,
+          
         },
         {
           category: "software",
@@ -732,71 +668,58 @@
           image: "./assets/Img/software/khm0.webp",
           description:
             "A full-scale hardware shop management system covering inventory, invoicing, customer and supplier records, revenue tracking, and stock control — built to run the store's entire day-to-day operations from a single dashboard.",
-          tags: ["React", "Express JS", "MongoDB", "Tailwind CSS"],
-          tagline: "Hardware Shop Management System",
+         
           link: "https://your-khulna-hardware-link.com/",
         },
         {
           category: "software",
           title: "Ummahatul Muminin Womens Madrasha",
-          logo: "./assets/madrasha-logo.png",
+          logo: "./assets/Img/partners/um.jpg",
           image: "./assets/Img/software/umkun.webp",
           description:
             "A comprehensive LMS built specifically for the madrasha's academic and administrative needs — managing student attendance, fee payments, teacher salary disbursement, and digital class notes in one integrated learning management platform.",
-          tags: ["React", "Node.js", "MongoDB", "LMS"],
-          tagline: "Madrasha Learning Management System",
+          
           link: "https://your-madrasha-lms-link.com/",
-          reverse: false,
+          
         },
         {
           category: "research",
           title: "BanglaPlate",
           image: "./assets/Img/Research_Paper/banglaplate.webp",
-
+          logo:'./assets/Img/Research_Paper/banglaplate.webp',
           description:
             "A robust automatic number plate detection and recognition system developed for Bangladeshi vehicles using YOLOv8. The research focuses on accurate real-time plate localization and character recognition to support intelligent transportation systems.",
-          tags: ["YOLOv8", "ANPR", "Computer Vision", "Transportation"],
-          tagline: "Bangla Vehicle Number Plate Recognition",
+          
           link: "https://ieeexplore.ieee.org/document/11013529",
-          reverse: false,
+          
         },
         {
           category: "research",
           title: "AI-Driven Personal Item & Crime Pattern Tracker",
           image: "./assets/Img/Research_Paper/aidriven.webp",
+          logo: "./assets/Img/Research_Paper/aidriven.webp",
           description:
             "An AI-powered research project that helps Bangladeshi consumers protect personal belongings by tracking lost items and analyzing crime patterns. The system combines intelligent reporting, location-based insights, and predictive analytics to improve public awareness and personal security.",
-          tags: ["AI", "Machine Learning", "Crime Analytics", "Bangladesh"],
-          tagline: "Smart Personal Security & Crime Analysis",
+          
           link: "https://www.researchgate.net/publication/406152567_AI-Driven_Personal_Item_Crime_Pattern_Tracker_for_Bangladeshi_Consumers",
-          reverse: false,
+          
         },
         {
           category: "research",
           title: "AIoT for Road Safety",
           image: "./assets/Img/Research_Paper/roadsafty.webp",
+          logo: "./assets/Img/Research_Paper/roadsafty.webp",
           description:
             "A unified AIoT-based road safety system that integrates vehicle speed estimation with automatic license plate recognition for intelligent traffic monitoring in Bangladesh. The framework enables real-time detection of speeding vehicles and supports smarter traffic law enforcement.",
-          tags: ["AIoT", "YOLO", "Computer Vision", "Road Safety"],
-          tagline: "Vehicle Speed & License Plate Recognition",
+         
           link: "https://www.researchgate.net/publication/406152534_AIoT_for_Road_Safety_Unified_Vehicle_Speed_and_License_Plate_Recognition_in_Bangladesh",
         },
-        {
-          category: "research",
-          title: "BanglaMind",
-          image: "./assets/Img/Research_Paper/banglamind.webp",
-          description:
-            "An AI-powered mental health chatbot designed to detect emotions and identify potential suicide risks among students through natural language conversations. The system provides early intervention support using Bangla language understanding and sentiment analysis.",
-          tags: ["NLP", "AI Chatbot", "Mental Health", "Bangla"],
-          tagline: "Emotion & Suicide Risk Detection",
-          link: "https://link.springer.com/chapter/10.1007/978-3-032-15346-3_9",
-          reverse: false,
-        },
+        
         {
           category: "aiml",
           title: "CBC Blood Cancer Detector",
           image: "./assets/Img/AI/63.webp",
-          logo: "./assets/aiml-logo.png",
+          logo: "./assets/Img/AI/63.webp",
           description:
             "An AI/ML-powered diagnostic support tool that analyzes Complete Blood Count (CBC) report data to flag early indicators of blood cancer. The system processes key blood parameters — WBC, RBC, platelet counts, and differential ratios — through a trained classification model to assist physicians in identifying high-risk patterns for further clinical investigation.",
           link: "https://your-cbc-detector-link.com/",
@@ -805,7 +728,7 @@
           category: "aiml",
           title: "HemaVision ML",
           image: "./assets/Img/AI/64.webp",
-          logo: "./assets/research-logo.png",
+          logo: "./assets/Img/AI/64.webp",
           description:
             "A machine learning system for automated hematology insights, trained on clinical flow cytometry data to assist in blood cancer detection. Developed in collaboration with the Department of Pediatric Hematology & Oncology at Bangladesh Medical University, the system analyzes marker expression panels (CD34, CD117, Anti-MPO, CD33, and more) across immunophenotyping tubes to flag leukemia patterns such as AML, generating structured flowcytometry reports for physician review.",
           
@@ -816,6 +739,7 @@
           category: "research",
           title: "Automated Waste Classification and Sorting",
           image: "./assets/Img/Research_Paper/waste.webp",
+          logo: "./assets/Img/Research_Paper/waste.webp",
 
           description:
             "A deep learning-based waste management system utilizing YOLOv8 to automatically classify and sort different types of waste materials. The proposed solution improves recycling efficiency while reducing manual effort through real-time object detection.",
@@ -825,20 +749,21 @@
             "Waste Management",
             "Deep Learning",
           ],
-          tagline: "Intelligent Waste Classification System",
+         
           link: "https://ieeexplore.ieee.org/document/11172269",
         },
         {
           category: "research",
           title: "BanglaPlate",
           image: "./assets/Img/Research_Paper/banglaplate.webp",
+          logo: "./assets/Img/Research_Paper/banglaplate.webp",
 
           description:
             "A robust automatic number plate detection and recognition system developed for Bangladeshi vehicles using YOLOv8. The research focuses on accurate real-time plate localization and character recognition to support intelligent transportation systems.",
-          tags: ["YOLOv8", "ANPR", "Computer Vision", "Transportation"],
+         
           tagline: "Bangla Vehicle Number Plate Recognition",
           link: "https://ieeexplore.ieee.org/document/11013529",
-          reverse: false,
+          
         },
 
         // Add research / aiml projects like this:
@@ -850,7 +775,7 @@
         //   tags: ["Python", "PyTorch"],
         //   tagline: "Research Paper",
         //   link: "https://...",
-        //   reverse: false,
+        //   
         // },
       ];
 
@@ -861,13 +786,14 @@
             href="${project.link}"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card card  relative h-100 sm:h-150 rounded-3xl overflow-hidden bg-[#111] block"
+            class="project-card card  relative h-100 sm:h-120 rounded-3xl overflow-hidden bg-[#111] block"
             data-category="${project.category}"
           >
             <div
               class="imgLayer absolute inset-[-30px] bg-center bg-cover bg-no-repeat"
               style="background-image: url('${project.image}')"
             ></div>
+           
 
             <div
               class="absolute imglayerbg select-none inset-0 rounded-xl z-[1] pointer-events-none"
@@ -1042,6 +968,7 @@
           if (active) movePill(active);
         });
       };
+      
 
       renderCards();
       cardAnimation();
